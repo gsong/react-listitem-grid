@@ -1,0 +1,10 @@
+[data-supple-flex-container] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+[data-supple-flex-item] {
+  list-style: none;
+}

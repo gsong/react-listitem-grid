@@ -1,0 +1,18 @@
+[data-supple-grid-container] {
+  --columnWidth: 1fr;
+  --columnGap: 0;
+  --rowGap: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, calc(var(--columnWidth) * 1px));
+  column-gap: calc(var(--columnGap) * 1px);
+  row-gap: calc(var(--rowGap) * 1px);
+  justify-content: start;
+
+  margin: 0;
+  padding: 0;
+}
+
+[data-supple-grid-item] {
+  list-style: none;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "react-card-grid",
+  "version": "0.0.1",
+  "description": "Utilities and components for responsive card grid layout",
+  "main": "hooks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsong/react-card-grid.git"
+  },
+  "author": "George Song <george@damacy.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gsong/react-card-grid/issues"
+  },
+  "homepage": "https://github.com/gsong/react-card-grid#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "prettier": "^2.0.5"
+  }
+}
