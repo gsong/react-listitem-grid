@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/gsong/react-listitem-grid#readme",
   "dependencies": {
-    "@babel/runtime": "^7",
     "@reach/rect": "*"
   },
   "peerDependencies": {
+    "@babel/runtime": "^7",
     "react": "^16.8"
   },
   "devDependencies": {
