@@ -1,1 +1,3 @@
+dist/
+flow-typed/
 pnpm-lock.yaml

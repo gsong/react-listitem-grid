@@ -7,7 +7,7 @@ export default [
   {
     input: "src/index.js",
     output: { dir: "dist", format: "es" },
-    external: ["react", "@reach/rect", /@babel\/runtime/],
+    external: ["react", /@babel/, /@reach/],
     preserveModules: true,
     plugins: [
       eslint(),
