@@ -1,3 +1,18 @@
+//@flow strict
+export type Options = {|
+  maximizeItemsPerRow?: boolean,
+  isFlex?: boolean,
+|};
+
+export type Params = {|
+  ...Options,
+  columnGap: number,
+  itemCount: number,
+  maxItemWidth: number,
+  minItemWidth: number,
+  maxRows: number,
+|};
+
 export const calculateItemWidth = ({
   containerWidth: _containerWidth,
   columnGap,
@@ -7,7 +22,10 @@ export const calculateItemWidth = ({
   maxRows,
   maximizeItemsPerRow = false,
   isFlex = false,
-}) => {
+}: {|
+  ...Params,
+  containerWidth: number,
+|}) => {
   const containerWidth = isFlex ? _containerWidth - columnGap : _containerWidth;
   const maxItemWidth =
     _maxItemWidth < minItemWidth ? minItemWidth : _maxItemWidth;
@@ -53,13 +71,22 @@ export const calculateItemWidth = ({
   return { containerWidth, itemWidth, itemRenderCount };
 };
 
+type GapParams = {| columnGap: number, rowGap: number |};
+
 export const flexCompensate = {
-  container: ({ columnGap, rowGap }) => {
+  container: ({ columnGap, rowGap }: GapParams) => {
     const margin = `-${rowGap}px 0 0 -${columnGap}px`;
     const width = `calc(100% + ${columnGap}px)`;
     return { margin, width };
   },
-  item: ({ itemWidth, columnGap, rowGap }) => {
+  item: ({
+    itemWidth,
+    columnGap,
+    rowGap,
+  }: {|
+    itemWidth: number,
+    ...GapParams,
+  |}) => {
     const flexBasis = itemWidth;
     const margin = `${rowGap}px 0 0 ${columnGap}px`;
     return { flexBasis, margin };

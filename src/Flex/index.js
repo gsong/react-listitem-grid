@@ -1,8 +1,11 @@
+//@flow strict
 import React from "react";
 
-import { flexCompensate } from "../utils";
+import { flexCompensate } from "../utils.js";
 
-const Container = React.forwardRef(
+import type { Gaps, Props } from "../types.js";
+
+const Container = React.forwardRef<Props, ?HTMLElement>(
   ({ columnGap, rowGap, children, ...props }, ref) => {
     const style = flexCompensate.container({ columnGap, rowGap });
 
@@ -16,10 +19,12 @@ const Container = React.forwardRef(
   },
 );
 
-const Item = ({ itemWidth, columnGap, rowGap, ...props }) => {
+type ItemProps = { ...Gaps, itemWidth: number, ... };
+
+const Item = ({ itemWidth, columnGap, rowGap, ...props }: ItemProps) => {
   const style = flexCompensate.item({ itemWidth, columnGap, rowGap });
 
-  return <li data-supple-flex-item style={style} {...props} />;
+  return <li data-supple-flex-item style={style} {...(props: any)} />;
 };
 
 export default { Container, Item };

@@ -1,4 +1,4 @@
 {
   "plugins": ["@babel/transform-runtime"],
-  "presets": ["@babel/react"]
+  "presets": ["@babel/flow", "@babel/react"]
 }

@@ -1,10 +1,13 @@
+//@flow strict
 import React from "react";
 import { useRect } from "@reach/rect";
 
 import { calculateItemWidth } from "./utils.js";
 
-export const useCalculateLayout = (calcParams) => {
-  const containerRef = React.useRef();
+import type { Params } from "./utils.js";
+
+export const useCalculateLayout = (calcParams: Params) => {
+  const containerRef = React.useRef<?HTMLElement>();
   const rect = useRect(containerRef);
 
   const containerWidth = rect?.width ?? 1024;

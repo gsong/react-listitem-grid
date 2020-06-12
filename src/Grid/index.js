@@ -1,6 +1,11 @@
+//@flow strict
 import React from "react";
 
-const Container = React.forwardRef(
+import type { Props as Props_ } from "../types.js";
+
+type Props = { ...Props_, itemWidth: number };
+
+const Container = React.forwardRef<Props, ?HTMLElement>(
   ({ itemWidth, columnGap, rowGap, children, ...props }, ref) => (
     <div {...props}>
       <ul
@@ -18,6 +23,6 @@ const Container = React.forwardRef(
   ),
 );
 
-const Item = ({ ...props }) => <li data-supple-grid-item {...props} />;
+const Item = ({ ...props }: any) => <li data-supple-grid-item {...props} />;
 
 export default { Container, Item };

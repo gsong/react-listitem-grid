@@ -18,6 +18,11 @@ export default [
             src: ["README.md", "LICENSE", "src/{Flex,Grid}/*.css"],
             dest: "dist/",
           },
+          {
+            src: "src/**/*.js",
+            dest: "dist/",
+            rename: (name, extension) => `${name}.${extension}.flow`,
+          },
         ],
         flatten: false,
       }),
