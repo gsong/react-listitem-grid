@@ -8,7 +8,6 @@
   column-gap: calc(var(--columnGap) * 1px);
   row-gap: calc(var(--rowGap) * 1px);
   justify-content: start;
-
   margin: 0;
   padding: 0;
 }

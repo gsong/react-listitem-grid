@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && rollup -c",
+    "lint": "eslint . && stylelint 'src/**'",
     "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update && flow-typed install @reach/rect@0.2",
     "prepublishOnly": "npm run build",
     "publish": "cd dist && npm publish",
@@ -52,6 +53,8 @@
     "rollup": "^2.16.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-eslint": "^7.0.0",
-    "rollup-plugin-generate-package-json": "^3.2.0"
+    "rollup-plugin-generate-package-json": "^3.2.0",
+    "stylelint": "^13.6.0",
+    "stylelint-config-standard": "^20.0.0"
   }
 }
