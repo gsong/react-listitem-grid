@@ -1,23 +1,22 @@
 //@flow strict
 import React from "react";
-import { useRect } from "@reach/rect";
 
-import { calculateItemWidth } from "./utils.js";
+import Constants from "./contexts";
+import { useCalculateLayout } from "./lib";
 
-import type { Params } from "./utils.js";
+import type { Options } from "./lib/utils";
 
-export const useCalculateLayout = (calcParams: Params) => {
-  const containerRef = React.useRef<?HTMLElement>();
-  const rect = useRect(containerRef);
+export const useLayout = (calcOptions: Options) => {
+  const constants = React.useContext(Constants);
+  const { border, padding, rowGap, width, ...params } = constants;
+  const layoutInfo = useCalculateLayout({ ...params, ...calcOptions });
 
-  const containerWidth = rect?.width ?? 1024;
-  const calculatedValues = calculateItemWidth({
-    containerWidth,
-    ...calcParams,
-  });
-
-  return {
-    containerRef,
-    ...calculatedValues,
+  const containerStyle = {
+    boxShadow: `inset 0 0 0 ${padding}px hsl(257, 16%, 90%)`,
+    border: `${border}px solid gray`,
+    margin: "auto",
+    padding,
+    width: `${width}%`,
   };
+  return { ...constants, ...layoutInfo, containerStyle };
 };

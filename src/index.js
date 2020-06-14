@@ -1,5 +1,13 @@
 //@flow strict
-export * from "./hooks.js";
-export * from "./utils.js";
-export { default as Flex } from "./Flex/index.js";
-export { default as Grid } from "./Grid/index.js";
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./App";
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  rootElement
+);

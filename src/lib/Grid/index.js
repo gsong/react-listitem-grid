@@ -23,6 +23,6 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
   ),
 );
 
-const Item = ({ ...props }: any) => <li data-supple-grid-item {...props} />;
+const Item = (props: any) => <li data-supple-grid-item {...props} />;
 
 export default { Container, Item };
