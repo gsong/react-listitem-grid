@@ -1,0 +1,5 @@
+{
+  "*.css": "stylelint --fix",
+  "*.js": ["eslint --cache --fix", "flow focus-check"],
+  "*.{css,html,js,json,md,yml}": "prettier --write"
+}

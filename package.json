@@ -40,6 +40,8 @@
     "flow-bin": "^0.127.0",
     "flow-typed": "^2.6.2",
     "globby": "^11.0.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.10",
     "normalize-package-data": "^2.5.0",
     "prettier": "^2.0.5",
     "react-scripts": "3.4.1",

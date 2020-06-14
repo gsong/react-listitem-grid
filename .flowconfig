@@ -1,4 +1,6 @@
 [ignore]
+<PROJECT_ROOT>/node_modules/.pnpm/@emotion/cache@10.0.29/node_modules/@emotion/cache/dist/cache.cjs.js.flow
+<PROJECT_ROOT>/node_modules/.pnpm/@emotion/cache@10.0.29/node_modules/@emotion/cache/src/index.js
 
 [include]
 
