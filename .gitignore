@@ -1,3 +1,17 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
 .eslintcache
-dist/
-node_modules/

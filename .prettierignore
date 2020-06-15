@@ -1,3 +1,4 @@
-dist/
-flow-typed/
+/build
+/dist
+/flow-typed
 pnpm-lock.yaml
