@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import React from "react";
 import VisuallyHidden from "@reach/visually-hidden";
 import faker from "faker";
 import styled from "@emotion/styled";
@@ -19,18 +20,21 @@ const Card = ({
 }) => {
   const [linkRef, clickProps] = useClickableContent();
 
-  const Item = styled(component)({
-    display: "flex",
-    flexDirection: "column",
-    border: `1px solid hsl(0, 0%, 85%)`,
-    borderRadius: 8,
-    color: "hsl(0, 0%, 40%)",
-    fontSize: 12,
-    listStyleType: "none",
-    width,
+  const Item = React.useCallback(
+    styled(component)({
+      display: "flex",
+      flexDirection: "column",
+      border: `1px solid hsl(0, 0%, 85%)`,
+      borderRadius: 8,
+      color: "hsl(0, 0%, 40%)",
+      fontSize: 12,
+      listStyleType: "none",
+      width,
 
-    ":hover": { boxShadow: "0 0 10px orange" },
-  });
+      ":hover": { boxShadow: "0 0 10px orange" },
+    }),
+    [width],
+  );
 
   return (
     <Item {...props}>

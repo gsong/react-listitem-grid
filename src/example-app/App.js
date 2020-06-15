@@ -1,6 +1,7 @@
 //@flow strict
 /** @jsx jsx */
 import React from "react";
+import debounce from "lodash/debounce";
 import { jsx } from "@emotion/core";
 
 import * as constants from "./constants";
@@ -94,27 +95,16 @@ const Field = ({
   children = undefined,
   ...props
 }) => {
-  const update = (event) => {
-    const value = event.currentTarget.value;
-    updateState({
-      [(input: string)]: value === "" ? constants[input] : Number(value),
-    });
-  };
-
-  const Input = () =>
-    children ? (
-      children
-    ) : (
-      <input
-        type="number"
-        pattern="[0-9]*"
-        min={0}
-        required
-        defaultValue={state[input]}
-        onChange={(event) => update(event)}
-        css={{ width: "4em" }}
-      />
-    );
+  const update = React.useCallback(
+    debounce(
+      (value) =>
+        updateState({
+          [(input: string)]: value === "" ? constants[input] : Number(value),
+        }),
+      500,
+    ),
+    [input, updateState],
+  );
 
   return (
     <label
@@ -122,17 +112,34 @@ const Field = ({
         display: "flex",
         justifyContent: "flex-end",
         alignItems: "center",
-        fontSize: 15,
+        fontSize: "inherit",
         "> *": { margin: ".2em" },
       }}
       {...props}
     >
       <div css={{ marginLeft: 0 }}>{input}:</div>
-      <Input />
+      <Input defaultValue={state[input]} update={update}>
+        {children}
+      </Input>
       <div css={{ width: "1em" }}>{unit}</div>
     </label>
   );
 };
+
+const Input = ({ defaultValue, update, children = undefined }) =>
+  children ? (
+    children
+  ) : (
+    <input
+      type="number"
+      pattern="[0-9]*"
+      min={0}
+      required
+      onChange={(event) => update(event.currentTarget.value)}
+      {...{ defaultValue }}
+      css={{ width: "4em" }}
+    />
+  );
 
 const gridForm = {
   backgroundColor: "white",
@@ -140,8 +147,9 @@ const gridForm = {
   display: "flex",
   margin: "0 -8px 0 -8px",
   padding: ".5em",
+  fontSize: "clamp(12px, 3.5vw, 1rem)",
 
-  "@media (min-height: 500px)": {
+  "@media (min-height: 670px)": {
     position: "sticky",
     top: 0,
   },
