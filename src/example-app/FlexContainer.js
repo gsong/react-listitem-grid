@@ -1,12 +1,14 @@
 //@flow strict
 /** @jsx jsx */
+import React from "react";
 import range from "lodash/range";
 import { jsx } from "@emotion/core";
 
-import { Flex, flexCompensate } from "./lib";
+import Card, { generateCardProps } from "./Card";
+import { Flex, flexCompensate } from "../lib";
 import { useLayout } from "./hooks";
 
-import "./lib/Flex/styles.css";
+import "../lib/Flex/styles.css";
 
 type Props = {
   maximizeItemsPerRow?: boolean,
@@ -31,6 +33,31 @@ const FlexContainer = ({
   const count = observeMaxRows ? itemRenderCount : itemCount;
 
   return (
+    <Content
+      {...{
+        flexBasis,
+        columnGap,
+        rowGap,
+        containerStyle,
+        containerRef,
+        count,
+        itemWidth,
+      }}
+    />
+  );
+};
+
+// $FlowFixMe
+const Content = React.memo(
+  ({
+    flexBasis,
+    columnGap,
+    rowGap,
+    containerStyle,
+    containerRef,
+    count,
+    itemWidth,
+  }) => (
     <section>
       <h3>Flex ({flexBasis}px)</h3>
       <Flex.Container
@@ -38,21 +65,21 @@ const FlexContainer = ({
         css={containerStyle}
         ref={containerRef}
       >
-        {range(count).map((i) => (
-          <Flex.Item
-            {...{ itemWidth, columnGap, rowGap }}
-            css={{
-              backgroundColor: maximizeItemsPerRow ? "green" : "red",
-              color: "white",
-            }}
-            key={i}
-          >
-            Hi
-          </Flex.Item>
-        ))}
+        {range(count).map((i) => {
+          const props = generateCardProps(i, itemWidth);
+          return (
+            <Card
+              component={Flex.Item}
+              width={itemWidth}
+              {...props}
+              {...{ itemWidth, columnGap, rowGap }}
+              key={i}
+            />
+          );
+        })}
       </Flex.Container>
     </section>
-  );
-};
+  ),
+);
 
 export default FlexContainer;

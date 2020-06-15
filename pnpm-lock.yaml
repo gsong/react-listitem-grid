@@ -1,13 +1,16 @@
 dependencies:
   '@emotion/core': 10.0.28_react@16.13.1
+  '@emotion/styled': 10.0.27_c989b1aa057905c7a8b69bf973f55a19
   '@reach/rect': 0.10.3_react-dom@16.13.1+react@16.13.1
+  '@reach/visually-hidden': 0.10.2_react-dom@16.13.1+react@16.13.1
+  faker: 4.1.0
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
 devDependencies:
   '@rollup/plugin-babel': 5.0.3_rollup@2.16.1
   babel-preset-react-app: 9.1.2
   eslint-config-prettier: 6.11.0
-  eslint-plugin-prettier: 3.1.3_prettier@2.0.5
+  eslint-plugin-prettier: 3.1.4_prettier@2.0.5
   flow-bin: 0.127.0
   flow-typed: 2.6.2
   globby: 11.0.1
@@ -1325,6 +1328,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-kBJtf7PH6aWwZ6fka3zQ0p6SBYzx4fl1LoZXE2RrnYST9Xljm7WfKJrU4g/Xr3Beg72MLrp1AWNUmuYJTL7Cow==
+  /@emotion/is-prop-valid/0.8.8:
+    dependencies:
+      '@emotion/memoize': 0.7.4
+    dev: false
+    resolution:
+      integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==
   /@emotion/memoize/0.7.4:
     dev: false
     resolution:
@@ -1343,6 +1352,32 @@ packages:
     dev: false
     resolution:
       integrity: sha512-zM9PFmgVSqBw4zL101Q0HrBVTGmpAxFZH/pYx/cjJT5advXguvcgjHFTCaIO3enL/xr89vK2bh0Mfyj9aa0ANA==
+  /@emotion/styled-base/10.0.31_c989b1aa057905c7a8b69bf973f55a19:
+    dependencies:
+      '@babel/runtime': 7.10.2
+      '@emotion/core': 10.0.28_react@16.13.1
+      '@emotion/is-prop-valid': 0.8.8
+      '@emotion/serialize': 0.11.16
+      '@emotion/utils': 0.11.3
+      react: 16.13.1
+    dev: false
+    peerDependencies:
+      '@emotion/core': ^10.0.28
+      react: '>=16.3.0'
+    resolution:
+      integrity: sha512-wTOE1NcXmqMWlyrtwdkqg87Mu6Rj1MaukEoEmEkHirO5IoHDJ8LgCQL4MjJODgxWxXibGR3opGp1p7YvkNEdXQ==
+  /@emotion/styled/10.0.27_c989b1aa057905c7a8b69bf973f55a19:
+    dependencies:
+      '@emotion/core': 10.0.28_react@16.13.1
+      '@emotion/styled-base': 10.0.31_c989b1aa057905c7a8b69bf973f55a19
+      babel-plugin-emotion: 10.0.33
+      react: 16.13.1
+    dev: false
+    peerDependencies:
+      '@emotion/core': ^10.0.27
+      react: '>=16.3.0'
+    resolution:
+      integrity: sha512-iK/8Sh7+NLJzyp9a5+vIQIXTYxfT4yB/OJbjzQanB2RZpvmzBQOHZWhpAMZWYEKRNNbsD6WfBw5sVWkb6WzS/Q==
   /@emotion/stylis/0.8.5:
     dev: false
     resolution:
@@ -1713,6 +1748,17 @@ packages:
       react-dom: ^16.8.0
     resolution:
       integrity: sha512-LoIZSfVAJMA+DnzAMCMfc/wAM39iKT8BQQ9gI1FODpxd8nPFP4cKisMuRXImh2/iVtG2Z6NzzCNgceJSrywqFQ==
+  /@reach/visually-hidden/0.10.2_react-dom@16.13.1+react@16.13.1:
+    dependencies:
+      react: 16.13.1
+      react-dom: 16.13.1_react@16.13.1
+      tslib: 1.13.0
+    dev: false
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+    resolution:
+      integrity: sha512-RWC2CZsEB6sUOMnBCiuemyesMVNOOKJP53j4RgbdaJ2zGFL6N+bh/E5bfZnAiVhjJ0G0laViE9s7iROaRWNFew==
   /@rollup/plugin-babel/5.0.3_rollup@2.16.1:
     dependencies:
       '@babel/helper-module-imports': 7.10.1
@@ -3847,6 +3893,16 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-u7v4o84SwFpD32Z8IIcPZ6z1/ie24O6RU3RbtL5Y316l3KuHVPx9ItBgWQ6VlfAFnRnTtMUrsQ9MUUTuEZjogg==
+  /cross-spawn/7.0.3:
+    dependencies:
+      path-key: 3.1.1
+      shebang-command: 2.0.0
+      which: 2.0.2
+    dev: true
+    engines:
+      node: '>= 8'
+    resolution:
+      integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==
   /crypt/0.0.2:
     dev: true
     resolution:
@@ -4780,7 +4836,7 @@ packages:
       eslint: ^3 || ^4 || ^5 || ^6
     resolution:
       integrity: sha512-CawzfGt9w83tyuVekn0GDPU9ytYtxyxyFZ3aSWROmnRRFQFT2BiPJd7jvRdzNDi6oLWaS2asMeYSNMjWTV4eNg==
-  /eslint-plugin-prettier/3.1.3_prettier@2.0.5:
+  /eslint-plugin-prettier/3.1.4_prettier@2.0.5:
     dependencies:
       prettier: 2.0.5
       prettier-linter-helpers: 1.0.0
@@ -4788,10 +4844,10 @@ packages:
     engines:
       node: '>=6.0.0'
     peerDependencies:
-      eslint: '>= 5.0.0'
-      prettier: '>= 1.13.0'
+      eslint: '>=5.0.0'
+      prettier: '>=1.13.0'
     resolution:
-      integrity: sha512-+HG5jmu/dN3ZV3T6eCD7a4BlAySdN7mLIbJYo0z1cFQuI+r2DiTJEFeF68ots93PsnrMxbzIZ2S/ieX+mkrBeQ==
+      integrity: sha512-jZDa8z76klRqo+TdGDTFJSavwbnWK2ZpqGKNZ+VvweMW516pDUMmQ2koXvxEE4JhzNvTv+radye/bWGBmA6jmg==
   /eslint-plugin-react-hooks/1.7.0_eslint@6.8.0:
     dependencies:
       eslint: 6.8.0
@@ -4885,7 +4941,7 @@ packages:
       ignore: 4.0.6
       import-fresh: 3.2.1
       imurmurhash: 0.1.4
-      inquirer: 7.1.0
+      inquirer: 7.2.0
       is-glob: 4.0.1
       js-yaml: 3.14.0
       json-stable-stringify-without-jsonify: 1.0.1
@@ -5019,7 +5075,7 @@ packages:
       integrity: sha512-adbxcyWV46qiHyvSp50TKt05tB4tK3HcmF7/nxfAdhnox83seTDbwnaqKO4sXRy7roHAIFqJP/Rw/AuEbX61LA==
   /execa/4.0.2:
     dependencies:
-      cross-spawn: 7.0.1
+      cross-spawn: 7.0.3
       get-stream: 5.1.0
       human-signals: 1.1.1
       is-stream: 2.0.0
@@ -5169,6 +5225,10 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-lpGEQOMEGnpBT4xS48V06zw+HgU=
+  /faker/4.1.0:
+    dev: false
+    resolution:
+      integrity: sha1-HkW7vsxndLPBlfrSg1EJxtdIzD8=
   /fast-deep-equal/3.1.3:
     dev: true
     resolution:
@@ -6366,7 +6426,7 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-Bu5Td5+j11sCkqfqmUTiwv+tWisMtP0L7Q8WrqA2C/BbBhy1YTdFrvjjlrKq8oagA/tLQBski2Gcx/Sqyi2qSQ==
-  /inquirer/7.1.0:
+  /inquirer/7.2.0:
     dependencies:
       ansi-escapes: 4.3.1
       chalk: 3.0.0
@@ -6383,9 +6443,9 @@ packages:
       through: 2.3.8
     dev: true
     engines:
-      node: '>=6.0.0'
+      node: '>=8.0.0'
     resolution:
-      integrity: sha512-5fJMWEmikSYu0nv/flMc475MhGbB7TSPd/2IpFV4I4rMklboCH2rQjYY5kKiYGHqUF9gvaambupcJFFG9dvReg==
+      integrity: sha512-E0c4rPwr9ByePfNlTIB8z51kK1s2n6jrHuJeEHENl/sbq2G/S1auvibgEwNR4uSyiU+PiYHqSwsgGiXjG8p5ZQ==
   /internal-ip/4.3.0:
     dependencies:
       default-gateway: 4.2.0
@@ -13266,11 +13326,14 @@ packages:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
 specifiers:
   '@emotion/core': ^10.0.28
+  '@emotion/styled': ^10.0.27
   '@reach/rect': '*'
+  '@reach/visually-hidden': ^0.10.2
   '@rollup/plugin-babel': ^5.0.3
   babel-preset-react-app: ^9.1.2
   eslint-config-prettier: ^6.11.0
-  eslint-plugin-prettier: ^3.1.3
+  eslint-plugin-prettier: ^3.1.4
+  faker: ^4.1.0
   flow-bin: ^0.127.0
   flow-typed: ^2.6.2
   globby: ^11.0.1
