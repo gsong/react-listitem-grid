@@ -46,6 +46,7 @@ const App = () => {
 
 const useInit = () => {
   const [state, updateState] = React.useReducer(
+    // $FlowFixMe
     (state, update) => ({ ...state, ...update }),
     constants,
   );
@@ -60,6 +61,18 @@ const Form = (props) => (
       <Field input="width" unit="%" {...props} />
       <Field input="border" {...props} />
       <Field input="padding" {...props} />
+      <Field input="alignment" unit="" {...props}>
+        <select
+          defaultValue={props.state.alignment}
+          onChange={(e) =>
+            props.updateState({ alignment: e.currentTarget.value })
+          }
+        >
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select>
+      </Field>
     </fieldset>
     <fieldset>
       <legend>Grid</legend>
@@ -73,13 +86,35 @@ const Form = (props) => (
   </form>
 );
 
-const Field = ({ input, unit = "px", state, updateState, ...props }) => {
+const Field = ({
+  input,
+  unit = "px",
+  state,
+  updateState,
+  children = undefined,
+  ...props
+}) => {
   const update = (event) => {
     const value = event.currentTarget.value;
     updateState({
       [(input: string)]: value === "" ? constants[input] : Number(value),
     });
   };
+
+  const Input = () =>
+    children ? (
+      children
+    ) : (
+      <input
+        type="number"
+        pattern="[0-9]*"
+        min={0}
+        required
+        defaultValue={state[input]}
+        onChange={(event) => update(event)}
+        css={{ width: "4em" }}
+      />
+    );
 
   return (
     <label
@@ -93,15 +128,7 @@ const Field = ({ input, unit = "px", state, updateState, ...props }) => {
       {...props}
     >
       <div css={{ marginLeft: 0 }}>{input}:</div>
-      <input
-        type="number"
-        pattern="[0-9]*"
-        min={0}
-        required
-        defaultValue={state[input]}
-        onChange={(event) => update(event)}
-        css={{ width: "4em" }}
-      />
+      <Input />
       <div css={{ width: "1em" }}>{unit}</div>
     </label>
   );

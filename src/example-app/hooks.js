@@ -8,18 +8,24 @@ import type { Options } from "../lib/utils";
 
 export const useLayout = (calcOptions: Options) => {
   const constants = React.useContext(Constants);
-  const { border, padding, rowGap, width, ...params } = constants;
+  const { alignment, border, padding, rowGap, width, ...params } = constants;
   const layoutInfo = useCalculateLayout({ ...params, ...calcOptions });
 
   const containerStyle = React.useMemo(
-    () => ({
-      // boxShadow: `inset 0 0 0 ${padding}px hsl(257, 16%, 90%)`,
-      border: `${border}px solid lightgray`,
-      margin: "auto",
-      padding,
-      width: `${width}%`,
-    }),
-    [border, padding, width],
+    () => [
+      {
+        border: `${border}px solid lightgray`,
+        margin: "auto",
+        padding,
+        width: `${width}%`,
+      },
+      alignment === "left"
+        ? { marginLeft: 0 }
+        : alignment === "right"
+        ? { marginRight: 0 }
+        : {},
+    ],
+    [alignment, border, padding, width],
   );
 
   return { ...constants, ...layoutInfo, containerStyle };
