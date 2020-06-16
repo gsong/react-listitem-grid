@@ -46,3 +46,13 @@ export const useClickableContent = () => {
 
   return [link, { onMouseDown, onMouseUp }];
 };
+
+export const useGetCards = (count: number) => {
+  const [cards, setCards] = React.useState([]);
+  React.useEffect(() => {
+    fetch(`/api/cards/?count=${count}`)
+      .then((response) => response.json())
+      .then(({ cards }) => setCards(cards));
+  }, [count]);
+  return cards;
+};

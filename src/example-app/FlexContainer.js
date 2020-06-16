@@ -1,12 +1,11 @@
 //@flow strict
 /** @jsx jsx */
 import React from "react";
-import range from "lodash/range";
 import { jsx } from "@emotion/core";
 
-import Card, { generateCardProps } from "./Card";
+import Card from "./Card";
 import { Flex, flexCompensate } from "../lib";
-import { useLayout } from "./hooks";
+import { useGetCards, useLayout } from "./hooks";
 
 import "../lib/Flex/styles.css";
 
@@ -57,29 +56,30 @@ const Content = React.memo(
     containerRef,
     count,
     itemWidth,
-  }) => (
-    <section>
-      <h3>Flex ({flexBasis}px)</h3>
-      <Flex.Container
-        {...{ columnGap, rowGap }}
-        css={containerStyle}
-        ref={containerRef}
-      >
-        {range(count).map((i) => {
-          const props = generateCardProps(i, itemWidth);
-          return (
+  }) => {
+    const cards = useGetCards(count);
+
+    return (
+      <section>
+        <h3>Flex ({flexBasis}px)</h3>
+        <Flex.Container
+          {...{ columnGap, rowGap }}
+          css={containerStyle}
+          ref={containerRef}
+        >
+          {cards.map((card) => (
             <Card
               component={Flex.Item}
               width={itemWidth}
-              {...props}
+              {...card}
               {...{ itemWidth, columnGap, rowGap }}
-              key={i}
+              key={card.id}
             />
-          );
-        })}
-      </Flex.Container>
-    </section>
-  ),
+          ))}
+        </Flex.Container>
+      </section>
+    );
+  },
 );
 
 export default FlexContainer;

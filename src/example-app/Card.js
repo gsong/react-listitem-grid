@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from "react";
 import VisuallyHidden from "@reach/visually-hidden";
-import faker from "faker";
 import styled from "@emotion/styled";
 import { jsx } from "@emotion/core";
 
@@ -117,15 +116,6 @@ const LinkButton = styled.button({
   padding: 6,
   ":hover": { cursor: "pointer" },
   ":hover, :focus": { color: "orange", textShadow: "0 0 5px orange" },
-});
-
-export const generateCardProps = (i, width) => ({
-  contentType: faker.lorem.word(),
-  title: faker.lorem.words(8),
-  subTitle: faker.lorem.words(),
-  url: faker.internet.url(),
-  image: { url: `https://picsum.photos/seed/${faker.lorem.word()}/500` },
-  handleMore: () => alert(`Clicked "more" #${i}`),
 });
 
 export const spec = { minWidth: 150, maxWidth: 350 };

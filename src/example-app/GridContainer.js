@@ -1,12 +1,11 @@
 //@flow strict
 /** @jsx jsx */
 import React from "react";
-import range from "lodash/range";
 import { jsx } from "@emotion/core";
 
-import Card, { generateCardProps } from "./Card";
+import Card from "./Card";
 import { Grid } from "../lib";
-import { useLayout } from "./hooks";
+import { useGetCards, useLayout } from "./hooks";
 
 import "../lib/Grid/styles.css";
 
@@ -40,23 +39,29 @@ const GridContainer = ({
 
 // $FlowFixMe
 const Content = React.memo(
-  ({ itemWidth, columnGap, rowGap, containerStyle, containerRef, count }) => (
-    <section>
-      <h3>Grid ({itemWidth}px)</h3>
-      <Grid.Container
-        {...{ itemWidth, columnGap, rowGap }}
-        css={containerStyle}
-        ref={containerRef}
-      >
-        {range(count).map((i) => {
-          const props = generateCardProps(i, itemWidth);
-          return (
-            <Card component={Grid.Item} {...props} width={itemWidth} key={i} />
-          );
-        })}
-      </Grid.Container>
-    </section>
-  ),
+  ({ itemWidth, columnGap, rowGap, containerStyle, containerRef, count }) => {
+    const cards = useGetCards(count);
+
+    return (
+      <section>
+        <h3>Grid ({itemWidth}px)</h3>
+        <Grid.Container
+          {...{ itemWidth, columnGap, rowGap }}
+          css={containerStyle}
+          ref={containerRef}
+        >
+          {cards.map((card) => (
+            <Card
+              component={Grid.Item}
+              width={itemWidth}
+              {...card}
+              key={card.id}
+            />
+          ))}
+        </Grid.Container>
+      </section>
+    );
+  },
 );
 
 export default GridContainer;

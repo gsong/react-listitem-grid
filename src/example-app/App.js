@@ -4,6 +4,7 @@ import React from "react";
 import debounce from "lodash/debounce";
 import { jsx } from "@emotion/core";
 
+import "./server";
 import * as constants from "./constants";
 import Constants from "./contexts";
 import FlexContainer from "./FlexContainer";
