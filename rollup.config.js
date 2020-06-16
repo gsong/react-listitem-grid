@@ -35,7 +35,7 @@ const copyStatic = () => {
       source: `src/lib/${component}/styles.css`,
       dest: `dist/${component}/styles.css`,
     })),
-    ...["README.md", "LICENSE"].map((file) => ({
+    ...["CHANGELOG.md", "README.md", "LICENSE"].map((file) => ({
       source: file,
       dest: `dist/${file}`,
     })),
