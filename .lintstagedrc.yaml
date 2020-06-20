@@ -1,0 +1,6 @@
+"*": prettier --check
+"*.css": stylelint --fix
+"*.js":
+  - eslint --cache --fix
+  - flow focus-check
+"*.md": markdownlint

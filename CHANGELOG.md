@@ -1,3 +1,5 @@
+# Change Log
+
 ## 0.0.3 (2020-06-15)
 
 - No feature changes, just using more compatible Babel settings to compile dist
