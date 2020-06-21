@@ -79,6 +79,7 @@ export const flexCompensate = {
     const width = `calc(100% + ${columnGap}px)`;
     return { margin, width };
   },
+
   item: ({
     itemWidth,
     columnGap,
