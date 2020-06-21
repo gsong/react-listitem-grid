@@ -1,10 +1,10 @@
-[data-supple-flex-container] {
+[data-react-listitem-flex-container] {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   padding: 0;
 }
 
-[data-supple-flex-item] {
+[data-react-listitem-flex-item] {
   list-style: none;
 }

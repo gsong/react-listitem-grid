@@ -1,4 +1,4 @@
-[data-supple-grid-container] {
+[data-react-listitem-grid-container] {
   --columnWidth: 1fr;
   --columnGap: 0;
   --rowGap: 0;
@@ -12,6 +12,6 @@
   padding: 0;
 }
 
-[data-supple-grid-item] {
+[data-react-listitem-grid-item] {
   list-style: none;
 }

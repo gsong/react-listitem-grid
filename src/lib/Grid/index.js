@@ -9,7 +9,7 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
   ({ itemWidth, columnGap, rowGap, children, ...props }, ref) => (
     <div {...props}>
       <ul
-        data-supple-grid-container
+        data-react-listitem-grid-container
         style={{
           "--columnWidth": itemWidth,
           "--columnGap": columnGap,
@@ -23,6 +23,6 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
   ),
 );
 
-const Item = (props: any) => <li data-supple-grid-item {...props} />;
+const Item = (props: any) => <li data-react-listitem-grid-item {...props} />;
 
 export default { Container, Item };
