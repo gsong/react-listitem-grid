@@ -2622,7 +2622,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-bjnWolZ6KVsHhgyCoYRFmbd26p8XVbulCzSG53BDQqAr+JOAderYK7CuYrB3bDjHJuF6LJ7Wrr42+goLRV9qIg==
-  /@types/babel__core/7.1.8:
+  /@types/babel__core/7.1.9:
     dependencies:
       '@babel/parser': 7.10.3
       '@babel/types': 7.10.3
@@ -2631,7 +2631,7 @@ packages:
       '@types/babel__traverse': 7.0.12
     dev: true
     resolution:
-      integrity: sha512-KXBiQG2OXvaPWFPDS1rD8yV9vO0OuWIqAEqLsbfX0oU2REN5KuoMnZ1gClWcBhO5I3n6oTVAmrMufOvRqdmFTQ==
+      integrity: sha512-sY2RsIJ5rpER1u3/aQ8OFSI7qGIy8o1NEEbgb2UaJcvOtXOMpd39ko723NBpjQFg9SIX7TXtjejZVGeIMLhoOw==
   /@types/babel__generator/7.6.1:
     dependencies:
       '@babel/types': 7.10.3
@@ -3337,10 +3337,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
-  /autoprefixer/9.8.1:
+  /autoprefixer/9.8.2:
     dependencies:
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001084
+      caniuse-lite: 1.0.30001085
       kleur: 4.0.1
       normalize-range: 0.1.2
       num2fraction: 1.2.2
@@ -3348,10 +3348,10 @@ packages:
       postcss-value-parser: 4.1.0
     dev: true
     engines:
-      node: '>=6.0.0'
+      node: ^6 || ^8 || ^10 || ^12 || >=13.7
     hasBin: true
     resolution:
-      integrity: sha512-zDw9+mkCdWZHloBIGrOgMq1tTUed4qy6ZgNAe2Ze2xERZA7CyTgW5Bw3XZbwSeJe8lfDHZIkw8Hwd/6hI3p0NQ==
+      integrity: sha512-9UwMMU8Rg7Fj0c55mbOpXrr/2WrRqoOwOlLNTyyYt+nhiyQdIBWipp5XWzt+Lge8r3DK5y+EHMc1OBf8VpZA6Q==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -3401,7 +3401,7 @@ packages:
       '@babel/core': 7.9.0
       '@jest/transform': 24.9.0
       '@jest/types': 24.9.0
-      '@types/babel__core': 7.1.8
+      '@types/babel__core': 7.1.9
       babel-plugin-istanbul: 5.2.0
       babel-preset-jest: 24.9.0_@babel+core@7.9.0
       chalk: 2.4.2
@@ -3775,8 +3775,8 @@ packages:
       integrity: sha512-Z942RysHXmJrhqk88FmKBVq/v5tqmSkDz7p54G/MGyjMnCFFnC79XWNbg+Vta8W6Wb2qtSZTSxIGkJrRpCFEiA==
   /browserslist/4.10.0:
     dependencies:
-      caniuse-lite: 1.0.30001084
-      electron-to-chromium: 1.3.478
+      caniuse-lite: 1.0.30001085
+      electron-to-chromium: 1.3.480
       node-releases: 1.1.58
       pkg-up: 3.1.0
     dev: true
@@ -3785,8 +3785,8 @@ packages:
       integrity: sha512-TpfK0TDgv71dzuTsEAlQiHeWQ/tiPqgNZVdv046fvNtBZrjbv2O3TsWCDU0AWGJJKCF/KsjNdLzR9hXOsh/CfA==
   /browserslist/4.12.0:
     dependencies:
-      caniuse-lite: 1.0.30001084
-      electron-to-chromium: 1.3.478
+      caniuse-lite: 1.0.30001085
+      electron-to-chromium: 1.3.480
       node-releases: 1.1.58
       pkg-up: 2.0.0
     dev: true
@@ -3993,16 +3993,16 @@ packages:
   /caniuse-api/3.0.0:
     dependencies:
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001084
+      caniuse-lite: 1.0.30001085
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
     resolution:
       integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==
-  /caniuse-lite/1.0.30001084:
+  /caniuse-lite/1.0.30001085:
     dev: true
     resolution:
-      integrity: sha512-ftdc5oGmhEbLUuMZ/Qp3mOpzfZLCxPYKcvGv6v2dJJ+8EdqcvZRbAGOiLmkM/PV1QGta/uwBs8/nCl6sokDW6w==
+      integrity: sha512-x0YRFRE0pmOD90z+9Xk7jwO58p4feVNXP+U8kWV+Uo/HADyrgESlepzIkUqPgaXkpyceZU6siM1gsK7sHgplqA==
   /capture-exit/2.0.0:
     dependencies:
       rsvp: 4.8.5
@@ -5263,10 +5263,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
-  /electron-to-chromium/1.3.478:
+  /electron-to-chromium/1.3.480:
     dev: true
     resolution:
-      integrity: sha512-pt9GUDD52uEO9ZXWcG4UuW/HwE8T+a8iFP7K2qqWrHB5wUxbbvCIXGBVpQDDQwSR766Nn4AkmLYxOUNd4Ji5Dw==
+      integrity: sha512-wnuUfQCBMAdzu5Xe+F4FjaRK+6ToG6WvwG72s8k/3E6b+hoGVYGiQE7JD1NhiCMcqF3+wV+c2vAnaLGRSSWVqA==
   /elliptic/6.5.3:
     dependencies:
       bn.js: 4.11.9
@@ -10766,9 +10766,9 @@ packages:
       integrity: sha512-Zb6byCSLkgRKLODj/5mQugyuj9bvAAw9LqJJjgwz5cYryGeXfFZfSXoP1UfveccFmeq0b/2xxwcTEVScnqGxBg==
   /postcss-preset-env/6.7.0:
     dependencies:
-      autoprefixer: 9.8.1
+      autoprefixer: 9.8.2
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001084
+      caniuse-lite: 1.0.30001085
       css-blank-pseudo: 0.1.4
       css-has-pseudo: 0.10.0
       css-prefers-color-scheme: 3.1.1
@@ -12888,7 +12888,7 @@ packages:
     dependencies:
       '@stylelint/postcss-css-in-js': 0.37.1_0029167fac65ddf67f405772eb5e372f
       '@stylelint/postcss-markdown': 0.36.1_0029167fac65ddf67f405772eb5e372f
-      autoprefixer: 9.8.1
+      autoprefixer: 9.8.2
       balanced-match: 1.0.0
       chalk: 4.1.0
       cosmiconfig: 6.0.0
