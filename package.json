@@ -1,6 +1,6 @@
 {
   "name": "react-listitem-grid",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Utilities and components for responsive card grid layout",
   "main": "index.js",
   "scripts": {
