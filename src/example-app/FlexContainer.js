@@ -18,30 +18,21 @@ const FlexContainer = ({
   maximizeItemsPerRow = false,
   observeMaxRows = false,
 }: Props) => {
-  const {
-    columnGap,
-    containerRef,
-    containerStyle,
-    itemCount,
-    itemRenderCount,
-    itemWidth,
-    rowGap,
-  } = useLayout({ maximizeItemsPerRow, isFlex: true });
-
-  const { flexBasis } = flexCompensate.item({ itemWidth, columnGap, rowGap });
-  const count = observeMaxRows ? itemRenderCount : itemCount;
+  const { itemWidth, columnGap, rowGap, ...layoutInfo } = useLayout({
+    maximizeItemsPerRow,
+    isFlex: true,
+    observeMaxRows,
+  });
 
   return (
     <Content
       {...{
-        flexBasis,
         columnGap,
         rowGap,
-        containerStyle,
-        containerRef,
-        count,
+        observeMaxRows,
         itemWidth,
       }}
+      {...layoutInfo}
     />
   );
 };
@@ -49,15 +40,33 @@ const FlexContainer = ({
 // $FlowFixMe
 const Content = React.memo(
   ({
-    flexBasis,
     columnGap,
-    rowGap,
-    containerStyle,
     containerRef,
+    containerStyle,
+    containerWidth,
     count,
+    itemCount,
     itemWidth,
+    maxItemWidth,
+    observeMaxRows,
+    rowCount,
+    rowGap,
   }) => {
-    const cards = useGetCards(count);
+    const { cards, adjustedItemWidth } = useGetCards({
+      columnGap,
+      containerWidth,
+      count,
+      itemCount,
+      maxItemWidth,
+      observeMaxRows,
+      rowCount,
+    });
+
+    const { flexBasis } = flexCompensate.item({
+      itemWidth: adjustedItemWidth,
+      columnGap,
+      rowGap,
+    });
 
     return (
       <section>
@@ -70,9 +79,10 @@ const Content = React.memo(
           {cards.map((card) => (
             <Card
               component={Flex.Item}
-              width={itemWidth}
+              width={adjustedItemWidth}
+              itemWidth={adjustedItemWidth}
               {...card}
-              {...{ itemWidth, columnGap, rowGap }}
+              {...{ columnGap, rowGap }}
               key={card.id}
             />
           ))}

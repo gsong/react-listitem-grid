@@ -18,42 +18,49 @@ const GridContainer = ({
   maximizeItemsPerRow = false,
   observeMaxRows = false,
 }: Props) => {
-  const {
-    columnGap,
-    containerRef,
-    containerStyle,
-    itemCount,
-    itemRenderCount,
-    itemWidth,
-    rowGap,
-  } = useLayout({ maximizeItemsPerRow });
+  const layoutInfo = useLayout({ maximizeItemsPerRow, observeMaxRows });
 
-  const count = observeMaxRows ? itemRenderCount : itemCount;
-
-  return (
-    <Content
-      {...{ itemWidth, columnGap, rowGap, containerStyle, containerRef, count }}
-    />
-  );
+  return <Content {...layoutInfo} {...{ observeMaxRows }} />;
 };
 
 // $FlowFixMe
 const Content = React.memo(
-  ({ itemWidth, columnGap, rowGap, containerStyle, containerRef, count }) => {
-    const cards = useGetCards(count);
+  ({
+    columnGap,
+    containerRef,
+    containerStyle,
+    containerWidth,
+    count,
+    itemCount,
+    itemWidth,
+    maxItemWidth,
+    observeMaxRows,
+    rowCount,
+    rowGap,
+  }) => {
+    const { cards, adjustedItemWidth } = useGetCards({
+      columnGap,
+      containerWidth,
+      count,
+      itemCount,
+      maxItemWidth,
+      observeMaxRows,
+      rowCount,
+    });
 
     return (
       <section>
-        <h3>Grid ({itemWidth}px)</h3>
+        <h3>Grid ({adjustedItemWidth}px)</h3>
         <Grid.Container
-          {...{ itemWidth, columnGap, rowGap }}
+          {...{ columnGap, rowGap }}
+          itemWidth={adjustedItemWidth}
           css={containerStyle}
           ref={containerRef}
         >
           {cards.map((card) => (
             <Card
               component={Grid.Item}
-              width={itemWidth}
+              width={adjustedItemWidth}
               {...card}
               key={card.id}
             />

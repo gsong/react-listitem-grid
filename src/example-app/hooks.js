@@ -2,14 +2,29 @@
 import React from "react";
 
 import Constants from "./contexts";
-import { useCalculateLayout } from "../lib";
+import { calculateItemWidthWithCount, useCalculateLayout } from "../lib";
 
 import type { Options } from "../lib/utils";
 
-export const useLayout = (calcOptions: Options) => {
+type CalcOptions = {| ...Options, observeMaxRows: boolean |};
+
+export const useLayout = ({ observeMaxRows, ...calcOptions }: CalcOptions) => {
   const constants = React.useContext(Constants);
-  const { alignment, border, padding, rowGap, width, ...params } = constants;
+  const {
+    alignment,
+    border,
+    itemCount,
+    padding,
+    rowGap,
+    width,
+    ...params
+  } = constants;
   const layoutInfo = useCalculateLayout({ ...params, ...calcOptions });
+
+  const count =
+    observeMaxRows && layoutInfo.desiredItemCount !== null
+      ? layoutInfo.desiredItemCount
+      : itemCount;
 
   const containerStyle = React.useMemo(
     () => [
@@ -28,7 +43,7 @@ export const useLayout = (calcOptions: Options) => {
     [alignment, border, padding, width],
   );
 
-  return { ...constants, ...layoutInfo, containerStyle };
+  return { ...constants, ...layoutInfo, count, containerStyle };
 };
 
 export const useClickableContent = () => {
@@ -47,12 +62,42 @@ export const useClickableContent = () => {
   return [link, { onMouseDown, onMouseUp }];
 };
 
-export const useGetCards = (count: number) => {
+type HookParams = {|
+  columnGap: number,
+  containerWidth: number,
+  count: number,
+  itemCount: number,
+  maxItemWidth: number,
+  observeMaxRows: boolean,
+  rowCount: number,
+|};
+
+export const useGetCards = ({
+  columnGap,
+  containerWidth,
+  count,
+  itemCount,
+  maxItemWidth,
+  observeMaxRows,
+  rowCount,
+}: HookParams) => {
   const [cards, setCards] = React.useState([]);
+
   React.useEffect(() => {
-    fetch(`/api/cards/?count=${count}`)
+    const route = observeMaxRows ? "" : "init/";
+
+    fetch(`/api/cards/${route}?count=${count}`)
       .then((response) => response.json())
       .then(({ cards }) => setCards(cards));
-  }, [count]);
-  return cards;
+  }, [count, observeMaxRows, itemCount]);
+
+  const adjustedItemWidth = calculateItemWidthWithCount({
+    columnGap,
+    containerWidth,
+    itemCount: cards.length,
+    maxItemWidth,
+    rowCount,
+  });
+
+  return { cards, adjustedItemWidth };
 };
