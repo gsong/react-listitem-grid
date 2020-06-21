@@ -68,13 +68,14 @@ know how many records to request from the back-end API.
 
 There are two JavaScript utilities which can be used in any project.
 
-- `calculateItemWidth()` does all the calculations and returns and object with:
+- `calculateLayoutSpec()` does all the calculations and returns and object with:
   - `containerWidth`: _only_ useful for flexbox-based layout, where the actual
     container size is larger than what appears visually in order to accommodate
     column gaps.
   - `itemWidth`: The exact pixel width of each list item.
-  - `itemRenderCount`: How many items will be rendered if the `maxRows`
-    constraint is given.
+  - `desiredItemCount`: How many items should be rendered if the `maxRows`
+    constraint is given. This value is `null` if `maxRows` is `0` or
+    `undefined`.
 - `flexCompensate`
   - `flexCompensate.container()` which returns the `margin` and `width` CSS
     values to be applied to the flex container.
@@ -84,7 +85,7 @@ There are two JavaScript utilities which can be used in any project.
 ### `useCalculateLayout` Hook
 
 A convenience hook which uses [@reach/rect][] to measure the width of the grid
-container. It returns all the values from `utils.calculateItemWidth()` plus a
+container. It returns all the values from `utils.calculateLayoutSpec()` plus a
 `containerRef`, which you attach as a `ref` to a grid container in your JSX.
 E.g.:
 
@@ -100,7 +101,7 @@ function MyComponent() {
 This will ensure `calculatedValues` is updated if `<ul>` is resized.
 
 You don't need to use this hook if you want to handle things differently, in
-that case, just use `calculateItemWidth()` directly.
+that case, just use `calculateLayoutSpec()` directly.
 
 ### React Components
 
@@ -150,7 +151,7 @@ Internet Explorer.
 ## Example App
 
 This repo contains an example app, which shows the effects of making adjustments
-`calculateItemWidth()`'s params. You can clone this repo and run it locally:
+`calculateLayoutSpec()`'s params. You can clone this repo and run it locally:
 
 ```sh
 npx pnpm i

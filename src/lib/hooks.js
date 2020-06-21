@@ -2,7 +2,7 @@
 import React from "react";
 import { useRect } from "@reach/rect";
 
-import { calculateItemWidth } from "./utils.js";
+import { calculateLayoutSpec } from "./utils.js";
 
 import type { Params } from "./utils.js";
 
@@ -11,7 +11,7 @@ export const useCalculateLayout = (calcParams: Params) => {
   const rect = useRect(containerRef);
 
   const containerWidth = rect?.width ?? 1024;
-  const calculatedValues = calculateItemWidth({
+  const calculatedValues = calculateLayoutSpec({
     containerWidth,
     ...calcParams,
   });

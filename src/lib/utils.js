@@ -7,16 +7,14 @@ export type Options = {|
 export type Params = {|
   ...Options,
   columnGap: number,
-  itemCount: number,
   maxItemWidth: number,
   minItemWidth: number,
-  maxRows: number,
+  maxRows?: number,
 |};
 
-export const calculateItemWidth = ({
+export const calculateLayoutSpec = ({
   containerWidth: _containerWidth,
   columnGap,
-  itemCount,
   maxItemWidth: _maxItemWidth,
   minItemWidth,
   maxRows,
@@ -46,14 +44,11 @@ export const calculateItemWidth = ({
     1,
   );
 
-  const count = Math.min(
-    maximizeItemsPerRow
-      ? maxCount
-      : maxCount - minCount > 0
-      ? minCount + 1
-      : minCount,
-    itemCount,
-  );
+  const count = maximizeItemsPerRow
+    ? maxCount
+    : maxCount - minCount > 0
+    ? minCount + 1
+    : minCount;
 
   const itemWidth = Math.floor(
     Math.min(
@@ -62,13 +57,10 @@ export const calculateItemWidth = ({
     ),
   );
 
-  let itemRenderCount = itemCount;
-  if ((maxRows ?? 0) > 0) {
-    const rows = Math.ceil(itemCount / count);
-    itemRenderCount = rows > maxRows ? count * maxRows : itemCount;
-  }
+  const desiredItemCount =
+    maxRows !== undefined && maxRows > 0 ? maxRows * count : null;
 
-  return { containerWidth, itemWidth, itemRenderCount };
+  return { containerWidth, itemWidth, desiredItemCount };
 };
 
 type GapParams = {| columnGap: number, rowGap: number |};
