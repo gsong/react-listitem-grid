@@ -82,6 +82,7 @@ const Content = styled.div({
   display: "flex",
   flexDirection: "column",
   flexGrow: 1,
+
   ":hover": { cursor: "pointer" },
 });
 
@@ -112,10 +113,16 @@ const LinkButton = styled.button({
   border: "none",
   color: "hsl(0, 0%, 40%)",
   fontWeight: 900,
-  letterSpacing: ".15em",
+  letterSpacing: "0.15em",
   padding: 6,
+
   ":hover": { cursor: "pointer" },
-  ":hover, :focus": { color: "orange", textShadow: "0 0 5px orange" },
+
+  // stylelint-disable-next-line selector-list-comma-newline-after
+  ":hover, :focus": {
+    color: "orange",
+    textShadow: "0 0 5px orange",
+  },
 });
 
 export const spec = { minWidth: 150, maxWidth: 350 };
