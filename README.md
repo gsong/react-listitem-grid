@@ -66,21 +66,33 @@ know how many records to request from the back-end API.
 
 ### Utils
 
-There are two JavaScript utilities which can be used in any project.
+There are some JavaScript utilities which can be used in any project.
 
-- `calculateLayoutSpec()` does all the calculations and returns and object with:
-  - `containerWidth`: _only_ useful for flexbox-based layout, where the actual
-    container size is larger than what appears visually in order to accommodate
-    column gaps.
-  - `itemWidth`: The exact pixel width of each list item.
-  - `desiredItemCount`: How many items should be rendered if the `maxRows`
-    constraint is given. This value is `null` if `maxRows` is `0` or
-    `undefined`.
-- `flexCompensate`
-  - `flexCompensate.container()` which returns the `margin` and `width` CSS
-    values to be applied to the flex container.
-  - `flexCompensate.item()` which returns the `flexBasis` and `margin` CSS
-    values to be applied to the flex item.
+#### `calculateLayoutSpec()`
+
+This function does all the calculations and returns an object with:
+
+- `itemWidth`: The exact pixel width of each list item.
+- `rowCount`: Number of items per row.
+- `desiredItemCount`: How many items should be rendered if the `maxRows`
+  constraint is given. This value is `null` if `maxRows` is `0` or `undefined`.
+- `containerWidth`: _only_ useful for flexbox-based layout, where the actual
+  container size is larger than what appears visually in order to accommodate
+  column gaps.
+
+#### `calculateItemWidthWithCount()`
+
+This is used to recalculate the `itemWidth` once the number of results are
+known. For example, the container width may be able to fit 5 items across at
+300px each. However, there are only 4 items to be displayed, we'll want to
+display them at their maximum width of 350px instead of at 300px.
+
+#### `flexCompensate`
+
+- `flexCompensate.container()` which returns the CSS `margin` and `width` values
+  to be applied to the flex container.
+- `flexCompensate.item()` which returns the CSS `flexBasis` and `margin` values
+  to be applied to the flex item.
 
 ### `useCalculateLayout` Hook
 
@@ -174,10 +186,10 @@ The following files specifically use this library:
 [Check out the task board](https://github.com/gsong/react-listitem-grid/projects/1).
 
 [@reach/rect]: https://reacttraining.com/reach-ui/rect
-[codesandbox]: https://ejj94.codesandbox.io/
+[codesandbox]: https://txr55.csb.app/
 [flexcontainer.js]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L63-L80
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L74-L89
 [gridcontainer.js]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L46-L57
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L54-L68
 [hooks.js]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L12
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L22

@@ -44,24 +44,58 @@ export const calculateLayoutSpec = ({
     1,
   );
 
-  const count = maximizeItemsPerRow
+  const rowCount = maximizeItemsPerRow
     ? maxCount
     : maxCount - minCount > 0
     ? minCount + 1
     : minCount;
 
-  const itemWidth = Math.floor(
+  const itemWidth = calculateItemWidth({
+    containerWidth,
+    maxItemWidth,
+    rowCount,
+    columnGap,
+  });
+
+  const desiredItemCount =
+    maxRows !== undefined && maxRows > 0 ? maxRows * rowCount : null;
+
+  return { containerWidth, itemWidth, rowCount, desiredItemCount };
+};
+
+type ItemWidthParams = {|
+  columnGap: number,
+  containerWidth: number,
+  itemCount: number,
+  maxItemWidth: number,
+  rowCount: number,
+|};
+
+export const calculateItemWidthWithCount = ({
+  itemCount,
+  rowCount,
+  ...rest
+}: ItemWidthParams) => {
+  const itemWidth = calculateItemWidth({
+    ...rest,
+    rowCount: Math.min(itemCount, rowCount),
+  });
+  return itemWidth;
+};
+
+const calculateItemWidth = ({
+  columnGap,
+  containerWidth,
+  maxItemWidth,
+  rowCount,
+}) =>
+  Math.floor(
     Math.min(
-      ((containerWidth ?? maxItemWidth) - (count - 1) * columnGap) / count,
+      ((containerWidth ?? maxItemWidth) - (rowCount - 1) * columnGap) /
+        rowCount,
       maxItemWidth,
     ),
   );
-
-  const desiredItemCount =
-    maxRows !== undefined && maxRows > 0 ? maxRows * count : null;
-
-  return { containerWidth, itemWidth, desiredItemCount };
-};
 
 type GapParams = {| columnGap: number, rowGap: number |};
 
