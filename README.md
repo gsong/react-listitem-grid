@@ -189,6 +189,12 @@ The example app demonstrates a typical workflow of how to use this library.
    [Supply the params to `useCalculateLayout()`][calc-layout] to get the layout
    spec.
 
+   ⚠️ Take care to **not** render your UI in the same component where you're
+   using the `useCalculateLayout` hook. This is because `useRect` updates not
+   just on resize, but on position changes as well (e.g. scrolling). The easiest
+   thing is to pass the values as props to a `React.memo` component. [See the
+   GridContainer example][grid-container].
+
 1. [Fetch the data you need for the list items][fetch-data].
 
 1. [Recalculate the item width][recalc-width] if needed. This is necessary if
@@ -216,5 +222,7 @@ The following files specifically use this library:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L74-L89
 [grid]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L54-L68
+[grid-container]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L21-L40
 [recalc-width]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L94-L100
