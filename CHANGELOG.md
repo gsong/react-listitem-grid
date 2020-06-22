@@ -1,5 +1,19 @@
 # Change Log
 
+## 2.0.0 (2020-06-22)
+
+- Use `ResizeObserver` in place of `@reach/rect` to observe container size
+  changes. This has the benefit of simplifying the usage of the library, since
+  we ensure that `useCalculateLayout` updates state only when the container
+  width changes.
+
+### Backward Incompatible Changes
+
+- `flexCompensate.item()` no longer accepts `itemWidth` as a param, since we
+  don't use `flex-basis` style anymore on flex items. As a result, the only CSS
+  attribute returned is `margin`.
+- `Flex.Item` component no longer accepts `itemWidth` prop.
+
 ## 1.0.0 (2020-06-21)
 
 - Update styling data attribute names

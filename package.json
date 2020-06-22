@@ -1,14 +1,13 @@
 {
   "name": "react-listitem-grid",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "Utilities and components for responsive card grid layout",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production rollup -c",
     "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update",
     "lint": "eslint . && stylelint 'src/**'",
-    "prepublishOnly": "npm run build",
-    "publish": "cd dist && npm publish",
+    "publish": "npm run build && cd dist && npm publish",
     "serve": "react-scripts build && npx serve -s build",
     "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",

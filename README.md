@@ -93,15 +93,15 @@ display them at their maximum width of 350px instead of at 300px.
 
 - `flexCompensate.container()` which returns the CSS `margin` and `width` values
   to be applied to the flex container.
-- `flexCompensate.item()` which returns the CSS `flexBasis` and `margin` values
-  to be applied to the flex item.
+- `flexCompensate.item()` which returns the CSS `margin` value to be applied to
+  the flex item.
 
 ### `useCalculateLayout` Hook
 
-A convenience hook which uses [@reach/rect][] to measure the width of the grid
-container. It returns all the values from `utils.calculateLayoutSpec()` plus a
-`containerRef`, which you attach as a `ref` to a grid container in your JSX.
-E.g.:
+A convenience hook which uses [ResizeObserver][] to measure the width of the
+grid container. It returns all the values from `utils.calculateLayoutSpec()`
+plus a `containerRef`, which you attach as a `ref` to a grid container in your
+JSX. E.g.:
 
 ```js
 import { useCalculateLayout } from "react-listitem-grid";
@@ -116,6 +116,10 @@ This will ensure `calculatedValues` is updated if `<ul>` is resized.
 
 You don't need to use this hook if you want to handle things differently, in
 that case, just use `calculateLayoutSpec()` directly.
+
+ℹ️ For browsers that do not support ResizeObserver, the library will
+[automatically ponyfill with `@juggle/resize-observer`][resizeobserver-ponyfill]
+via dynamic import.
 
 ### React Components
 
@@ -189,12 +193,6 @@ The example app demonstrates a typical workflow of how to use this library.
    [Supply the params to `useCalculateLayout()`][calc-layout] to get the layout
    spec.
 
-   ⚠️ Take care to **not** render your UI in the same component where you're
-   using the `useCalculateLayout` hook. This is because `useRect` updates not
-   just on resize, but on position changes as well (e.g. scrolling). The easiest
-   thing is to pass the values as props to a `React.memo` component. [See the
-   GridContainer example][grid-container].
-
 1. [Fetch the data you need for the list items][fetch-data].
 
 1. [Recalculate the item width][recalc-width] if needed. This is necessary if
@@ -208,21 +206,21 @@ The following files specifically use this library:
 
 [Check out the task board](https://github.com/gsong/react-listitem-grid/projects/1).
 
-[@reach/rect]: https://reacttraining.com/reach-ui/rect
 [calc-layout]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L22
-[codesandbox]: https://txr55.csb.app/
+[codesandbox]: https://73c1w.csb.app
 [constants]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/constants.js
 [example app]:
   https://github.com/gsong/react-listitem-grid/tree/develop/src/example-app
 [fetch-data]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L86-L92
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L85-L91
 [flex]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L74-L89
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L36-L50
 [grid]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L54-L68
-[grid-container]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L21-L40
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L32-L46
 [recalc-width]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L94-L100
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L93-L99
+[resizeobserver-ponyfill]: https://github.com/juggle/resize-observer
+[resizeobserver]:
+  https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
