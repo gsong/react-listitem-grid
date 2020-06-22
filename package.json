@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production rollup -c",
-    "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update && flow-typed install @reach/rect@0.2",
+    "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update",
     "lint": "eslint . && stylelint 'src/**'",
     "prepublishOnly": "npm run build",
     "publish": "cd dist && npm publish",
+    "serve": "react-scripts build && npx serve -s build",
     "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update": "pnpm update && npm run flow-typed"
@@ -25,7 +26,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@reach/rect": "*",
+    "@juggle/resize-observer": "^3.2.0",
     "@reach/visually-hidden": "^0.10.4",
     "faker": "^4.1.0",
     "lodash": "^4.17.15",
@@ -52,6 +53,7 @@
     "markdownlint-cli": "^0.23.1",
     "normalize-package-data": "^2.5.0",
     "prettier": "^2.0.5",
+    "react-app-polyfill": "^1.0.6",
     "react-scripts": "3.4.1",
     "read-pkg": "^5.2.0",
     "rimraf": "^3.0.2",

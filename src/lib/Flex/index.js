@@ -21,8 +21,8 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
 
 type ItemProps = { ...Gaps, itemWidth: number, ... };
 
-const Item = ({ itemWidth, columnGap, rowGap, ...props }: ItemProps) => {
-  const style = flexCompensate.item({ itemWidth, columnGap, rowGap });
+const Item = ({ columnGap, rowGap, ...props }: ItemProps) => {
+  const style = flexCompensate.item({ columnGap, rowGap });
 
   return <li data-react-listitem-flex-item style={style} {...(props: any)} />;
 };

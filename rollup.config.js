@@ -12,7 +12,7 @@ export default [
   {
     input: "src/lib/index.js",
     output: { dir: "dist", format: "es" },
-    external: ["react", /@babel/, /@reach/],
+    external: ["react", /@babel/, /@juggle/],
     preserveModules: true,
     plugins: [eslint(), babel({ babelHelpers: "runtime" }), writeBundle()],
   },
@@ -64,7 +64,7 @@ const generatePackageJson = async () => {
   const pkg = {
     ...rest,
     dependencies: {
-      "@reach/rect": "*",
+      "@juggle/resize-observer": "^3",
     },
   };
 

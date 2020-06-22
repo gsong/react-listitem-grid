@@ -106,16 +106,8 @@ export const flexCompensate = {
     return { margin, width };
   },
 
-  item: ({
-    itemWidth,
-    columnGap,
-    rowGap,
-  }: {|
-    itemWidth: number,
-    ...GapParams,
-  |}) => {
-    const flexBasis = itemWidth;
+  item: ({ columnGap, rowGap }: GapParams) => {
     const margin = `${rowGap}px 0 0 ${columnGap}px`;
-    return { flexBasis, margin };
+    return { margin };
   },
 };

@@ -1,7 +1,7 @@
 dependencies:
   '@emotion/core': 10.0.28_react@16.13.1
   '@emotion/styled': 10.0.27_c989b1aa057905c7a8b69bf973f55a19
-  '@reach/rect': 0.10.4_react-dom@16.13.1+react@16.13.1
+  '@juggle/resize-observer': 3.2.0
   '@reach/visually-hidden': 0.10.4_react-dom@16.13.1+react@16.13.1
   faker: 4.1.0
   lodash: 4.17.15
@@ -23,6 +23,7 @@ devDependencies:
   markdownlint-cli: 0.23.1
   normalize-package-data: 2.5.0
   prettier: 2.0.5
+  react-app-polyfill: 1.0.6
   react-scripts: 3.4.1
   read-pkg: 5.2.0
   rimraf: 3.0.2
@@ -2272,6 +2273,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-XKK7ze1apu5JWQ5eZjHITP66AX+QsLlbaJRBGYr8pNzwcAE2JVkwnf0yqjHTsDRcjR0mujy/NmZMXw5kl+kGBw==
+  /@juggle/resize-observer/3.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-fsLxt0CHx2HCV9EL8lDoVkwHffsA0snUpddYjdLyXcG5E41xaamn9ZyQqOE9TUJdrRlH8/hjIf+UdOdDeKCUgg==
   /@miragejs/pretender-node-polyfill/0.1.2:
     dev: false
     resolution:
@@ -2408,37 +2413,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-GorvORVwp244fGKEt3cgt/P+M0MGy4xEDbckw+K5ojEezxyMDgCaYPKVct+/eWQfZXOT7uq0xRpmrl/+hliabA==
-  /@reach/observe-rect/1.1.0:
-    dev: false
-    resolution:
-      integrity: sha512-kE+jvoj/OyJV24C03VvLt5zclb9ArJi04wWXMMFwQvdZjdHoBlN4g0ZQFjyy/ejPF1Z/dpUD5dhRdBiUmIGZTA==
-  /@reach/rect/0.10.4_react-dom@16.13.1+react@16.13.1:
-    dependencies:
-      '@reach/observe-rect': 1.1.0
-      '@reach/utils': 0.10.4_react-dom@16.13.1+react@16.13.1
-      prop-types: 15.7.2
-      react: 16.13.1
-      react-dom: 16.13.1_react@16.13.1
-      tslib: 2.0.0
-    dev: false
-    peerDependencies:
-      react: ^16.8.0
-      react-dom: ^16.8.0
-    resolution:
-      integrity: sha512-h3nRvOD+poiSQ7xQSucggj/c4g3LLLzn+jAfMvxjcTl72IjCFrULEboWeIVTMMOiyb34rIw0LZVR78FleqCdNg==
-  /@reach/utils/0.10.4_react-dom@16.13.1+react@16.13.1:
-    dependencies:
-      '@types/warning': 3.0.0
-      react: 16.13.1
-      react-dom: 16.13.1_react@16.13.1
-      tslib: 2.0.0
-      warning: 4.0.3
-    dev: false
-    peerDependencies:
-      react: ^16.8.0
-      react-dom: ^16.8.0
-    resolution:
-      integrity: sha512-eQ7T/5yPE5VMThBOst+7bDQvsa+4z8IH+CMBnT06jUithLCed70pxS0YJVV/4rqV7/PmYwUgSrQOKQLmW6CMcg==
   /@reach/visually-hidden/0.10.4_react-dom@16.13.1+react@16.13.1:
     dependencies:
       react: 16.13.1
@@ -2722,10 +2696,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
-  /@types/warning/3.0.0:
-    dev: false
-    resolution:
-      integrity: sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI=
   /@types/yargs-parser/15.0.0:
     dev: true
     resolution:
@@ -13705,12 +13675,6 @@ packages:
     dev: true
     resolution:
       integrity: sha1-L3+bj9ENZ3JisYqITijRlhjgKPs=
-  /warning/4.0.3:
-    dependencies:
-      loose-envify: 1.4.0
-    dev: false
-    resolution:
-      integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==
   /watchpack-chokidar2/2.0.0:
     dependencies:
       chokidar: 2.1.8
@@ -14287,7 +14251,7 @@ specifiers:
   '@babel/preset-react': ^7.10.1
   '@emotion/core': ^10.0.28
   '@emotion/styled': ^10.0.27
-  '@reach/rect': '*'
+  '@juggle/resize-observer': ^3.2.0
   '@reach/visually-hidden': ^0.10.4
   '@rollup/plugin-babel': ^5.0.3
   eslint-config-prettier: ^6.11.0
@@ -14304,6 +14268,7 @@ specifiers:
   normalize-package-data: ^2.5.0
   prettier: ^2.0.5
   react: ^16.13.1
+  react-app-polyfill: ^1.0.6
   react-dom: ^16.13.1
   react-scripts: 3.4.1
   read-pkg: ^5.2.0
