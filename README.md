@@ -11,7 +11,9 @@ Utilities and components for responsive grid layout of list items.
   - [Utils](#utils)
   - [`useCalculateLayout` Hook](#usecalculatelayout-hook)
   - [React Components](#react-components)
-- [Example App](#example-app)
+- [How Do I Use This Library?](#how-do-i-use-this-library)
+  - [Example App](#example-app)
+  - [Typical Workflow](#typical-workflow)
 - [Want to Help?](#want-to-help)
 
 ## Should I Use This Library?
@@ -160,10 +162,13 @@ If you work with modern browsers that support CSS grid.
 If you need to support older browsers with iffy or no grid support, e.g.
 Internet Explorer.
 
-## Example App
+## How Do I Use This Library?
 
-This repo contains an example app, which shows the effects of making adjustments
-`calculateLayoutSpec()`'s params. You can clone this repo and run it locally:
+### Example App
+
+This repo [contains an example app][example app], which shows the effects of
+making adjustments `calculateLayoutSpec()`'s params. You can clone this repo and
+run it locally:
 
 ```sh
 npx pnpm i
@@ -172,24 +177,44 @@ npm start
 
 You can also [see the app running at CodeSandbox][codesandbox].
 
-The following files specifically use this library:
+### Typical Workflow
 
-- [hooks.js][] shows how to instantiate the `useCalculateLayout` hook to get the
-  raw calculated values for you to work with directly.
-- [FlexContainer.js][] shows how to use CSS flexbox based `<ul>` container and
-  `<li>` item components.
-- [GridContainer.js][] shows how to use CSS grid based `<ul>` and `<li>`
-  components.
+The example app demonstrates a typical workflow of how to use this library.
+
+1. Get the layout spec.
+
+   The example app encapsulates its input params as [constants][], but you can
+   specify them however you want.
+
+   [Supply the params to `useCalculateLayout()`][calc-layout] to get the layout
+   spec.
+
+1. [Fetch the data you need for the list items][fetch-data].
+
+1. [Recalculate the item width][recalc-width] if needed. This is necessary if
+   the total number of items is less then `rowCount` (number of items per row).
+
+1. Use the [Grid][grid] or [Flex][flex] components to render out the result.
+
+The following files specifically use this library:
 
 ## Want to Help?
 
 [Check out the task board](https://github.com/gsong/react-listitem-grid/projects/1).
 
 [@reach/rect]: https://reacttraining.com/reach-ui/rect
-[codesandbox]: https://txr55.csb.app/
-[flexcontainer.js]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L74-L89
-[gridcontainer.js]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L54-L68
-[hooks.js]:
+[calc-layout]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L22
+[codesandbox]: https://txr55.csb.app/
+[constants]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/constants.js
+[example app]:
+  https://github.com/gsong/react-listitem-grid/tree/develop/src/example-app
+[fetch-data]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L86-L92
+[flex]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L74-L89
+[grid]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L54-L68
+[recalc-width]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L94-L100
