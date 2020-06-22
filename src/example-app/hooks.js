@@ -26,6 +26,14 @@ export const useLayout = ({ observeMaxRows, ...calcOptions }: CalcOptions) => {
       ? layoutInfo.desiredItemCount
       : itemCount;
 
+  const { cards, adjustedItemWidth } = useGetCards({
+    ...layoutInfo,
+    ...params,
+    count,
+    itemCount,
+    observeMaxRows,
+  });
+
   const containerStyle = React.useMemo(
     () => [
       {
@@ -43,26 +51,17 @@ export const useLayout = ({ observeMaxRows, ...calcOptions }: CalcOptions) => {
     [alignment, border, padding, width],
   );
 
-  return { ...constants, ...layoutInfo, count, containerStyle };
-};
-
-export const useClickableContent = () => {
-  const link = React.useRef<HTMLElement | typeof undefined>();
-  let down;
-
-  const onMouseDown = () => (down = Date.now());
-  const onMouseUp = () => {
-    const elapsed = Date.now() - down;
-    if (elapsed < 200) {
-      // eslint-disable-next-line no-unused-expressions
-      link.current?.click();
-    }
+  return {
+    ...constants,
+    ...layoutInfo,
+    count,
+    containerStyle,
+    cards,
+    adjustedItemWidth,
   };
-
-  return [link, { onMouseDown, onMouseUp }];
 };
 
-type HookParams = {|
+type HookParams = {
   columnGap: number,
   containerWidth: number,
   count: number,
@@ -70,7 +69,7 @@ type HookParams = {|
   maxItemWidth: number,
   observeMaxRows: boolean,
   rowCount: number,
-|};
+};
 
 export const useGetCards = ({
   columnGap,
@@ -100,4 +99,20 @@ export const useGetCards = ({
   });
 
   return { cards, adjustedItemWidth };
+};
+
+export const useClickableContent = () => {
+  const link = React.useRef<HTMLElement | typeof undefined>();
+  let down;
+
+  const onMouseDown = () => (down = Date.now());
+  const onMouseUp = () => {
+    const elapsed = Date.now() - down;
+    if (elapsed < 200) {
+      // eslint-disable-next-line no-unused-expressions
+      link.current?.click();
+    }
+  };
+
+  return [link, { onMouseDown, onMouseUp }];
 };

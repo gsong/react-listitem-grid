@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import React from "react";
 import debounce from "lodash/debounce";
-import { jsx } from "@emotion/core";
+import { Global, jsx } from "@emotion/core";
 
 import "./server";
 import * as constants from "./constants";
@@ -14,7 +14,21 @@ const App = () => {
   const { state, updateState } = useInit();
 
   return (
-    <main css={{ "*": { boxSizing: "border-box", fontFamily: "sans-serif" } }}>
+    <main>
+      <Global
+        styles={{
+          html: {
+            boxSizing: "border-box",
+            fontFamily: "sans-serif",
+          },
+
+          "*, *:before, *:after": {
+            boxSizing: "inherit",
+            fontFamily: "inherit",
+          },
+        }}
+      />
+
       <Form {...{ state, updateState }} />
 
       <Constants.Provider value={state}>

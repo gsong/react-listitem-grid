@@ -32,6 +32,7 @@
     "lodash": "^4.17.15",
     "miragejs": "^0.1.40",
     "react": "^16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1"
   },
   "peerDependencies": {
@@ -53,7 +54,6 @@
     "markdownlint-cli": "^0.23.1",
     "normalize-package-data": "^2.5.0",
     "prettier": "^2.0.5",
-    "react-app-polyfill": "^1.0.6",
     "react-scripts": "3.4.1",
     "read-pkg": "^5.2.0",
     "rimraf": "^3.0.2",

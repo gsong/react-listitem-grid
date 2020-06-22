@@ -2,3 +2,4 @@ extends: stylelint-config-standard
 
 rules:
   declaration-block-trailing-semicolon:
+  value-keyword-case:

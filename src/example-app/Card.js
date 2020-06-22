@@ -9,12 +9,12 @@ import { useClickableContent } from "./hooks";
 const Card = ({
   component,
   contentType,
-  title,
-  subTitle,
-  url,
-  image,
   handleMore,
-  width,
+  image,
+  itemWidth,
+  subTitle,
+  title,
+  url,
   ...props
 }) => {
   const [linkRef, clickProps] = useClickableContent();
@@ -28,11 +28,11 @@ const Card = ({
       color: "hsl(0, 0%, 40%)",
       fontSize: 12,
       listStyleType: "none",
-      width,
+      width: itemWidth,
 
       ":hover": { boxShadow: "0 0 10px orange" },
     }),
-    [width],
+    [itemWidth],
   );
 
   return (
@@ -55,9 +55,9 @@ const Card = ({
           src={image.url}
           alt={image.alt ? image.alt : ""}
           css={{
-            height: ((width - 2) * 9) / 16,
+            height: ((itemWidth - 2) * 9) / 16,
             objectFit: "cover",
-            width: width - 2,
+            width: itemWidth - 2,
           }}
         />
       </Content>
