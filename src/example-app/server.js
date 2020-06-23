@@ -33,7 +33,7 @@ new Server({
     });
 
     this.get("/cards", ({ cards }, { queryParams: { count } }) =>
-      cards.all().slice(0, count),
+      count ? cards.all().slice(0, count) : cards.all(),
     );
 
     this.passthrough();

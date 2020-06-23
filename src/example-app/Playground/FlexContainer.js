@@ -1,12 +1,13 @@
 //@flow strict
 /** @jsx jsx */
+import { Flex } from "react-listitem-grid";
 import { jsx } from "@emotion/core";
 
-import Card from "./Card";
-import { Flex } from "../lib";
+import CardContent from "../components/CardContent";
+import { itemStyle } from "../styles";
 import { useLayout } from "./hooks";
 
-import "../lib/Flex/styles.css";
+import "react-listitem-grid/Flex/styles.css";
 
 type Props = {
   maximizeItemsPerRow?: boolean,
@@ -18,7 +19,7 @@ const FlexContainer = ({
   observeMaxRows = false,
 }: Props) => {
   const {
-    adjustedItemWidth,
+    adjustedItemWidth: itemWidth,
     cards,
     columnGap,
     containerRef,
@@ -32,20 +33,20 @@ const FlexContainer = ({
 
   return (
     <section>
-      <h3>Flex ({adjustedItemWidth}px)</h3>
+      <h3>Flex ({itemWidth}px)</h3>
       <Flex.Container
         {...{ columnGap, rowGap }}
         css={containerStyle}
         ref={containerRef}
       >
         {cards.map((card) => (
-          <Card
-            component={Flex.Item}
-            itemWidth={adjustedItemWidth}
-            {...card}
-            {...{ columnGap, rowGap }}
+          <Flex.Item
+            {...{ columnGap, itemWidth, rowGap }}
+            css={itemStyle}
             key={card.id}
-          />
+          >
+            <CardContent {...card} {...{ itemWidth }} />
+          </Flex.Item>
         ))}
       </Flex.Container>
     </section>

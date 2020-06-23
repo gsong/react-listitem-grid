@@ -1,12 +1,13 @@
 //@flow strict
 /** @jsx jsx */
+import { Grid } from "react-listitem-grid";
 import { jsx } from "@emotion/core";
 
-import Card from "./Card";
-import { Grid } from "../lib";
+import CardContent from "../components/CardContent";
+import { itemStyle } from "../styles";
 import { useLayout } from "./hooks";
 
-import "../lib/Grid/styles.css";
+import "react-listitem-grid/Grid/styles.css";
 
 type Props = {
   maximizeItemsPerRow?: boolean,
@@ -18,7 +19,7 @@ const GridContainer = ({
   observeMaxRows = false,
 }: Props) => {
   const {
-    adjustedItemWidth,
+    adjustedItemWidth: itemWidth,
     cards,
     columnGap,
     containerRef,
@@ -28,20 +29,16 @@ const GridContainer = ({
 
   return (
     <section>
-      <h3>Grid ({adjustedItemWidth}px)</h3>
+      <h3>Grid ({itemWidth}px)</h3>
       <Grid.Container
-        {...{ columnGap, rowGap }}
-        itemWidth={adjustedItemWidth}
+        {...{ columnGap, itemWidth, rowGap }}
         css={containerStyle}
         ref={containerRef}
       >
         {cards.map((card) => (
-          <Card
-            component={Grid.Item}
-            itemWidth={adjustedItemWidth}
-            {...card}
-            key={card.id}
-          />
+          <Grid.Item css={itemStyle} key={card.id}>
+            <CardContent {...card} {...{ itemWidth }} />
+          </Grid.Item>
         ))}
       </Grid.Container>
     </section>

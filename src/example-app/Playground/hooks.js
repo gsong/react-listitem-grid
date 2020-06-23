@@ -1,10 +1,13 @@
 //@flow strict
 import React from "react";
+import {
+  calculateItemWidthWithCount,
+  useCalculateLayout,
+} from "react-listitem-grid";
 
 import Constants from "./contexts";
-import { calculateItemWidthWithCount, useCalculateLayout } from "../lib";
 
-import type { Options } from "../lib/utils";
+import type { Options } from "react-listitem-grid/utils";
 
 type CalcOptions = {| ...Options, observeMaxRows: boolean |};
 
@@ -22,8 +25,8 @@ export const useLayout = ({ observeMaxRows, ...calcOptions }: CalcOptions) => {
   const layoutInfo = useCalculateLayout({ ...params, ...calcOptions });
 
   const count =
-    observeMaxRows && layoutInfo.desiredItemCount !== null
-      ? layoutInfo.desiredItemCount
+    observeMaxRows && layoutInfo.desiredItemCount !== 0
+      ? layoutInfo.desiredItemCount ?? itemCount
       : itemCount;
 
   const { cards, adjustedItemWidth } = useGetCards({
@@ -99,20 +102,4 @@ export const useGetCards = ({
   });
 
   return { cards, adjustedItemWidth };
-};
-
-export const useClickableContent = () => {
-  const link = React.useRef<HTMLElement | typeof undefined>();
-  let down;
-
-  const onMouseDown = () => (down = Date.now());
-  const onMouseUp = () => {
-    const elapsed = Date.now() - down;
-    if (elapsed < 200) {
-      // eslint-disable-next-line no-unused-expressions
-      link.current?.click();
-    }
-  };
-
-  return [link, { onMouseDown, onMouseUp }];
 };

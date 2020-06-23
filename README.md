@@ -77,10 +77,14 @@ This function does all the calculations and returns an object with:
 - `itemWidth`: The exact pixel width of each list item.
 - `rowCount`: Number of items per row.
 - `desiredItemCount`: How many items should be rendered if the `maxRows`
-  constraint is given. This value is `null` if `maxRows` is `0` or `undefined`.
+  constraint is given. This value is `undefined` if `maxRows` is `0` or
+  `undefined`.
 - `containerWidth`: _only_ useful for flexbox-based layout, where the actual
   container size is larger than what appears visually in order to accommodate
   column gaps.
+
+⚠️ If you decide to use CSS flexbox to render the grid, be sure to pass
+`isFlex: true`.
 
 #### `calculateItemWidthWithCount()`
 
@@ -120,6 +124,9 @@ that case, just use `calculateLayoutSpec()` directly.
 ℹ️ For browsers that do not support ResizeObserver, the library will
 [automatically ponyfill with `@juggle/resize-observer`][resizeobserver-ponyfill]
 via dynamic import.
+
+⚠️ If you decide to use CSS flexbox to render the grid, be sure to pass
+`isFlex: true`.
 
 ### React Components
 
@@ -164,7 +171,7 @@ If you work with modern browsers that support CSS grid.
 #### Flex
 
 If you need to support older browsers with iffy or no grid support, e.g.
-Internet Explorer.
+Internet Explorer. This has been tested to work with IE 11.
 
 ## How Do I Use This Library?
 
@@ -185,13 +192,9 @@ You can also [see the app running at CodeSandbox][codesandbox].
 
 The example app demonstrates a typical workflow of how to use this library.
 
-1. Get the layout spec.
-
-   The example app encapsulates its input params as [constants][], but you can
-   specify them however you want.
-
-   [Supply the params to `useCalculateLayout()`][calc-layout] to get the layout
-   spec.
+1. Get the calculated values based on container width. The easiest way is to
+   [use `useCalculateLayout`][calc-layout] by [supplying some initial layout
+   specs][layout-specs].
 
 1. [Fetch the data you need for the list items][fetch-data].
 
@@ -207,20 +210,20 @@ The following files specifically use this library:
 [Check out the task board](https://github.com/gsong/react-listitem-grid/projects/1).
 
 [calc-layout]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L22
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/Grid.js#L23-L28
 [codesandbox]: https://73c1w.csb.app
-[constants]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/constants.js
 [example app]:
   https://github.com/gsong/react-listitem-grid/tree/develop/src/example-app
 [fetch-data]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L85-L91
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/Grid.js#L31-L35
 [flex]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/FlexContainer.js#L36-L50
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/Flex.js#L47-L61
 [grid]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/GridContainer.js#L32-L46
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/Grid.js#L46-L56
+[layout-specs]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/Grid.js#L16-L20
 [recalc-width]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/hooks.js#L93-L99
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/Grid.js#L37-L43
 [resizeobserver-ponyfill]: https://github.com/juggle/resize-observer
 [resizeobserver]:
   https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver

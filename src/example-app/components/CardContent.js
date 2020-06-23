@@ -1,13 +1,21 @@
+//@flow strict
 /** @jsx jsx */
 import React from "react";
 import VisuallyHidden from "@reach/visually-hidden";
 import styled from "@emotion/styled";
 import { jsx } from "@emotion/core";
 
-import { useClickableContent } from "./hooks";
+type Props = {|
+  contentType: string,
+  handleMore: () => void,
+  image: { url: string, alt?: string },
+  itemWidth: number,
+  subTitle: string,
+  title: string,
+  url: string,
+|};
 
-const Card = ({
-  component,
+const CardContent = ({
   contentType,
   handleMore,
   image,
@@ -15,32 +23,16 @@ const Card = ({
   subTitle,
   title,
   url,
-  ...props
-}) => {
+}: Props) => {
   const [linkRef, clickProps] = useClickableContent();
 
-  const Item = React.useCallback(
-    styled(component)({
-      display: "flex",
-      flexDirection: "column",
-      border: `1px solid hsl(0, 0%, 85%)`,
-      borderRadius: 8,
-      color: "hsl(0, 0%, 40%)",
-      fontSize: 12,
-      listStyleType: "none",
-      width: itemWidth,
-
-      ":hover": { boxShadow: "0 0 10px orange" },
-    }),
-    [itemWidth],
-  );
-
   return (
-    <Item {...props}>
+    <React.Fragment>
       <Content {...clickProps} css={{ order: 1 }}>
         <header css={{ margin: "auto 6px 6px", order: 1, paddingTop: 6 }}>
           <Title>
             <a
+              // $FlowFixMe
               ref={linkRef}
               href={url}
               css={{ color: "hsl(0, 0%, 25%)", textDecoration: "none" }}
@@ -74,7 +66,7 @@ const Card = ({
           •••
         </LinkButton>
       </ActionBar>
-    </Item>
+    </React.Fragment>
   );
 };
 
@@ -125,6 +117,20 @@ const LinkButton = styled.button({
   },
 });
 
-export const spec = { minWidth: 150, maxWidth: 350 };
+export const useClickableContent = () => {
+  const link = React.useRef<HTMLElement | typeof undefined>();
+  let down;
 
-export default Card;
+  const onMouseDown = () => (down = Date.now());
+  const onMouseUp = () => {
+    const elapsed = Date.now() - down;
+    if (elapsed < 200) {
+      // eslint-disable-next-line no-unused-expressions
+      link.current?.click();
+    }
+  };
+
+  return [link, { onMouseDown, onMouseUp }];
+};
+
+export default CardContent;
