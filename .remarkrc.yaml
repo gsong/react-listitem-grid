@@ -1,0 +1,3 @@
+plugins:
+  - lint-no-dead-urls
+  - validate-links
