@@ -1,6 +1,6 @@
 {
   "name": "react-listitem-grid",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Utilities and components for responsive card grid layout",
   "main": "index.js",
   "scripts": {
@@ -35,8 +35,8 @@
     "miragejs": "^0.1.40",
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
-    "react-dom": "16.13.1",
-    "react-listitem-grid": "^2.0.1"
+    "react-dom": "^16.13.1",
+    "react-listitem-grid": "^2.0.2"
   },
   "peerDependencies": {
     "@babel/runtime": "^7",
