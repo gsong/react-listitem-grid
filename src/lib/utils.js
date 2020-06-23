@@ -58,7 +58,7 @@ export const calculateLayoutSpec = ({
   });
 
   const desiredItemCount =
-    maxRows !== undefined && maxRows > 0 ? maxRows * rowCount : null;
+    maxRows !== undefined && maxRows > 0 ? maxRows * rowCount : undefined;
 
   return { containerWidth, itemWidth, rowCount, desiredItemCount };
 };

@@ -31,7 +31,7 @@ export const useCalculateLayout = (calcParams: Params) => {
       observer.current &&
       observer.current.observe(containerRef.current);
     return () => observer.current && observer.current.disconnect();
-  }, []);
+  });
 
   const calculatedValues = calculateLayoutSpec({
     containerWidth,

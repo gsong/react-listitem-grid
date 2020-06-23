@@ -1,6 +1,15 @@
 # Change Log
 
-## 2.0.0 (2020-06-22)
+## 2.0.2 (2020-06-23)
+
+- Observe and unobserve container with each render cycle. This is to address an
+  issue in IE where the containerRef isn't attached to the DOM element fast
+  enough.
+- Return `undefined` for `desiredItemCount` instead of `null` if there's no way
+  to calculate the value.
+- Attach CSS `width` directly to each flex item.
+
+## 2.0.1 (2020-06-22)
 
 - Use `ResizeObserver` in place of `@reach/rect` to observe container size
   changes. This has the benefit of simplifying the usage of the library, since
