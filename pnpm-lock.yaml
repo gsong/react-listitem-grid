@@ -13,7 +13,7 @@ devDependencies:
   '@babel/preset-env': 7.10.3
   '@babel/preset-flow': 7.10.1
   '@babel/preset-react': 7.10.1
-  '@rollup/plugin-babel': 5.0.3_rollup@2.17.1
+  '@rollup/plugin-babel': 5.0.4_rollup@2.18.0
   eslint-config-prettier: 6.11.0
   eslint-plugin-prettier: 3.1.4_prettier@2.0.5
   flow-bin: 0.127.0
@@ -27,7 +27,7 @@ devDependencies:
   react-scripts: 3.4.1
   read-pkg: 5.2.0
   rimraf: 3.0.2
-  rollup: 2.17.1
+  rollup: 2.18.0
   rollup-plugin-eslint: 7.0.0
   sort-keys: 4.0.0
   stylelint: 13.6.1
@@ -2424,11 +2424,11 @@ packages:
       react-dom: ^16.8.0
     resolution:
       integrity: sha512-GnuPuTRCf+Ih47BoKvGyB+jP8EVWLb04GfbGa5neOrjdp90qrb4zr7pMSL4ZvTsrxt9MRooJA2BhSxs5DbyqCQ==
-  /@rollup/plugin-babel/5.0.3_rollup@2.17.1:
+  /@rollup/plugin-babel/5.0.4_rollup@2.18.0:
     dependencies:
       '@babel/helper-module-imports': 7.10.3
-      '@rollup/pluginutils': 3.1.0_rollup@2.17.1
-      rollup: 2.17.1
+      '@rollup/pluginutils': 3.1.0_rollup@2.18.0
+      rollup: 2.18.0
     dev: true
     engines:
       node: '>= 10.0.0'
@@ -2436,13 +2436,13 @@ packages:
       '@babel/core': ^7.0.0
       rollup: ^1.20.0||^2.0.0
     resolution:
-      integrity: sha512-NlaPf4E6YFxeOCbqc+A2PTkB1BSy3rfKu6EJuQ1MGhMHpTVvMqKi6Rf0DlwtnEsTNK9LueUgsGEgp5Occ4KDVA==
-  /@rollup/pluginutils/3.1.0_rollup@2.17.1:
+      integrity: sha512-MBtNoi5gqBEbqy1gE9jZBfPsi10kbuK2CEu9bx53nk1Z3ATRvBOoZ/GsbhXOeVbS76xXi/DeYM+vYX6EGIDv9A==
+  /@rollup/pluginutils/3.1.0_rollup@2.18.0:
     dependencies:
       '@types/estree': 0.0.39
       estree-walker: 1.0.1
       picomatch: 2.2.2
-      rollup: 2.17.1
+      rollup: 2.18.0
     dev: true
     engines:
       node: '>= 8.0.0'
@@ -3306,10 +3306,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
-  /autoprefixer/9.8.2:
+  /autoprefixer/9.8.3:
     dependencies:
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001085
+      caniuse-lite: 1.0.30001087
       kleur: 4.0.1
       normalize-range: 0.1.2
       num2fraction: 1.2.2
@@ -3317,10 +3317,10 @@ packages:
       postcss-value-parser: 4.1.0
     dev: true
     engines:
-      node: ^6 || ^8 || ^10 || ^12 || >=13.7
+      node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7
     hasBin: true
     resolution:
-      integrity: sha512-9UwMMU8Rg7Fj0c55mbOpXrr/2WrRqoOwOlLNTyyYt+nhiyQdIBWipp5XWzt+Lge8r3DK5y+EHMc1OBf8VpZA6Q==
+      integrity: sha512-Y3CkEPqPqGw0TNBcMoUAxeZT9WEOAh0BPYENOTrN/bEfNBqjlYWjHbR1PKduBrmAVn8WbEZtMA3gAZO5MgV7Pg==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -3329,10 +3329,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==
-  /axobject-query/2.1.2:
+  /axobject-query/2.2.0:
     dev: true
     resolution:
-      integrity: sha512-ICt34ZmrVt8UQnvPl6TVyDTkmhXmAyAT4Jh5ugfGUX4MOrZ+U/ZY6/sdylRw3qGNr9Ub5AJsaHeDMzNLehRdOQ==
+      integrity: sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==
   /babel-code-frame/6.26.0:
     dependencies:
       chalk: 1.1.3
@@ -3744,8 +3744,8 @@ packages:
       integrity: sha512-Z942RysHXmJrhqk88FmKBVq/v5tqmSkDz7p54G/MGyjMnCFFnC79XWNbg+Vta8W6Wb2qtSZTSxIGkJrRpCFEiA==
   /browserslist/4.10.0:
     dependencies:
-      caniuse-lite: 1.0.30001085
-      electron-to-chromium: 1.3.480
+      caniuse-lite: 1.0.30001087
+      electron-to-chromium: 1.3.481
       node-releases: 1.1.58
       pkg-up: 3.1.0
     dev: true
@@ -3754,8 +3754,8 @@ packages:
       integrity: sha512-TpfK0TDgv71dzuTsEAlQiHeWQ/tiPqgNZVdv046fvNtBZrjbv2O3TsWCDU0AWGJJKCF/KsjNdLzR9hXOsh/CfA==
   /browserslist/4.12.0:
     dependencies:
-      caniuse-lite: 1.0.30001085
-      electron-to-chromium: 1.3.480
+      caniuse-lite: 1.0.30001087
+      electron-to-chromium: 1.3.481
       node-releases: 1.1.58
       pkg-up: 2.0.0
     dev: true
@@ -3962,16 +3962,16 @@ packages:
   /caniuse-api/3.0.0:
     dependencies:
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001085
+      caniuse-lite: 1.0.30001087
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
     resolution:
       integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==
-  /caniuse-lite/1.0.30001085:
+  /caniuse-lite/1.0.30001087:
     dev: true
     resolution:
-      integrity: sha512-x0YRFRE0pmOD90z+9Xk7jwO58p4feVNXP+U8kWV+Uo/HADyrgESlepzIkUqPgaXkpyceZU6siM1gsK7sHgplqA==
+      integrity: sha512-KAQRGtt+eGCQBSp2iZTQibdCf9oe6cNTi5lmpsW38NnxP4WMYzfU6HCRmh4kJyh6LrTM9/uyElK4xcO93kafpg==
   /capture-exit/2.0.0:
     dependencies:
       rsvp: 4.8.5
@@ -5231,10 +5231,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
-  /electron-to-chromium/1.3.480:
+  /electron-to-chromium/1.3.481:
     dev: true
     resolution:
-      integrity: sha512-wnuUfQCBMAdzu5Xe+F4FjaRK+6ToG6WvwG72s8k/3E6b+hoGVYGiQE7JD1NhiCMcqF3+wV+c2vAnaLGRSSWVqA==
+      integrity: sha512-q2PeCP2PQXSYadDo9uNY+uHXjdB9PcsUpCVoGlY8TZOPHGlXdevlqW9PkKeqCxn2QBkGB8b6AcMO++gh8X82bA==
   /elliptic/6.5.3:
     dependencies:
       bn.js: 4.11.9
@@ -5383,7 +5383,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
-  /escodegen/1.14.2:
+  /escodegen/1.14.3:
     dependencies:
       esprima: 4.0.1
       estraverse: 4.3.0
@@ -5396,7 +5396,7 @@ packages:
     optionalDependencies:
       source-map: 0.6.1
     resolution:
-      integrity: sha512-InuOIiKk8wwuOFg6x9BQXbzjrQhtyXh46K9bqVTPzSo2FnyMBaYGBMC6PhQy7yxxil9vIedFBweQBMK74/7o8A==
+      integrity: sha512-qFcX0XJkdg+PB3xjZZG/wKSuT1PnQWx57+TVSjIMmILd2yC/6ByYElPwJnslDsuWuSAp4AwJGumarAAmJch5Kw==
   /eslint-config-prettier/6.11.0:
     dependencies:
       get-stdin: 6.0.0
@@ -5503,7 +5503,7 @@ packages:
       aria-query: 3.0.0
       array-includes: 3.1.1
       ast-types-flow: 0.0.7
-      axobject-query: 2.1.2
+      axobject-query: 2.2.0
       damerau-levenshtein: 1.0.6
       emoji-regex: 7.0.3
       eslint: 6.8.0
@@ -8174,7 +8174,7 @@ packages:
       cssstyle: 1.4.0
       data-urls: 1.1.0
       domexception: 1.0.1
-      escodegen: 1.14.2
+      escodegen: 1.14.3
       html-encoding-sniffer: 1.0.2
       left-pad: 1.3.0
       nwsapi: 2.2.0
@@ -8205,7 +8205,7 @@ packages:
       cssstyle: 1.4.0
       data-urls: 1.1.0
       domexception: 1.0.1
-      escodegen: 1.14.2
+      escodegen: 1.14.3
       html-encoding-sniffer: 1.0.2
       nwsapi: 2.2.0
       parse5: 5.1.0
@@ -10733,9 +10733,9 @@ packages:
       integrity: sha512-Zb6byCSLkgRKLODj/5mQugyuj9bvAAw9LqJJjgwz5cYryGeXfFZfSXoP1UfveccFmeq0b/2xxwcTEVScnqGxBg==
   /postcss-preset-env/6.7.0:
     dependencies:
-      autoprefixer: 9.8.2
+      autoprefixer: 9.8.3
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001085
+      caniuse-lite: 1.0.30001087
       css-blank-pseudo: 0.1.4
       css-has-pseudo: 0.10.0
       css-prefers-color-scheme: 3.1.1
@@ -11923,7 +11923,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==
-  /rollup/2.17.1:
+  /rollup/2.18.0:
     dev: true
     engines:
       node: '>=10.0.0'
@@ -11931,7 +11931,7 @@ packages:
     optionalDependencies:
       fsevents: 2.1.3
     resolution:
-      integrity: sha512-lVrtCXJ+08Eapa0SfApLmRNWNWm2FsYFnLPIJZJvZz2uI2Gv+dfPyu1zgF7KKF/HYFJDvjxbdCbI8lUVMnG7Sg==
+      integrity: sha512-LhuQQp3WpnHo3HlKCRrdMXpB6jdLsGOoXXSfMjbv74s5VdV3WZhkYJT0Z6w/EH3UgPH+g/S9T4GJrKW/5iD8TA==
   /route-recognizer/0.3.4:
     dev: false
     resolution:
@@ -12852,7 +12852,7 @@ packages:
     dependencies:
       '@stylelint/postcss-css-in-js': 0.37.1_0029167fac65ddf67f405772eb5e372f
       '@stylelint/postcss-markdown': 0.36.1_0029167fac65ddf67f405772eb5e372f
-      autoprefixer: 9.8.2
+      autoprefixer: 9.8.3
       balanced-match: 1.0.0
       chalk: 4.1.0
       cosmiconfig: 6.0.0
@@ -14246,7 +14246,7 @@ specifiers:
   '@emotion/styled': ^10.0.27
   '@juggle/resize-observer': ^3.2.0
   '@reach/visually-hidden': ^0.10.4
-  '@rollup/plugin-babel': ^5.0.3
+  '@rollup/plugin-babel': ^5.0.4
   eslint-config-prettier: ^6.11.0
   eslint-plugin-prettier: ^3.1.4
   faker: ^4.1.0
@@ -14266,7 +14266,7 @@ specifiers:
   react-scripts: 3.4.1
   read-pkg: ^5.2.0
   rimraf: ^3.0.2
-  rollup: ^2.17.1
+  rollup: ^2.18.0
   rollup-plugin-eslint: ^7.0.0
   sort-keys: ^4.0.0
   stylelint: ^13.6.1
