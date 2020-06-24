@@ -15,7 +15,7 @@ In order to contribute to this repository please follow the following steps:
 
 - Fork this repository
 - Install dependencies by running `pnpm i`
-- Build the project using `npm build`
+- Build the project using `npm run build`
 - Implement your changes
 - You can run the examples by running `npm start` this will build the app and
   serve it up on `http://localhost:3000`
