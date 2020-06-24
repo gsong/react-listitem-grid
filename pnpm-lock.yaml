@@ -70,7 +70,7 @@ importers:
       react: ^16.13.1
       react-app-polyfill: ^1.0.6
       react-dom: ^16.13.1
-      react-listitem-grid: ^2.0.2
+      react-listitem-grid: ^2.1.0
       react-scripts: ^3.4.1
       read-pkg: ^5.2.0
       remark-cli: ^8.0.0
@@ -2460,13 +2460,13 @@ packages:
       integrity: sha512-gfFKwRT/wFxq5qlNjnW2dh+qh74XgTQ2B179UX5K1HYCluioWj8Ndbgqw2PVqa1NnVJkGHp2ovMpVn/DImlmkw==
   /@octokit/types/2.16.2:
     dependencies:
-      '@types/node': 14.0.13
+      '@types/node': 14.0.14
     dev: true
     resolution:
       integrity: sha512-O75k56TYvJ8WpAakWwYRN8Bgu60KrmX0z1KqFp1kNiFNkgW+JW+9EBKZ+S33PU6SLvbihqd+3drvPxKK68Ee8Q==
   /@octokit/types/5.0.1:
     dependencies:
-      '@types/node': 14.0.13
+      '@types/node': 14.0.14
     dev: true
     resolution:
       integrity: sha512-GorvORVwp244fGKEt3cgt/P+M0MGy4xEDbckw+K5ojEezxyMDgCaYPKVct+/eWQfZXOT7uq0xRpmrl/+hliabA==
@@ -2711,7 +2711,7 @@ packages:
   /@types/glob/7.1.2:
     dependencies:
       '@types/minimatch': 3.0.3
-      '@types/node': 14.0.13
+      '@types/node': 14.0.14
     dev: true
     resolution:
       integrity: sha512-VgNIkxK+j7Nz5P7jvUZlRvhuPSmsEfS03b0alKcq5V/STUKAa3Plemsn5mrQUO7am6OErJ4rhGEGJbACclrtRA==
@@ -2744,10 +2744,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
-  /@types/node/14.0.13:
+  /@types/node/14.0.14:
     dev: true
     resolution:
-      integrity: sha512-rouEWBImiRaSJsVA+ITTFM6ZxibuAlTuNOCyxVbwreu6k6+ujs7DfnU9o+PShFhET78pMBl3eH+AGSI5eOTkPA==
+      integrity: sha512-syUgf67ZQpaJj01/tRTknkMNoBBLWJOBODF0Zm4NrXmiSuxjymFrxnTu1QVYRubhVkRcZLYZG8STTwJRdVm/WQ==
   /@types/normalize-package-data/2.4.0:
     dev: true
     resolution:
@@ -3424,21 +3424,19 @@ packages:
     dev: true
     resolution:
       integrity: sha1-BlK0kYgYefB3XazgzcoyM5QqTkc=
-  /autoprefixer/9.8.3:
+  /autoprefixer/9.8.4:
     dependencies:
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001087
-      kleur: 4.0.1
+      caniuse-lite: 1.0.30001088
+      colorette: 1.2.0
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       postcss: 7.0.32
       postcss-value-parser: 4.1.0
     dev: true
-    engines:
-      node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7
     hasBin: true
     resolution:
-      integrity: sha512-Y3CkEPqPqGw0TNBcMoUAxeZT9WEOAh0BPYENOTrN/bEfNBqjlYWjHbR1PKduBrmAVn8WbEZtMA3gAZO5MgV7Pg==
+      integrity: sha512-84aYfXlpUe45lvmS+HoAWKCkirI/sw4JK0/bTeeqgHYco3dcsOn0NqdejISjptsYwNji/21dnkDri9PsYKk89A==
   /aws-sign2/0.7.0:
     dev: true
     resolution:
@@ -3876,7 +3874,7 @@ packages:
       integrity: sha512-Z942RysHXmJrhqk88FmKBVq/v5tqmSkDz7p54G/MGyjMnCFFnC79XWNbg+Vta8W6Wb2qtSZTSxIGkJrRpCFEiA==
   /browserslist/4.10.0:
     dependencies:
-      caniuse-lite: 1.0.30001087
+      caniuse-lite: 1.0.30001088
       electron-to-chromium: 1.3.481
       node-releases: 1.1.58
       pkg-up: 3.1.0
@@ -3886,7 +3884,7 @@ packages:
       integrity: sha512-TpfK0TDgv71dzuTsEAlQiHeWQ/tiPqgNZVdv046fvNtBZrjbv2O3TsWCDU0AWGJJKCF/KsjNdLzR9hXOsh/CfA==
   /browserslist/4.12.0:
     dependencies:
-      caniuse-lite: 1.0.30001087
+      caniuse-lite: 1.0.30001088
       electron-to-chromium: 1.3.481
       node-releases: 1.1.58
       pkg-up: 2.0.0
@@ -4114,16 +4112,16 @@ packages:
   /caniuse-api/3.0.0:
     dependencies:
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001087
+      caniuse-lite: 1.0.30001088
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
     dev: true
     resolution:
       integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==
-  /caniuse-lite/1.0.30001087:
+  /caniuse-lite/1.0.30001088:
     dev: true
     resolution:
-      integrity: sha512-KAQRGtt+eGCQBSp2iZTQibdCf9oe6cNTi5lmpsW38NnxP4WMYzfU6HCRmh4kJyh6LrTM9/uyElK4xcO93kafpg==
+      integrity: sha512-6eYUrlShRYveyqKG58HcyOfPgh3zb2xqs7NvT2VVtP3hEUeeWvc3lqhpeMTxYWBBeeaT9A4bKsrtjATm66BTHg==
   /capture-exit/2.0.0:
     dependencies:
       rsvp: 4.8.5
@@ -4489,6 +4487,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-vXTJhHebByxZn3lDvDJYw4lR5+uB3vuoHsuYA5AKuxRVn5wzzIfQKGLBmgdVRHKTJYeK5rvJcHnrd0Li49CFpg==
+  /colorette/1.2.0:
+    dev: true
+    resolution:
+      integrity: sha512-soRSroY+OF/8OdA3PTQXwaDJeMc7TfknKKrxeSCencL2a4+Tx5zhxmmv7hdpCjhKBjehzp8+bwe/T68K0hpIjw==
   /colors/1.4.0:
     dev: true
     engines:
@@ -8376,7 +8378,7 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-3BEYN5WbSq9wd+SyLDES7AHnjH9A/ROBwmz7l2y+ol+NtSFO8DYiEBzoO1CeFc9a8DYy10EO4dDFVv/wN3zl1w==
-  /jest-pnp-resolver/1.2.1_jest-resolve@24.9.0:
+  /jest-pnp-resolver/1.2.2_jest-resolve@24.9.0:
     dependencies:
       jest-resolve: 24.9.0_jest-resolve@24.9.0
     dev: true
@@ -8388,7 +8390,7 @@ packages:
       jest-resolve:
         optional: true
     resolution:
-      integrity: sha512-pgFw2tm54fzgYvc/OHrnysABEObZCUNFnhjoRjaVOCN8NYc032/gVjPaHD4Aq6ApkSieWtfKAFQtmDKAmhupnQ==
+      integrity: sha512-olV41bKSMm8BdnuMsewT4jqlZ8+3TCARAXjZGT9jcoSnrfUnRCqnMoF9XEeoWjbzObpqF9dRhHQj0Xb9QdF6/w==
   /jest-regex-util/24.9.0:
     dev: true
     engines:
@@ -8410,7 +8412,7 @@ packages:
       '@jest/types': 24.9.0
       browser-resolve: 1.11.3
       chalk: 2.4.2
-      jest-pnp-resolver: 1.2.1_jest-resolve@24.9.0
+      jest-pnp-resolver: 1.2.2_jest-resolve@24.9.0
       realpath-native: 1.1.0
     dev: true
     engines:
@@ -8832,12 +8834,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
-  /kleur/4.0.1:
-    dev: true
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-Qs6SqCLm63rd0kNVh+wO4XsWLU6kgfwwaPYsLiClWf0Tewkzsa6MvB21bespb8cz+ANS+2t3So1ge3gintzhlw==
   /known-css-properties/0.19.0:
     dev: true
     resolution:
@@ -9405,7 +9401,7 @@ packages:
       jsonc-parser: 2.2.1
       lodash.differencewith: 4.5.0
       lodash.flatten: 4.4.0
-      markdownlint: 0.20.3
+      markdownlint: 0.20.4
       markdownlint-rule-helpers: 0.10.0
       minimatch: 3.0.4
       minimist: 1.2.5
@@ -9420,14 +9416,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-0e8VUTjNdQwS7hTyNan9oOLsy4a7KEsXo3fxKMDRFRk6Jn+pLB3iKZ3mj/m6ECrlOUCxPYYmgOmmyk3bSdbIvw==
-  /markdownlint/0.20.3:
+  /markdownlint/0.20.4:
     dependencies:
       markdown-it: 10.0.0
     dev: true
     engines:
       node: '>=10'
     resolution:
-      integrity: sha512-J93s59tGvSFvAPWVUtEgxqPI0CHayTx1Z8poj1/4UJAquHGPIruWRMurkRldiNbgBiaQ4OOt15rHZbFfU6u05A==
+      integrity: sha512-jpfaPgjT0OpeBbemjYNZbzGG3hCLcAIvrm/pEY3+q/szDScG6ZonDacqySVRJAv9glbo8y4wBPJ0wgW17+9GGA==
   /math-random/1.0.4:
     dev: true
     resolution:
@@ -11394,9 +11390,9 @@ packages:
       integrity: sha512-Zb6byCSLkgRKLODj/5mQugyuj9bvAAw9LqJJjgwz5cYryGeXfFZfSXoP1UfveccFmeq0b/2xxwcTEVScnqGxBg==
   /postcss-preset-env/6.7.0:
     dependencies:
-      autoprefixer: 9.8.3
+      autoprefixer: 9.8.4
       browserslist: 4.12.0
-      caniuse-lite: 1.0.30001087
+      caniuse-lite: 1.0.30001088
       css-blank-pseudo: 0.1.4
       css-has-pseudo: 0.10.0
       css-prefers-color-scheme: 3.1.1
@@ -13675,7 +13671,7 @@ packages:
     dependencies:
       '@stylelint/postcss-css-in-js': 0.37.1_0029167fac65ddf67f405772eb5e372f
       '@stylelint/postcss-markdown': 0.36.1_0029167fac65ddf67f405772eb5e372f
-      autoprefixer: 9.8.3
+      autoprefixer: 9.8.4
       balanced-match: 1.0.0
       chalk: 4.1.0
       cosmiconfig: 6.0.0

@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.0.3 (2020-06-24)
+
+- Make `columnGap` and `rowGap` params optional with default value of 0,
+  wherever they're needed.
+
 ## 2.0.2 (2020-06-23)
 
 - Observe and unobserve container with each render cycle. This is to address an
