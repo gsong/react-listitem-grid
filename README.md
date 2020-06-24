@@ -207,10 +207,12 @@ The following files specifically use this library:
 
 ## Want to Help?
 
-[Check out the task board](https://github.com/gsong/react-listitem-grid/projects/1).
+[Check out the task board][task-board] and [how to contribute][contributing].
 
 [calc-layout]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L23-L28
+[contributing]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/CONTRIBUTING.md
 [deployed]: https://gsong.github.io/react-listitem-grid/
 [example app]:
   https://github.com/gsong/react-listitem-grid/tree/develop/src/example-app
@@ -227,3 +229,4 @@ The following files specifically use this library:
 [resizeobserver-ponyfill]: https://github.com/juggle/resize-observer
 [resizeobserver]:
   https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
+[task-board]: https://github.com/gsong/react-listitem-grid/projects/1
