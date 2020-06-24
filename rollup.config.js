@@ -30,17 +30,19 @@ function writeBundle() {
   };
 }
 
-const copyStatic = () => {
+const copyStatic = async () => {
   const copyList = [
     ...["Flex", "Grid"].map((component) => ({
       source: `src/lib/${component}/styles.css`,
       dest: `dist/${component}/styles.css`,
     })),
-    ...["CHANGELOG.md", "README.md", "LICENSE"].map((file) => ({
+
+    ...[...(await globby("*.md")), "LICENSE"].map((file) => ({
       source: file,
       dest: `dist/${file}`,
     })),
   ];
+
   copyFiles(copyList);
 };
 
@@ -67,6 +69,7 @@ const generatePackageJson = async () => {
     dependencies: {
       "@juggle/resize-observer": "^3",
     },
+    homepage: "https://gsong.github.io/react-listitem-grid/",
   };
 
   normalizeData(pkg, true, true);
