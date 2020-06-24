@@ -15,7 +15,6 @@ import "react-listitem-grid/Grid/styles.css";
 
 const columnGap = 16;
 const maxItemWidth = 350;
-const maximizeItemsPerRow = false;
 const minItemWidth = 150;
 const rowGap = 16;
 
@@ -24,7 +23,6 @@ export default function GridAll() {
     columnGap,
     maxItemWidth,
     minItemWidth,
-    maximizeItemsPerRow,
   });
 
   const [cards, setCards] = React.useState([]);

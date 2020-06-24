@@ -60,7 +60,7 @@ const examples = {
 };
 
 const App = () => {
-  const [selected, setExample] = React.useState("grid");
+  const [selected, setExample] = React.useState("flex");
   const Example = examples[selected].component;
 
   // $FlowFixMe
@@ -70,7 +70,7 @@ const App = () => {
     <React.Fragment>
       <main>
         <Global styles={globalStyle} />
-        <nav>
+        <nav css={{ marginBottom: "0.75em" }}>
           <label>
             Choose an example:
             <select

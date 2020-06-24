@@ -1,5 +1,7 @@
 //@flow strict
-import { defaults as d } from "./defaults";
+import defaults from "./defaults.js";
+
+import type { Gaps } from "./types";
 
 export type Options = {|
   maximizeItemsPerRow?: boolean,
@@ -16,12 +18,12 @@ export type Params = {|
 
 export const calculateLayoutSpec = ({
   containerWidth: _containerWidth,
-  columnGap = d.columnGap,
+  columnGap = defaults.columnGap,
   maxItemWidth: _maxItemWidth,
   minItemWidth,
   maxRows,
-  maximizeItemsPerRow = d.maximizeItemsPerRow,
-  isFlex = d.isFlex,
+  maximizeItemsPerRow = false,
+  isFlex = false,
 }: {|
   ...Params,
   containerWidth: number,
@@ -86,7 +88,7 @@ export const calculateItemWidthWithCount = ({
 };
 
 const calculateItemWidth = ({
-  columnGap = d.columnGap,
+  columnGap = defaults.columnGap,
   containerWidth,
   maxItemWidth,
   rowCount,
@@ -99,16 +101,20 @@ const calculateItemWidth = ({
     ),
   );
 
-type GapParams = {| columnGap: number, rowGap: number |};
-
 export const flexCompensate = {
-  container: ({ columnGap, rowGap }: GapParams) => {
+  container: ({
+    columnGap = defaults.columnGap,
+    rowGap = defaults.rowGap,
+  }: Gaps) => {
     const margin = `-${rowGap}px 0 0 -${columnGap}px`;
     const width = `calc(100% + ${columnGap}px)`;
     return { margin, width };
   },
 
-  item: ({ columnGap, rowGap }: GapParams) => {
+  item: ({
+    columnGap = defaults.columnGap,
+    rowGap = defaults.rowGap,
+  }: Gaps) => {
     const margin = `${rowGap}px 0 0 ${columnGap}px`;
     return { margin };
   },

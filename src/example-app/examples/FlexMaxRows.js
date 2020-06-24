@@ -16,7 +16,6 @@ import "react-listitem-grid/Flex/styles.css";
 const columnGap = 16;
 const maxItemWidth = 350;
 const maxRows = 1;
-const maximizeItemsPerRow = false;
 const minItemWidth = 150;
 const rowGap = 16;
 
@@ -31,7 +30,6 @@ export default function FlexMaxRows() {
     maxItemWidth,
     maxRows,
     minItemWidth,
-    maximizeItemsPerRow,
     isFlex: true,
   });
 

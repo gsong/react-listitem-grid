@@ -1,13 +1,21 @@
 //@flow strict
 import React from "react";
 
-import { defaults as d } from "../defaults.js";
+import defaults from "../defaults.js";
 import { flexCompensate } from "../utils.js";
 
 import type { Gaps, Props } from "../types.js";
 
 const Container = React.forwardRef<Props, ?HTMLElement>(
-  ({ columnGap = d.columnGap, rowGap = d.rowGap, children, ...props }, ref) => {
+  (
+    {
+      columnGap = defaults.columnGap,
+      rowGap = defaults.rowGap,
+      children,
+      ...props
+    },
+    ref,
+  ) => {
     const style = flexCompensate.container({ columnGap, rowGap });
 
     return (
@@ -23,9 +31,9 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
 type ItemProps = { ...Gaps, itemWidth: number, ... };
 
 const Item = ({
-  columnGap = d.columnGap,
+  columnGap = defaults.columnGap,
   itemWidth,
-  rowGap = d.rowGap,
+  rowGap = defaults.rowGap,
   ...props
 }: ItemProps) => {
   const style = {

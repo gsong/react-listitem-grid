@@ -1,7 +1,7 @@
 //@flow strict
 import React from "react";
 
-import { defaults as d } from "../defaults.js";
+import defaults from "../defaults.js";
 
 import type { Props as Props_ } from "../types.js";
 
@@ -11,8 +11,8 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
   (
     {
       itemWidth,
-      columnGap = d.columnGap,
-      rowGap = d.rowGap,
+      columnGap = defaults.columnGap,
+      rowGap = defaults.rowGap,
       children,
       ...props
     },
