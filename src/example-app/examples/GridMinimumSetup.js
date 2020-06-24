@@ -14,12 +14,10 @@ import { itemStyle } from "../styles";
 import "react-listitem-grid/Grid/styles.css";
 
 const maxItemWidth = 350;
-const minItemWidth = 150;
 
 export default function GridMinimumSetup() {
   const { containerWidth, rowCount, containerRef } = useCalculateLayout({
     maxItemWidth,
-    minItemWidth,
   });
 
   const [cards, setCards] = React.useState([]);

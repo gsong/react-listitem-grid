@@ -12,7 +12,7 @@ export type Params = {|
   ...Options,
   columnGap?: number,
   maxItemWidth: number,
-  minItemWidth: number,
+  minItemWidth?: number,
   maxRows?: number,
 |};
 
@@ -20,7 +20,7 @@ export const calculateLayoutSpec = ({
   containerWidth: _containerWidth,
   columnGap = defaults.columnGap,
   maxItemWidth: _maxItemWidth,
-  minItemWidth,
+  minItemWidth = 0,
   maxRows,
   maximizeItemsPerRow = false,
   isFlex = false,
@@ -29,8 +29,7 @@ export const calculateLayoutSpec = ({
   containerWidth: number,
 |}) => {
   const containerWidth = isFlex ? _containerWidth - columnGap : _containerWidth;
-  const maxItemWidth =
-    _maxItemWidth < minItemWidth ? minItemWidth : _maxItemWidth;
+  const maxItemWidth = Math.max(_maxItemWidth, minItemWidth);
 
   const maxCount = Math.max(
     Math.floor(
