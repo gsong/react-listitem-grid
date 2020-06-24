@@ -1,6 +1,6 @@
 # Change Log
 
-## 2.0.3 (2020-06-24)
+## 2.1.0 (2020-06-24)
 
 - Make `columnGap` and `rowGap` params optional with default value of 0,
   wherever they're needed.
