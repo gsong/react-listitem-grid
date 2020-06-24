@@ -1,4 +1,6 @@
 //@flow strict
+import { defaults as d } from "./defaults";
+
 export type Options = {|
   maximizeItemsPerRow?: boolean,
   isFlex?: boolean,
@@ -6,7 +8,7 @@ export type Options = {|
 
 export type Params = {|
   ...Options,
-  columnGap: number,
+  columnGap?: number,
   maxItemWidth: number,
   minItemWidth: number,
   maxRows?: number,
@@ -14,12 +16,12 @@ export type Params = {|
 
 export const calculateLayoutSpec = ({
   containerWidth: _containerWidth,
-  columnGap,
+  columnGap = d.columnGap,
   maxItemWidth: _maxItemWidth,
   minItemWidth,
   maxRows,
-  maximizeItemsPerRow = false,
-  isFlex = false,
+  maximizeItemsPerRow = d.maximizeItemsPerRow,
+  isFlex = d.isFlex,
 }: {|
   ...Params,
   containerWidth: number,
@@ -64,7 +66,7 @@ export const calculateLayoutSpec = ({
 };
 
 type ItemWidthParams = {|
-  columnGap: number,
+  columnGap?: number,
   containerWidth: number,
   itemCount: number,
   maxItemWidth: number,
@@ -84,7 +86,7 @@ export const calculateItemWidthWithCount = ({
 };
 
 const calculateItemWidth = ({
-  columnGap,
+  columnGap = d.columnGap,
   containerWidth,
   maxItemWidth,
   rowCount,

@@ -1,12 +1,23 @@
 //@flow strict
 import React from "react";
 
+import { defaults as d } from "../defaults.js";
+
 import type { Props as Props_ } from "../types.js";
 
 type Props = { ...Props_, itemWidth: number };
 
 const Container = React.forwardRef<Props, ?HTMLElement>(
-  ({ itemWidth, columnGap, rowGap, children, ...props }, ref) => (
+  (
+    {
+      itemWidth,
+      columnGap = d.columnGap,
+      rowGap = d.rowGap,
+      children,
+      ...props
+    },
+    ref,
+  ) => (
     <div {...props}>
       <ul
         data-react-listitem-grid-container

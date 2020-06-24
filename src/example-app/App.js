@@ -1,7 +1,7 @@
 //@flow strict
 /** @jsx jsx */
-import { Global, jsx } from "@emotion/core";
 import React from "react";
+import { Global, jsx } from "@emotion/core";
 
 import "./server";
 import FlexAll from "./examples/FlexAll";
@@ -12,6 +12,7 @@ import GridAll from "./examples/GridAll";
 import GridMaxItems from "./examples/GridMaxItems";
 import GridMaxRows from "./examples/GridMaxRows";
 import GridMaxRowsMaxItems from "./examples/GridMaxRowsMaxItems";
+import GridMinimumSetup from "./examples/GridMinimumSetup";
 import Playground from "./Playground";
 
 const examples = {
@@ -46,6 +47,10 @@ const examples = {
   gridMaxRowsMaxItems: {
     component: GridMaxRowsMaxItems,
     label: "Grid max items per row with maxRows constraints",
+  },
+  gridMinimumSetup: {
+    component: GridMinimumSetup,
+    label: "Grid with minimum setup",
   },
   playground: {
     component: Playground,

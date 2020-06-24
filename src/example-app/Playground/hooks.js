@@ -65,7 +65,7 @@ export const useLayout = ({ observeMaxRows, ...calcOptions }: CalcOptions) => {
 };
 
 type HookParams = {
-  columnGap: number,
+  columnGap?: number,
   containerWidth: number,
   count: number,
   itemCount: number,

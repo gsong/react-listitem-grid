@@ -1,12 +1,13 @@
 //@flow strict
 import React from "react";
 
+import { defaults as d } from "../defaults.js";
 import { flexCompensate } from "../utils.js";
 
 import type { Gaps, Props } from "../types.js";
 
 const Container = React.forwardRef<Props, ?HTMLElement>(
-  ({ columnGap, rowGap, children, ...props }, ref) => {
+  ({ columnGap = d.columnGap, rowGap = d.rowGap, children, ...props }, ref) => {
     const style = flexCompensate.container({ columnGap, rowGap });
 
     return (
@@ -21,7 +22,12 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
 
 type ItemProps = { ...Gaps, itemWidth: number, ... };
 
-const Item = ({ columnGap, itemWidth, rowGap, ...props }: ItemProps) => {
+const Item = ({
+  columnGap = d.columnGap,
+  itemWidth,
+  rowGap = d.rowGap,
+  ...props
+}: ItemProps) => {
   const style = {
     width: itemWidth,
     ...flexCompensate.item({ columnGap, rowGap }),
