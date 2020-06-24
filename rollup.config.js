@@ -1,8 +1,9 @@
-import babel from "@rollup/plugin-babel";
 import fs from "fs";
+import path from "path";
+
+import babel from "@rollup/plugin-babel";
 import globby from "globby";
 import normalizeData from "normalize-package-data";
-import path from "path";
 import sortKeys from "sort-keys";
 import { eslint } from "rollup-plugin-eslint";
 

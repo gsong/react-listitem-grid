@@ -186,7 +186,7 @@ npx pnpm i
 npm start
 ```
 
-You can also [see the app running at CodeSandbox][codesandbox].
+You can also [play with the deployed example app][deployed].
 
 ### Typical Workflow
 
@@ -211,7 +211,7 @@ The following files specifically use this library:
 
 [calc-layout]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L23-L28
-[codesandbox]: https://ynmbx.csb.app/
+[deployed]: https://gsong.github.io/react-listitem-grid/
 [example app]:
   https://github.com/gsong/react-listitem-grid/tree/develop/src/example-app
 [fetch-data]:
