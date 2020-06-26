@@ -1,4 +1,5 @@
 .*ignore
+.*rc
 /build
 /dist
 /flow-typed

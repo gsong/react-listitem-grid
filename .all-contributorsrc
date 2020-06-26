@@ -1,0 +1,42 @@
+{
+  "projectName": "react-listitem-grid",
+  "projectOwner": "gsong",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "gsong",
+      "name": "George Song",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/607420?v=4",
+      "profile": "https://github.com/gsong",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "ideas",
+        "infra",
+        "maintenance",
+        "review"
+      ]
+    },
+    {
+      "login": "hsw107",
+      "name": "Hanna",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2524299?v=4",
+      "profile": "https://github.com/hsw107",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
