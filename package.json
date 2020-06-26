@@ -11,6 +11,7 @@
     "build:watch": "rollup -c -w",
     "deploy": "run-s build _build:example && gh-pages -d build",
     "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update",
+    "init-dev": "npx pnpm i && npm run build && npx pnpm i",
     "lint": "eslint . && stylelint 'src/**' && remark . && flow check",
     "publish": "npm run build && cd dist && npm publish",
     "serve": "run-s build _build:example && serve -s build",
