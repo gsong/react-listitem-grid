@@ -1,5 +1,9 @@
 # Change Log
 
+## 2.2.0 (2020-06-26)
+
+- Make `minItemWidth` param optional with default value of 0.
+
 ## 2.1.0 (2020-06-24)
 
 - Make `columnGap` and `rowGap` params optional with default value of 0,

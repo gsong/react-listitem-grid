@@ -1,7 +1,11 @@
 # react-listitem-grid
 
-Utilities and components for responsive grid layout of list items.
+Utilities and components for responsive grid layout of list items. [See example
+use cases][deployed].
 
+## Table of Contents
+
+- [Installation](#installation)
 - [Should I Use This Library?](#should-i-use-this-library)
   - [List Item Width](#list-item-width)
   - [List Item Alignment](#list-item-alignment)
@@ -15,6 +19,18 @@ Utilities and components for responsive grid layout of list items.
   - [Example App](#example-app)
   - [Typical Workflow](#typical-workflow)
 - [Want to Help?](#want-to-help)
+
+## Installation
+
+```sh
+npm install react-listitem-grid
+```
+
+This library has minimal peer depencency on `@babel/runtime`, which is probably
+already present in your React project.
+
+If you use the React hook and the components from this library, you'll also need
+the `react` peer dependency.
 
 ## Should I Use This Library?
 
@@ -72,6 +88,8 @@ There are some JavaScript utilities which can be used in any project.
 
 #### `calculateLayoutSpec()`
 
+[View source][calc-layout].
+
 This function does all the calculations and returns an object with:
 
 - `itemWidth`: The exact pixel width of each list item.
@@ -88,6 +106,8 @@ This function does all the calculations and returns an object with:
 
 #### `calculateItemWidthWithCount()`
 
+[View source][calc-itemwidth].
+
 This is used to recalculate the `itemWidth` once the number of results are
 known. For example, the container width may be able to fit 5 items across at
 300px each. However, there are only 4 items to be displayed, we'll want to
@@ -95,12 +115,16 @@ display them at their maximum width of 350px instead of at 300px.
 
 #### `flexCompensate`
 
+[View source][flex-compensate].
+
 - `flexCompensate.container()` which returns the CSS `margin` and `width` values
   to be applied to the flex container.
 - `flexCompensate.item()` which returns the CSS `margin` value to be applied to
   the flex item.
 
 ### `useCalculateLayout` Hook
+
+[View source][hook-source].
 
 A convenience hook which uses [ResizeObserver][] to measure the width of the
 grid container. It returns all the values from `utils.calculateLayoutSpec()`
@@ -166,9 +190,13 @@ however you want: regular CSS, CSS modules, CSS-with-JS.
 
 #### Grid
 
+[View source][grid].
+
 If you work with modern browsers that support CSS grid.
 
 #### Flex
+
+[View source][flex].
 
 If you need to support older browsers with iffy or no grid support, e.g.
 Internet Explorer. This has been tested to work with IE 11.
@@ -193,15 +221,16 @@ You can also [play with the deployed example app][deployed].
 The example app demonstrates a typical workflow of how to use this library.
 
 1. Get the calculated values based on container width. The easiest way is to
-   [use `useCalculateLayout`][calc-layout] by [supplying some initial layout
-   specs][layout-specs].
+   [use `useCalculateLayout`][calc-layout-usage] by [supplying some initial
+   layout specs][layout-specs].
 
 1. [Fetch the data you need for the list items][fetch-data].
 
 1. [Recalculate the item width][recalc-width] if needed. This is necessary if
    the total number of items is less then `rowCount` (number of items per row).
 
-1. Use the [Grid][grid] or [Flex][flex] components to render out the result.
+1. Use the [Grid][grid-example] or [Flex][flex-example] components to render out
+   the result.
 
 The following files specifically use this library:
 
@@ -209,19 +238,31 @@ The following files specifically use this library:
 
 [Check out the task board][task-board] and [how to contribute][contributing].
 
-[calc-layout]:
+[calc-itemwidth]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils.js#L69-L81
+[calc-layout-usage]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L23-L28
+[calc-layout]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils.js#L6-L30
 [contributing]:
   https://github.com/gsong/react-listitem-grid/blob/develop/CONTRIBUTING.md
 [deployed]: https://gsong.github.io/react-listitem-grid/
 [example app]:
-  https://github.com/gsong/react-listitem-grid/tree/develop/src/example-app
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app
 [fetch-data]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L31-L35
-[flex]:
+[flex-compensate]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils.js#L103-L120
+[flex-example]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/FlexAll.js#L47-L61
-[grid]:
+[flex]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/Flex/index.js
+[grid-example]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L46-L56
+[grid]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/Grid/index.js
+[hook-source]:
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/hooks.js#L6-L8
 [layout-specs]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L16-L20
 [recalc-width]:
