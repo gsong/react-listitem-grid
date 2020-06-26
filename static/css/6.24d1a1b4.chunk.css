@@ -1,0 +1,2 @@
+[data-react-listitem-grid-container]{--columnWidth:1fr;--columnGap:0;--rowGap:0;display:grid;grid-template-columns:repeat(auto-fit,calc(var(--columnWidth)*1px));grid-column-gap:calc(var(--columnGap)*1px);-webkit-column-gap:calc(var(--columnGap)*1px);column-gap:calc(var(--columnGap)*1px);grid-row-gap:calc(var(--rowGap)*1px);row-gap:calc(var(--rowGap)*1px);justify-content:start;margin:0;padding:0}[data-react-listitem-grid-item]{list-style:none}
+/*# sourceMappingURL=6.24d1a1b4.chunk.css.map */
