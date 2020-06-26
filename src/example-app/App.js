@@ -4,70 +4,39 @@ import React from "react";
 import { Global, jsx } from "@emotion/core";
 
 import "./server";
-import FlexAll from "./examples/FlexAll";
-import FlexMaxItems from "./examples/FlexMaxItems";
-import FlexMaxRows from "./examples/FlexMaxRows";
-import FlexMaxRowsMaxItems from "./examples/FlexMaxRowsMaxItems";
-import GridAll from "./examples/GridAll";
-import GridMaxItems from "./examples/GridMaxItems";
-import GridMaxRows from "./examples/GridMaxRows";
-import GridMaxRowsMaxItems from "./examples/GridMaxRowsMaxItems";
-import GridMinimumSetup from "./examples/GridMinimumSetup";
-import Playground from "./Playground";
 
 const examples = {
-  flex: {
-    component: FlexAll,
-    label: "Flex with all cards",
-  },
-  flexMaxItems: {
-    component: FlexMaxItems,
-    label: "Flex max items per row with all cards",
-  },
-  flexMaxRows: {
-    component: FlexMaxRows,
-    label: "Flex with maxRows constraints",
-  },
-  flexMaxRowsMaxItems: {
-    component: FlexMaxRowsMaxItems,
+  FlexAll: { label: "Flex with all cards" },
+  FlexMaxItems: { label: "Flex max items per row with all cards" },
+  FlexMaxRows: { label: "Flex with maxRows constraints" },
+  FlexMaxRowsMaxItems: {
     label: "Flex max items per row with maxRows constraints",
   },
-  grid: {
-    component: GridAll,
-    label: "Grid with all cards",
-  },
-  gridMaxItems: {
-    component: GridMaxItems,
-    label: "Grid max items per row with all cards",
-  },
-  gridMaxRows: {
-    component: GridMaxRows,
-    label: "Grid with maxRows constraints",
-  },
-  gridMaxRowsMaxItems: {
-    component: GridMaxRowsMaxItems,
+  GridAll: { label: "Grid with all cards" },
+  GridMaxItems: { label: "Grid max items per row with all cards" },
+  GridMaxRows: { label: "Grid with maxRows constraints" },
+  GridMaxRowsMaxItems: {
     label: "Grid max items per row with maxRows constraints",
   },
-  gridMinimumSetup: {
-    component: GridMinimumSetup,
-    label: "Grid with minimum setup",
-  },
-  playground: {
-    component: Playground,
+  GridMinimumSetup: { label: "Grid with minimum setup" },
+  Playground: {
     label: "Library playground",
     src: "Playground/index.js",
+    Component: () => import("./Playground/index.js"),
   },
 };
 
 const App = () => {
-  const [selected, setExample] = React.useState("flex");
-  const Example = examples[selected].component;
-
+  const [selected, setExample] = React.useState("FlexAll");
+  const Example = React.lazy(
+    // $FlowFixMe
+    examples[selected].Component ?? (() => import(`./examples/${selected}`)),
+  );
   // $FlowFixMe
-  const src = examples[selected].src ?? `examples/${Example.name}.js`;
+  const src = examples[selected].src ?? `examples/${selected}.js`;
 
   return (
-    <React.Fragment>
+    <React.Suspense fallback={<div>Loading...</div>}>
       <main>
         <Global styles={globalStyle} />
         <nav css={{ marginBottom: "0.75em" }}>
@@ -95,7 +64,7 @@ const App = () => {
         </nav>
         <Example />
       </main>
-    </React.Fragment>
+    </React.Suspense>
   );
 };
 

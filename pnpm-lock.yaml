@@ -72,7 +72,7 @@ importers:
       react: ^16.13.1
       react-app-polyfill: ^1.0.6
       react-dom: ^16.13.1
-      react-listitem-grid: ^2.1.0
+      react-listitem-grid: ^2.2.0
       react-scripts: ^3.4.1
       read-pkg: ^5.2.0
       remark-cli: ^8.0.0
@@ -107,7 +107,7 @@ packages:
       integrity: sha512-a9gxpmdXtZEInkCSHUJDLHZVBgb1QS0jhss4cPP93EW7s+uC5bikET2twEF3KV+7rDblJcmNvTR7VJejqd2C2g==
   /@babel/compat-data/7.10.3:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       invariant: 2.2.4
       semver: 5.7.1
     dev: true
@@ -199,7 +199,7 @@ packages:
   /@babel/helper-compilation-targets/7.10.2:
     dependencies:
       '@babel/compat-data': 7.10.3
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       invariant: 2.2.4
       levenary: 1.1.1
       semver: 5.7.1
@@ -212,7 +212,7 @@ packages:
     dependencies:
       '@babel/compat-data': 7.10.3
       '@babel/core': 7.9.0
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       invariant: 2.2.4
       levenary: 1.1.1
       semver: 5.7.1
@@ -1743,7 +1743,7 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.10.1
       '@babel/preset-modules': 0.1.3
       '@babel/types': 7.10.3
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       core-js-compat: 3.6.5
       invariant: 2.2.4
       levenary: 1.1.1
@@ -1815,7 +1815,7 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.10.1_@babel+core@7.9.0
       '@babel/preset-modules': 0.1.3_@babel+core@7.9.0
       '@babel/types': 7.10.3
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       core-js-compat: 3.6.5
       invariant: 2.2.4
       levenary: 1.1.1
@@ -1883,7 +1883,7 @@ packages:
       '@babel/plugin-transform-unicode-regex': 7.10.1_@babel+core@7.9.0
       '@babel/preset-modules': 0.1.3_@babel+core@7.9.0
       '@babel/types': 7.10.3
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       core-js-compat: 3.6.5
       invariant: 2.2.4
       levenary: 1.1.1
@@ -2439,7 +2439,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-atAs5GAGbZedvJXXdjtKljin+e2SltEs48B3naJjqWupYl2IUBbB/CJisyjbNHcKpHzb3E+OYEZ46G8eakXgQg==
-  /@octokit/rest/16.43.1:
+  /@octokit/rest/16.43.2:
     dependencies:
       '@octokit/auth-token': 2.4.2
       '@octokit/plugin-paginate-rest': 1.1.2
@@ -2459,7 +2459,7 @@ packages:
       universal-user-agent: 4.0.1
     dev: true
     resolution:
-      integrity: sha512-gfFKwRT/wFxq5qlNjnW2dh+qh74XgTQ2B179UX5K1HYCluioWj8Ndbgqw2PVqa1NnVJkGHp2ovMpVn/DImlmkw==
+      integrity: sha512-ngDBevLbBTFfrHZeiS7SAMAZ6ssuVmXuya+F/7RaVvlysgGa1JKJkKWY+jV6TCJYcW0OALfJ7nTIGXcBXzycfQ==
   /@octokit/types/2.16.2:
     dependencies:
       '@types/node': 14.0.14
@@ -3428,7 +3428,7 @@ packages:
       integrity: sha1-BlK0kYgYefB3XazgzcoyM5QqTkc=
   /autoprefixer/9.8.4:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       caniuse-lite: 1.0.30001088
       colorette: 1.2.0
       normalize-range: 0.1.2
@@ -3877,23 +3877,25 @@ packages:
   /browserslist/4.10.0:
     dependencies:
       caniuse-lite: 1.0.30001088
-      electron-to-chromium: 1.3.481
+      electron-to-chromium: 1.3.483
       node-releases: 1.1.58
       pkg-up: 3.1.0
     dev: true
     hasBin: true
     resolution:
       integrity: sha512-TpfK0TDgv71dzuTsEAlQiHeWQ/tiPqgNZVdv046fvNtBZrjbv2O3TsWCDU0AWGJJKCF/KsjNdLzR9hXOsh/CfA==
-  /browserslist/4.12.0:
+  /browserslist/4.12.1:
     dependencies:
       caniuse-lite: 1.0.30001088
-      electron-to-chromium: 1.3.481
+      electron-to-chromium: 1.3.483
+      escalade: 3.0.1
       node-releases: 1.1.58
-      pkg-up: 2.0.0
     dev: true
+    engines:
+      node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7
     hasBin: true
     resolution:
-      integrity: sha512-UH2GkcEDSI0k/lRkuDSzFl9ZZ87skSy9w2XAn1MsZnL+4c4rqbBd3e82UWHbYDpztABrPBhZsTEeuxVfHppqDg==
+      integrity: sha512-WMjXwFtPskSW1pQUDJRxvRKRkeCr7usN0O/Za76N+F4oadaTdQHotSGcX9jT/Hs7mSKPkyMFNvqawB/1HzYDKQ==
   /bser/2.1.1:
     dependencies:
       node-int64: 0.4.0
@@ -4113,7 +4115,7 @@ packages:
       integrity: sha512-8KMDF1Vz2gzOq54ONPJS65IvTUaB1cHJ2DMM7MbPmLZljDH1qpzzLsWdiN9pHh6qvkRVDTi/07+eNGch/oLU4w==
   /caniuse-api/3.0.0:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       caniuse-lite: 1.0.30001088
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
@@ -4705,7 +4707,7 @@ packages:
       integrity: sha1-Z29us8OZl8LuGsOpJP1hJHSPV40=
   /core-js-compat/3.6.5:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       semver: 7.0.0
     dev: true
     resolution:
@@ -5506,10 +5508,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
-  /electron-to-chromium/1.3.481:
+  /electron-to-chromium/1.3.483:
     dev: true
     resolution:
-      integrity: sha512-q2PeCP2PQXSYadDo9uNY+uHXjdB9PcsUpCVoGlY8TZOPHGlXdevlqW9PkKeqCxn2QBkGB8b6AcMO++gh8X82bA==
+      integrity: sha512-+05RF8S9rk8S0G8eBCqBRBaRq7+UN3lDs2DAvnG8SBSgQO3hjy0+qt4CmRk5eiuGbTcaicgXfPmBi31a+BD3lg==
   /elliptic/6.5.3:
     dependencies:
       bn.js: 4.11.9
@@ -5651,6 +5653,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-NJ6Yn3FuDinBaBRWl/q5X/s4koRHBrgKAu+yGI6JCBeiu3qrcbJhwT2GeR/EXVfylRk8dpQVJoLEFhK+Mu31NA==
+  /escalade/3.0.1:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-DR6NO3h9niOT+MZs7bjxlj2a1k+POu5RN8CLTPX2+i78bRi9eLe7+0zXgUHMnGXWybYcL61E9hGhPKqedy8tQA==
   /escape-html/1.0.3:
     dev: true
     resolution:
@@ -6537,7 +6545,7 @@ packages:
   /flow-typed/2.6.2:
     dependencies:
       '@babel/polyfill': 7.10.1
-      '@octokit/rest': 16.43.1
+      '@octokit/rest': 16.43.2
       colors: 1.4.0
       flowgen: 1.11.0
       fs-extra: 7.0.1
@@ -10847,14 +10855,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-HRDzbaKjC+AOWVXxAU/x54COGeIv9eb+6CkDSQoNTt4XyWoIJvuPsXizxu/Fr23EiekbtZwmh1IcIG/l/a10GQ==
-  /pkg-up/2.0.0:
-    dependencies:
-      find-up: 2.1.0
-    dev: true
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha1-yBmscoBZpGHKscOImivjxJoATX8=
   /pkg-up/3.1.0:
     dependencies:
       find-up: 3.0.0
@@ -10904,9 +10904,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-clkFxk/9pcdb4Vkn0hAHq3YnxBQ2p0CGD1dy24jN+reBck+EWxMbxSUqN4Yj7t0w8csl87K6p0gxBe1utkJsYA==
-  /postcss-browser-comments/3.0.0_browserslist@4.12.0:
+  /postcss-browser-comments/3.0.0_browserslist@4.12.1:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       postcss: 7.0.32
     dev: true
     engines:
@@ -10972,7 +10972,7 @@ packages:
       integrity: sha512-aAe3OhkS6qJXBbqzvZth2Au4V3KieR5sRQ4ptb2b2O8wgvB3SJBsdG+jsn2BZbbwekDG8nTfcCNKcSfe/lEy8g==
   /postcss-colormin/4.0.3:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       color: 3.1.2
       has: 1.0.3
       postcss: 7.0.32
@@ -11210,7 +11210,7 @@ packages:
       integrity: sha512-alx/zmoeXvJjp7L4mxEMjh8lxVlDFX1gqWHzaaQewwMZiVhLo42TEClKaeHbRf6J7j82ZOdTJ808RtN0ZOZwvw==
   /postcss-merge-rules/4.0.3:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       caniuse-api: 3.0.0
       cssnano-util-same-parent: 4.0.1
       postcss: 7.0.32
@@ -11244,7 +11244,7 @@ packages:
   /postcss-minify-params/4.0.2:
     dependencies:
       alphanum-sort: 1.0.2
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       cssnano-util-get-arguments: 4.0.0
       postcss: 7.0.32
       postcss-value-parser: 3.3.1
@@ -11370,7 +11370,7 @@ packages:
       integrity: sha512-acwJY95edP762e++00Ehq9L4sZCEcOPyaHwoaFOhIwWCDfik6YvqsYNxckee65JHLKzuNSSmAdxwD2Cud1Z54A==
   /postcss-normalize-unicode/4.0.1:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       postcss: 7.0.32
       postcss-value-parser: 3.3.1
     dev: true
@@ -11401,9 +11401,9 @@ packages:
   /postcss-normalize/8.0.1:
     dependencies:
       '@csstools/normalize.css': 10.1.0
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       postcss: 7.0.32
-      postcss-browser-comments: 3.0.0_browserslist@4.12.0
+      postcss-browser-comments: 3.0.0_browserslist@4.12.1
       sanitize.css: 10.0.0
     dev: true
     engines:
@@ -11446,7 +11446,7 @@ packages:
   /postcss-preset-env/6.7.0:
     dependencies:
       autoprefixer: 9.8.4
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       caniuse-lite: 1.0.30001088
       css-blank-pseudo: 0.1.4
       css-has-pseudo: 0.10.0
@@ -11498,7 +11498,7 @@ packages:
       integrity: sha512-lgXW9sYJdLqtmw23otOzrtbDXofUdfYzNm4PIpNE322/swES3VU9XlXHeJS46zT2onFO7V1QFdD4Q9LiZj8mew==
   /postcss-reduce-initial/4.0.3:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       caniuse-api: 3.0.0
       has: 1.0.3
       postcss: 7.0.32
@@ -13711,7 +13711,7 @@ packages:
       integrity: sha1-eVjHk+R+MuB9K1yv5cC/jhLneQI=
   /stylehacks/4.0.3:
     dependencies:
-      browserslist: 4.12.0
+      browserslist: 4.12.1
       postcss: 7.0.32
       postcss-selector-parser: 3.1.2
     dev: true
