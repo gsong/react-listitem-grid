@@ -12,7 +12,7 @@
     "dist": "rimraf dist && NODE_ENV=production rollup -c",
     "dist:watch": "rollup -c -w",
     "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update",
-    "init-dev": "npx pnpm i && npm run dist && npx pnpm i",
+    "init-dev": "npx pnpm i --prefer-frozen-lockfile && npm run dist && npx pnpm i",
     "lint": "eslint . && stylelint 'src/**' && remark . && flow check",
     "publish": "npm run dist && cd dist && npm publish",
     "serve": "npm run build && serve -s build",
