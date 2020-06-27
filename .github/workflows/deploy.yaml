@@ -7,15 +7,34 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    env:
-      CI:
     steps:
       - uses: actions/checkout@v2
-      - name: Deploy
+
+      - name: Set up
+        run: |
+          echo "::set-env name=NODE_VERSION::$(node -v)"
+          echo "::set-env name=PNPM_VERSION::$(npx pnpm -v)"
+
+      - name: Cache pnpm-store
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key:
+            pnpm-store-${{ env.NODE_VERSION }}-${{ env.PNPM_VERSION }}-${{
+            hashFiles('./pnpm-lock.yaml') }}
+          restore-keys: |
+            pnpm-store-${{ env.NODE_VERSION }}-${{ env.PNPM_VERSION }}-
+            pnpm-store-
+
+      - name: Build
+        env:
+          CI:
         run: |
           npm run init-dev
           npm run build
-      - uses: peaceiris/actions-gh-pages@v3
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
