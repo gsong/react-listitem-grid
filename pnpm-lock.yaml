@@ -18,6 +18,7 @@ importers:
       '@babel/preset-react': 7.10.1
       '@jsdevtools/npm-publish': 1.1.0
       '@rollup/plugin-babel': 5.0.4_rollup@2.18.1
+      '@testing-library/react': 10.4.3_react-dom@16.13.1+react@16.13.1
       all-contributors-cli: 6.16.0
       eslint-config-prettier: 6.11.0
       eslint-plugin-prettier: 3.1.4_prettier@2.0.5
@@ -57,6 +58,7 @@ importers:
       '@juggle/resize-observer': ^3.2.0
       '@reach/visually-hidden': ^0.10.4
       '@rollup/plugin-babel': ^5.0.4
+      '@testing-library/react': ^10.4.3
       all-contributors-cli: ^6.16.0
       eslint-config-prettier: ^6.11.0
       eslint-plugin-prettier: ^3.1.4
@@ -2001,7 +2003,6 @@ packages:
   /@babel/runtime/7.9.0:
     dependencies:
       regenerator-runtime: 0.13.5
-    dev: true
     resolution:
       integrity: sha512-cTIudHnzuWLS56ik4DnRnqqNf8MkdUzV4iFFI1h7Jo9xvrpQROYaAnaSd2mHLQAzzZAPfATynX5ord6YlNYNMA==
   /@babel/template/7.10.3:
@@ -2339,6 +2340,17 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-XKK7ze1apu5JWQ5eZjHITP66AX+QsLlbaJRBGYr8pNzwcAE2JVkwnf0yqjHTsDRcjR0mujy/NmZMXw5kl+kGBw==
+  /@jest/types/25.5.0:
+    dependencies:
+      '@types/istanbul-lib-coverage': 2.0.3
+      '@types/istanbul-reports': 1.1.2
+      '@types/yargs': 15.0.5
+      chalk: 3.0.0
+    dev: true
+    engines:
+      node: '>= 8.3'
+    resolution:
+      integrity: sha512-OXD0RgQ86Tu3MazKo8bnrkDRaDXXMGUqd+kTtLtK1Zb7CRzQcaSRPPPV37SvYTdevXEBVxe0HXylEjs8ibkmCw==
   /@jsdevtools/ez-spawn/3.0.3:
     dependencies:
       call-me-maybe: 1.0.1
@@ -2703,6 +2715,31 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
+  /@testing-library/dom/7.18.1:
+    dependencies:
+      '@babel/runtime': 7.10.3
+      aria-query: 4.2.2
+      dom-accessibility-api: 0.4.5
+      pretty-format: 25.5.0
+    dev: true
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-tGq4KAFjaI7j375sMM1RRVleWA0viJWs/w69B+nyDkqYLNkhdTHdV6mGkspJlkn3PUfyBDi3rERDv4PA/LrpVA==
+  /@testing-library/react/10.4.3_react-dom@16.13.1+react@16.13.1:
+    dependencies:
+      '@babel/runtime': 7.10.3
+      '@testing-library/dom': 7.18.1
+      react: 16.13.1
+      react-dom: 16.13.1_react@16.13.1
+    dev: true
+    engines:
+      node: '>=10'
+    peerDependencies:
+      react: '*'
+      react-dom: '*'
+    resolution:
+      integrity: sha512-A/ydYXcwAcfY7vkPrfUkUTf9HQLL3/GtixTefcu3OyGQtAYQ7XBQj1S9FWbLEhfWa0BLwFwTBFS3Ao1O0tbMJg==
   /@types/babel__core/7.1.9:
     dependencies:
       '@babel/parser': 7.10.3
@@ -2813,6 +2850,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xrvhZ4DZewMDhoH1utLtOAwYQy60eYFoXeje30TzM3VOvQlBwQaEpKFq5m34k1wOw2AKIi2pwtiAjdmhvlBUzg==
+  /@types/yargs/15.0.5:
+    dependencies:
+      '@types/yargs-parser': 15.0.0
+    dev: true
+    resolution:
+      integrity: sha512-Dk/IDOPtOgubt/IaevIUbTgV7doaKkoorvOyYM2CMwuDyP89bekI7H4xLIwunNYiK9jhCkmc6pUrJk3cj2AB9w==
   /@typescript-eslint/eslint-plugin/2.34.0_984cbb313f9ea271f36cadd8f9814e06:
     dependencies:
       '@typescript-eslint/experimental-utils': 2.34.0_eslint@6.8.0
@@ -3294,6 +3337,15 @@ packages:
     dev: true
     resolution:
       integrity: sha1-ZbP8wcoRVajJrmTW7uKX8V1RM8w=
+  /aria-query/4.2.2:
+    dependencies:
+      '@babel/runtime': 7.10.3
+      '@babel/runtime-corejs3': 7.10.3
+    dev: true
+    engines:
+      node: '>=6.0'
+    resolution:
+      integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==
   /arity-n/1.0.4:
     dev: true
     resolution:
@@ -3625,7 +3677,7 @@ packages:
       integrity: sha512-2EMA2P8Vp7lG0RAzr4HXqtYwacfMErOuv1U3wrvxHX6rD1sV6xS3WXG3r8TRQ2r6w8OhvSdWt+z41hQNwNm3Xw==
   /babel-plugin-macros/2.8.0:
     dependencies:
-      '@babel/runtime': 7.10.3
+      '@babel/runtime': 7.9.0
       cosmiconfig: 6.0.0
       resolve: 1.17.0
     resolution:
@@ -5491,6 +5543,10 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
+  /dom-accessibility-api/0.4.5:
+    dev: true
+    resolution:
+      integrity: sha512-HcPDilI95nKztbVikaN2vzwvmv0sE8Y2ZJFODy/m15n7mGXLeOKGiys9qWVbFbh+aq/KYj2lqMLybBOkYAEXqg==
   /dom-converter/0.2.0:
     dependencies:
       utila: 0.4.0
@@ -11896,6 +11952,17 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-00ZMZUiHaJrNfk33guavqgvfJS30sLYf0f8+Srklv0AMPodGGHcoHgksZ3OThYnIvOd+8yMCn0YiEOogjlgsnA==
+  /pretty-format/25.5.0:
+    dependencies:
+      '@jest/types': 25.5.0
+      ansi-regex: 5.0.0
+      ansi-styles: 4.2.1
+      react-is: 16.13.1
+    dev: true
+    engines:
+      node: '>= 8.3'
+    resolution:
+      integrity: sha512-kbo/kq2LQ/A/is0PQwsEHM7Ca6//bGPPvU6UnsdDRSKTWxT/ru/xb88v4BJf6a69H+uTytOEsTusT9ksd/1iWQ==
   /private/0.1.8:
     dev: true
     engines:
@@ -12198,7 +12265,6 @@ packages:
       prop-types: 15.7.2
       react: 16.13.1
       scheduler: 0.19.1
-    dev: false
     peerDependencies:
       react: ^16.13.1
     resolution:
@@ -12282,7 +12348,6 @@ packages:
       loose-envify: 1.4.0
       object-assign: 4.1.1
       prop-types: 15.7.2
-    dev: false
     engines:
       node: '>=0.10.0'
     resolution:
@@ -13008,7 +13073,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-    dev: false
     resolution:
       integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
   /schema-utils/1.0.0:

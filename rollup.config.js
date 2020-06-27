@@ -47,7 +47,7 @@ const copyStatic = async () => {
 };
 
 const generateFlow = async () => {
-  const sourceFiles = await globby("src/lib/**/*.js");
+  const sourceFiles = await globby(["src/lib/**/*.js", "!**/__tests__/**"]);
   const copyList = sourceFiles.map((file) => ({
     source: file,
     dest: `${file.replace("src/lib", "dist")}.flow`,

@@ -1,4 +1,4 @@
-name: Publish to NPM
+name: publish-to-npm
 
 on:
   push:
@@ -8,6 +8,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "12"
+
       - uses: actions/checkout@v2
 
       - name: Set up

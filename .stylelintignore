@@ -1,0 +1,6 @@
+*.json
+*.snap
+*.yaml
+LICENSE
+dist/
+public/

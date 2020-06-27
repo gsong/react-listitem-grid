@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex.Container renders properly 1`] = `
+<div>
+  <div>
+    <ul
+      data-react-listitem-flex-container="true"
+      style="margin: -0px 0px 0px -0px;"
+    >
+      fixed-snapshot-children
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Flex.Container renders properly with optional params 1`] = `
+<div>
+  <div>
+    <ul
+      data-react-listitem-flex-container="true"
+      style="margin: -8px 0px 0px -16px;"
+    >
+      fixed-snapshot-children
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Flex.Item renders properly 1`] = `
+<div>
+  <li
+    data-react-listitem-flex-item="true"
+    style="width: 150px; margin: 0px 0px 0px 0px;"
+  >
+    fixed-snapshot-children
+  </li>
+</div>
+`;
+
+exports[`Flex.Item renders properly with optional params 1`] = `
+<div>
+  <li
+    data-react-listitem-flex-item="true"
+    style="width: 150px; margin: 8px 0px 0px 16px;"
+  >
+    fixed-snapshot-children
+  </li>
+</div>
+`;
