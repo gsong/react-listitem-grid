@@ -15,16 +15,18 @@ jobs:
           echo "::set-env name=NODE_VERSION::$(node -v)"
           echo "::set-env name=PNPM_VERSION::$(npx pnpm -v)"
 
-      - name: Cache pnpm-store
+      - name: Cache node packages
         uses: actions/cache@v2
         with:
-          path: ~/.pnpm-store
+          path: |
+            ~/.pnpm-store
+            **/node_modules
           key:
-            pnpm-store-${{ env.NODE_VERSION }}-${{ env.PNPM_VERSION }}-${{
+            node-cache-${{ env.NODE_VERSION }}-${{ env.PNPM_VERSION }}-${{
             hashFiles('./pnpm-lock.yaml') }}
           restore-keys: |
-            pnpm-store-${{ env.NODE_VERSION }}-${{ env.PNPM_VERSION }}-
-            pnpm-store-
+            node-cache-${{ env.NODE_VERSION }}-${{ env.PNPM_VERSION }}-
+            node-cache-
 
       - env:
           CI:
