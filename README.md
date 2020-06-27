@@ -212,7 +212,7 @@ making adjustments `calculateLayoutSpec()`'s params. You can clone this repo and
 run it locally:
 
 ```sh
-npx pnpm i
+npm run init-dev
 npm start
 ```
 
