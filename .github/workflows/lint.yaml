@@ -26,10 +26,10 @@ jobs:
             pnpm-store-${{ env.NODE_VERSION }}-${{ env.PNPM_VERSION }}-
             pnpm-store-
 
-      - name: Init env
-        env:
+      - env:
           CI:
         run: npm run init-dev
 
-      - name: Lint
-        run: npm run lint
+      # workflow specific steps
+
+      - run: npm run lint

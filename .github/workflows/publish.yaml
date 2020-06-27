@@ -1,11 +1,11 @@
-name: Deploy GitHub Pages
+name: Publish to NPM
 
 on:
   push:
-    branches: [develop]
+    branches: [release]
 
 jobs:
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -32,10 +32,8 @@ jobs:
 
       # workflow specific steps
 
-      - run: npm run build
+      - run: npm run dist
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+      - env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx npm-publish --token=${NPM_TOKEN} ./dist/package.json
