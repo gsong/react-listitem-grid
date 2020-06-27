@@ -1,5 +1,7 @@
 # react-listitem-grid
 
+[![Test and lint status][test-and-lint-badge]][test-and-lint]
+
 Utilities and components for responsive grid layout of list items. [See example
 use cases][deployed].
 
@@ -240,6 +242,34 @@ The following files specifically use this library:
 
 [Check out the task board][task-board] and [how to contribute][contributing].
 
+## Contributors
+
+Thanks goes to these people
+([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/gsong"><img src="https://avatars1.githubusercontent.com/u/607420?v=4" width="100px;" alt=""/><br /><sub><b>George Song</b></sub></a><br /><a href="https://github.com/gsong/react-listitem-grid/commits?author=gsong" title="Code">💻</a> <a href="https://github.com/gsong/react-listitem-grid/commits?author=gsong" title="Documentation">📖</a> <a href="#example-gsong" title="Examples">💡</a> <a href="#ideas-gsong" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-gsong" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-gsong" title="Maintenance">🚧</a> <a href="https://github.com/gsong/react-listitem-grid/pulls?q=is%3Apr+reviewed-by%3Agsong" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/hsw107"><img src="https://avatars2.githubusercontent.com/u/2524299?v=4" width="100px;" alt=""/><br /><sub><b>Hanna</b></sub></a><br /><a href="https://github.com/gsong/react-listitem-grid/commits?author=hsw107" title="Code">💻</a> <a href="https://github.com/gsong/react-listitem-grid/commits?author=hsw107" title="Documentation">📖</a> <a href="#example-hsw107" title="Examples">💡</a> <a href="#ideas-hsw107" title="Ideas, Planning, & Feedback">🤔</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the
+[all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
+
+## License
+
+[MIT](https://github.com/gsong/react-listitem-grid/blob/develop/LICENSE)
+
 [calc-itemwidth]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils.js#L69-L81
 [calc-layout-usage]:
@@ -273,31 +303,7 @@ The following files specifically use this library:
 [resizeobserver]:
   https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
 [task-board]: https://github.com/gsong/react-listitem-grid/projects/1
-
-## Contributors
-
-Thanks goes to these people
-([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/gsong"><img src="https://avatars1.githubusercontent.com/u/607420?v=4" width="100px;" alt=""/><br /><sub><b>George Song</b></sub></a><br /><a href="https://github.com/gsong/react-listitem-grid/commits?author=gsong" title="Code">💻</a> <a href="https://github.com/gsong/react-listitem-grid/commits?author=gsong" title="Documentation">📖</a> <a href="#example-gsong" title="Examples">💡</a> <a href="#ideas-gsong" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-gsong" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-gsong" title="Maintenance">🚧</a> <a href="https://github.com/gsong/react-listitem-grid/pulls?q=is%3Apr+reviewed-by%3Agsong" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://github.com/hsw107"><img src="https://avatars2.githubusercontent.com/u/2524299?v=4" width="100px;" alt=""/><br /><sub><b>Hanna</b></sub></a><br /><a href="https://github.com/gsong/react-listitem-grid/commits?author=hsw107" title="Code">💻</a> <a href="https://github.com/gsong/react-listitem-grid/commits?author=hsw107" title="Documentation">📖</a> <a href="#example-hsw107" title="Examples">💡</a> <a href="#ideas-hsw107" title="Ideas, Planning, & Feedback">🤔</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the
-[all-contributors](https://github.com/all-contributors/all-contributors)
-specification. Contributions of any kind welcome!
-
-## License
-
-[MIT](https://github.com/gsong/react-listitem-grid/blob/develop/LICENSE)
+[test-and-lint]:
+  https://github.com/gsong/react-listitem-grid/actions?query=workflow%3Atest-and-lint
+[test-and-lint-badge]:
+  https://github.com/gsong/react-listitem-grid/workflows/test-and-lint/badge.svg
