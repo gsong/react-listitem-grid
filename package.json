@@ -1,6 +1,6 @@
 {
   "name": "react-listitem-grid",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Utilities and components for responsive card grid layout",
   "main": "index.js",
   "homepage": ".",
@@ -41,7 +41,7 @@
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
-    "react-listitem-grid": "^2.2.0"
+    "react-listitem-grid": "^2.2.1"
   },
   "peerDependencies": {
     "@babel/runtime": "^7",
@@ -51,7 +51,6 @@
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-flow": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
-    "@jsdevtools/npm-publish": "^1.1.0",
     "@rollup/plugin-babel": "^5.0.4",
     "@testing-library/react": "^10.4.3",
     "all-contributors-cli": "^6.16.0",

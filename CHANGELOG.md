@@ -1,5 +1,10 @@
 # Change Log
 
+## 2.2.1 (2020-06-28)
+
+- Auto release via CI
+- Add tests
+
 ## 2.2.0 (2020-06-26)
 
 - Make `minItemWidth` param optional with default value of 0.

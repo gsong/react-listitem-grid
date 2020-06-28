@@ -16,7 +16,6 @@ importers:
       '@babel/preset-env': 7.10.3
       '@babel/preset-flow': 7.10.1
       '@babel/preset-react': 7.10.1
-      '@jsdevtools/npm-publish': 1.1.0
       '@rollup/plugin-babel': 5.0.4_rollup@2.18.1
       '@testing-library/react': 10.4.3_react-dom@16.13.1+react@16.13.1
       all-contributors-cli: 6.16.0
@@ -24,7 +23,7 @@ importers:
       eslint-plugin-jest-dom: 3.0.1
       eslint-plugin-prettier: 3.1.4_prettier@2.0.5
       eslint-plugin-testing-library: 3.3.1
-      flow-bin: 0.127.0
+      flow-bin: 0.128.0
       flow-typed: 2.6.2
       gh-pages: 3.1.0
       globby: 11.0.1
@@ -56,7 +55,6 @@ importers:
       '@babel/preset-react': ^7.10.1
       '@emotion/core': ^10.0.28
       '@emotion/styled': ^10.0.27
-      '@jsdevtools/npm-publish': ^1.1.0
       '@juggle/resize-observer': ^3.2.0
       '@reach/visually-hidden': ^0.10.4
       '@rollup/plugin-babel': ^5.0.4
@@ -67,7 +65,7 @@ importers:
       eslint-plugin-prettier: ^3.1.4
       eslint-plugin-testing-library: ^3.3.1
       faker: ^4.1.0
-      flow-bin: ^0.127.0
+      flow-bin: ^0.128.0
       flow-typed: ^2.6.2
       gh-pages: ^3.1.0
       globby: ^11.0.1
@@ -83,7 +81,7 @@ importers:
       react: ^16.13.1
       react-app-polyfill: ^1.0.6
       react-dom: ^16.13.1
-      react-listitem-grid: ^2.2.0
+      react-listitem-grid: ^2.2.1
       react-scripts: ^3.4.1
       read-pkg: ^5.2.0
       remark-cli: ^8.0.0
@@ -2356,33 +2354,6 @@ packages:
       node: '>= 8.3'
     resolution:
       integrity: sha512-OXD0RgQ86Tu3MazKo8bnrkDRaDXXMGUqd+kTtLtK1Zb7CRzQcaSRPPPV37SvYTdevXEBVxe0HXylEjs8ibkmCw==
-  /@jsdevtools/ez-spawn/3.0.3:
-    dependencies:
-      call-me-maybe: 1.0.1
-      cross-spawn: 7.0.3
-      string-argv: 0.3.1
-      type-detect: 4.0.8
-    dev: true
-    engines:
-      node: '>=10'
-    resolution:
-      integrity: sha512-vMTCNwfJaJSgWiZCboRdOzTEWRTG0mbEt5ZJndjiZ/EC+gg0oCu3Ok0hAsRMNAWG4oXeS+jroXpPj8f0GoQczw==
-  /@jsdevtools/npm-publish/1.1.0:
-    dependencies:
-      '@jsdevtools/ez-spawn': 3.0.3
-      '@jsdevtools/ono': 7.1.2
-      command-line-args: 5.1.1
-      semver: 7.3.2
-    dev: true
-    engines:
-      node: '>=10'
-    hasBin: true
-    resolution:
-      integrity: sha512-tdDWRWZerUxPUJpml6kcbMrLBrfWv+Pm/q3ebO3nJ1Ij3Q1UNTbS7VPGThyc4nz/ihSyyzTiaZRHhtj91D/Clw==
-  /@jsdevtools/ono/7.1.2:
-    dev: true
-    resolution:
-      integrity: sha512-qS/a24RA5FEoiJS9wiv6Pwg2c/kiUo3IVUQcfeM9JvsR6pM8Yx+yl/6xWYLckZCT5jpLNhslgjiA8p/XcGyMRQ==
   /@juggle/resize-observer/3.2.0:
     dev: false
     resolution:
@@ -3386,12 +3357,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-45sJrqne+Gao8gbiiK9jkZuuOcQ=
-  /array-back/3.1.0:
-    dev: true
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-TkuxA4UCOvxuDK6NZYXCalszEzj+TLszyASooky+i742l9TqsOdYCMJJupxRic61hwquNtppB3hgcuq9SVSH1Q==
   /array-equal/1.0.0:
     dev: true
     resolution:
@@ -4660,17 +4625,6 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
-  /command-line-args/5.1.1:
-    dependencies:
-      array-back: 3.1.0
-      find-replace: 3.0.0
-      lodash.camelcase: 4.3.0
-      typical: 4.0.0
-    dev: true
-    engines:
-      node: '>=4.0.0'
-    resolution:
-      integrity: sha512-hL/eG8lrll1Qy1ezvkant+trihbGnaKaeEjj6Scyr3DN+RC7iQ5Rz84IeLERfAWDGo0HBSNAakczwgCilDXnWg==
   /commander/2.20.3:
     dev: true
     resolution:
@@ -6681,14 +6635,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-t2GDMt3oGC/v+BMwzmllWDuJF/xcDtE5j/fCGbqDD7OLuJkj0cfh1YSA5VKPvwMeLFLNDBkwOKZ2X85jGLVftQ==
-  /find-replace/3.0.0:
-    dependencies:
-      array-back: 3.1.0
-    dev: true
-    engines:
-      node: '>=4.0.0'
-    resolution:
-      integrity: sha512-6Tb2myMioCAgv5kfvP5/PkZZ/ntTpVK39fHY7WkWBgvbeE+VHd/tZuZ4mrC+bxh4cfOZeYKVPaJIZtZXV7GNCQ==
   /find-root/1.1.0:
     dev: false
     resolution:
@@ -6753,13 +6699,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-dVsPA/UwQ8+2uoFe5GHtiBMu48dWLTdsuEd7CKGlZlD78r1TTWBvDuFaFGKCo/ZfEr95Uk56vZoX86OsHkUeIg==
-  /flow-bin/0.127.0:
+  /flow-bin/0.128.0:
     dev: true
     engines:
       node: '>=0.10.0'
     hasBin: true
     resolution:
-      integrity: sha512-ywvCCdV4NJWzrqjFrMU5tAiVGyBiXjsJQ1+/kj8thXyX15V17x8BFvNwoAH97NrUU8T1HzmFBjLzWc0l2319qg==
+      integrity: sha512-EnmMSOCrkx8F0r1+T1d1HODQ+ddy5yRfkT3CvwmK05IWZyXQy27OVdNwdXUWRqc0iMW75T4QkoXaVBYrMqfk+A==
   /flow-typed/2.6.2:
     dependencies:
       '@babel/polyfill': 7.10.1
@@ -9367,6 +9313,7 @@ packages:
     resolution:
       integrity: sha1-DZnzzNem0mHRm9rrkkUAXShYCOc=
   /lodash.camelcase/4.3.0:
+    dev: false
     resolution:
       integrity: sha1-soqmKIorn8ZRA1x3EfZathkDMaY=
   /lodash.clonedeep/4.5.0:
@@ -14452,12 +14399,6 @@ packages:
       node: '>= 0.8.0'
     resolution:
       integrity: sha1-WITKtRLPHTVeP7eE8wgEsrUg23I=
-  /type-detect/4.0.8:
-    dev: true
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==
   /type-fest/0.11.0:
     dev: true
     engines:
@@ -14532,12 +14473,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-hSAifV3k+i6lEoCJ2k6R2Z/rp/H3+8sdmcn5NrS3/3kE7+RyZXm9aqvxWqjEXHAd8b0pShatpcdMTvEdvAJltQ==
-  /typical/4.0.0:
-    dev: true
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-VAH4IvQ7BDFYglMd7BPRDfLgxZZX4O4TFcRDA6EN5X7erNJJq+McIEp8np9aVtxrCJ6qx4GTYVfOWNjcqwZgRw==
   /uc.micro/1.0.6:
     dev: true
     resolution:

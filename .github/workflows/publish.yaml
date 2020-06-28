@@ -38,8 +38,9 @@ jobs:
 
       # workflow specific steps
 
-      - run: npm run dist
-
-      - env:
+      - name: Publish to npm
+        env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx npm-publish --token=${NPM_TOKEN} ./dist/package.json
+        run: |
+          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
+          npm run publish
