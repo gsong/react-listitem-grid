@@ -1,7 +1,7 @@
 //@flow strict
-import defaults from "./defaults.js";
+import defaults from "../defaults.js";
 
-import type { Gaps } from "./types";
+import type { Gaps } from "../types";
 
 export type Options = {|
   maximizeItemsPerRow?: boolean,

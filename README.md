@@ -271,11 +271,11 @@ specification. Contributions of any kind welcome!
 [MIT](https://github.com/gsong/react-listitem-grid/blob/develop/LICENSE)
 
 [calc-itemwidth]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils.js#L69-L81
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils/index.js#L69-L81
 [calc-layout-usage]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L23-L28
 [calc-layout]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils.js#L6-L30
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils/index.js#L6-L30
 [contributing]:
   https://github.com/gsong/react-listitem-grid/blob/develop/CONTRIBUTING.md
 [deployed]: https://gsong.github.io/react-listitem-grid/
@@ -284,7 +284,7 @@ specification. Contributions of any kind welcome!
 [fetch-data]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L31-L35
 [flex-compensate]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils.js#L103-L120
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils/index.js#L103-L120
 [flex-example]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/FlexAll.js#L47-L61
 [flex]:

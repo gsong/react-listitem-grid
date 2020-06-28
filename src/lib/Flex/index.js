@@ -2,7 +2,7 @@
 import React from "react";
 
 import defaults from "../defaults.js";
-import { flexCompensate } from "../utils.js";
+import { flexCompensate } from "../utils/index.js";
 
 import type { Gaps, Props } from "../types.js";
 

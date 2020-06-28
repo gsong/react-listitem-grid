@@ -1,9 +1,9 @@
 //@flow strict
 import React from "react";
 
-import { calculateLayoutSpec } from "./utils.js";
+import { calculateLayoutSpec } from "./utils/index.js";
 
-import type { Params } from "./utils.js";
+import type { Params } from "./utils/index.js";
 
 export const useCalculateLayout = (calcParams: Params) => {
   const containerRef = React.useRef<?HTMLElement>();

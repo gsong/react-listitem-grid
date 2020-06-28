@@ -13,7 +13,7 @@
     "dist:watch": "rollup -c -w",
     "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update && flow-typed install jest@24",
     "init-dev": "npx pnpm i --prefer-frozen-lockfile && npm run dist && npx pnpm i",
-    "lint": "eslint . && stylelint . && remark -f . && flow check",
+    "lint": "eslint . && flow check && stylelint . && remark -f .",
     "publish": "npm run dist && cd dist && npm publish",
     "serve": "npm run build && serve -s build",
     "start": "run-p _start dist:watch",
