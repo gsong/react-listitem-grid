@@ -21,7 +21,9 @@ importers:
       '@testing-library/react': 10.4.3_react-dom@16.13.1+react@16.13.1
       all-contributors-cli: 6.16.0
       eslint-config-prettier: 6.11.0
+      eslint-plugin-jest-dom: 3.0.1
       eslint-plugin-prettier: 3.1.4_prettier@2.0.5
+      eslint-plugin-testing-library: 3.3.1
       flow-bin: 0.127.0
       flow-typed: 2.6.2
       gh-pages: 3.1.0
@@ -61,7 +63,9 @@ importers:
       '@testing-library/react': ^10.4.3
       all-contributors-cli: ^6.16.0
       eslint-config-prettier: ^6.11.0
+      eslint-plugin-jest-dom: ^3.0.1
       eslint-plugin-prettier: ^3.1.4
+      eslint-plugin-testing-library: ^3.3.1
       faker: ^4.1.0
       flow-bin: ^0.127.0
       flow-typed: ^2.6.2
@@ -2876,6 +2880,19 @@ packages:
         optional: true
     resolution:
       integrity: sha512-4zY3Z88rEE99+CNvTbXSyovv2z9PNOVffTWD2W8QF5s2prBQtwN2zadqERcrHpcR7O/+KMI3fcTAmUUhK/iQcQ==
+  /@typescript-eslint/experimental-utils/2.34.0:
+    dependencies:
+      '@types/json-schema': 7.0.5
+      '@typescript-eslint/typescript-estree': 2.34.0
+      eslint-scope: 5.1.0
+      eslint-utils: 2.1.0
+    dev: true
+    engines:
+      node: ^8.10.0 || ^10.13.0 || >=11.10.1
+    peerDependencies:
+      eslint: '*'
+    resolution:
+      integrity: sha512-eS6FTkq+wuMJ+sgtuNTtcqavWXqsflWcfBnlYhg/nS4aZ1leewkXGbvBhaapn1q6qf4M71bsR1tez5JTRMuqwA==
   /@typescript-eslint/experimental-utils/2.34.0_eslint@6.8.0:
     dependencies:
       '@types/json-schema': 7.0.5
@@ -5950,6 +5967,19 @@ packages:
       eslint: 2.x - 6.x
     resolution:
       integrity: sha512-qQHgFOTjguR+LnYRoToeZWT62XM55MBVXObHM6SKFd1VzDcX/vqT1kAz8ssqigh5eMj8qXcRoXXGZpPP6RfdCw==
+  /eslint-plugin-jest-dom/3.0.1:
+    dependencies:
+      '@babel/runtime': 7.10.3
+      requireindex: 1.2.0
+    dev: true
+    engines:
+      node: ^10.12.0 || >=12.0.0
+      npm: '>=6'
+      yarn: '>=1'
+    peerDependencies:
+      eslint: ^7.0.0
+    resolution:
+      integrity: sha512-RszrVljcf+jxfudrvFo469HMVT+yeB5wt/6tY+33Ebiiq7Za1Uh5RVu+ZKPCKSd7E4buyi8bxcHLfNCFXSSz7w==
   /eslint-plugin-jsx-a11y/6.2.3_eslint@6.8.0:
     dependencies:
       '@babel/runtime': 7.10.3
@@ -6013,6 +6043,17 @@ packages:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0
     resolution:
       integrity: sha512-SPT8j72CGuAP+JFbT0sJHOB80TX/pu44gQ4vXH/cq+hQTiY2PuZ6IHkqXJV6x1b28GDdo1lbInjKUrrdUf0LOQ==
+  /eslint-plugin-testing-library/3.3.1:
+    dependencies:
+      '@typescript-eslint/experimental-utils': 2.34.0
+    dev: true
+    engines:
+      node: ^10.12.0 || >=12.0.0
+      npm: '>=6'
+    peerDependencies:
+      eslint: ^5 || ^6
+    resolution:
+      integrity: sha512-0Ubug+v9hJDb0OEHc6e2p5/7Q4xhaCZiYLc05hybja8Yd2t+2y1Q+UDwKz+JiDAHoPgE7y2B2G3jn+u9kqJTGw==
   /eslint-scope/4.0.3:
     dependencies:
       esrecurse: 4.2.1
@@ -12791,6 +12832,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg==
+  /requireindex/1.2.0:
+    dev: true
+    engines:
+      node: '>=0.10.5'
+    resolution:
+      integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==
   /requires-port/1.0.0:
     dev: true
     resolution:

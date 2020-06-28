@@ -42,6 +42,7 @@ const App = () => {
         <nav css={{ marginBottom: "0.75em" }}>
           <label>
             Choose an example:
+            {/* eslint-disable-next-line jsx-a11y/no-onchange */}
             <select
               name="example"
               value={selected}

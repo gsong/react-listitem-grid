@@ -63,6 +63,7 @@ const Form = (props) => (
       <Field input="border" {...props} />
       <Field input="padding" {...props} />
       <Field input="alignment" unit="" {...props}>
+        {/* eslint-disable-next-line jsx-a11y/no-onchange */}
         <select
           defaultValue={props.state.alignment}
           onChange={(e) =>

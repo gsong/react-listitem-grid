@@ -4,5 +4,9 @@ env:
   node: true
 
 extends:
+  - plugin:jest-dom/recommended
+  - plugin:jsx-a11y/recommended
   - plugin:prettier/recommended
+  - plugin:testing-library/react
+  - plugin:testing-library/recommended
   - react-app
