@@ -273,7 +273,7 @@ specification. Contributions of any kind welcome!
 [calc-itemwidth]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils/index.js#L69-L81
 [calc-layout-usage]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L23-L28
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L22-L26
 [calc-layout]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils/index.js#L6-L30
 [contributing]:
@@ -282,28 +282,28 @@ specification. Contributions of any kind welcome!
 [example app]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app
 [fetch-data]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L31-L35
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L29-L33
 [flex-compensate]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils/index.js#L103-L120
 [flex-example]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/FlexAll.js#L47-L61
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/FlexAll.js#L45-L59
 [flex]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/Flex/index.js
 [grid-example]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L46-L56
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L44-L54
 [grid]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/Grid/index.js
 [hook-source]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/hooks.js#L6-L8
 [layout-specs]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L16-L20
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L16-L19
 [recalc-width]:
-  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L37-L43
+  https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L35-L41
 [resizeobserver-ponyfill]: https://github.com/juggle/resize-observer
 [resizeobserver]:
   https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
 [task-board]: https://github.com/gsong/react-listitem-grid/projects/1
-[test-and-lint]:
-  https://github.com/gsong/react-listitem-grid/actions?query=workflow%3Atest-and-lint
 [test-and-lint-badge]:
   https://github.com/gsong/react-listitem-grid/workflows/test-and-lint/badge.svg
+[test-and-lint]:
+  https://github.com/gsong/react-listitem-grid/actions?query=workflow%3Atest-and-lint
