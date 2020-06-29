@@ -2,7 +2,7 @@
   - eslint --cache --fix
   - flow focus-check
 "*.{css,js}": stylelint --fix
-"*.md":
+"!(CHANGELOG).md":
   - markdownlint
   - remark -f
 "*": prettier --check
