@@ -1,6 +1,10 @@
 # react-listitem-grid
 
-[![Test and lint status][test-and-lint-badge]][test-and-lint]
+<!-- prettier-ignore-start -->
+[![npm][badge-npm]][npm]
+[![Test and lint status][badge-test]][test]
+[![MIT license][badge-license]][license]
+<!-- prettier-ignore-end -->
 
 Utilities and components for responsive grid layout of list items. [See example
 use cases][deployed].
@@ -268,8 +272,12 @@ specification. Contributions of any kind welcome!
 
 ## License
 
-[MIT](https://github.com/gsong/react-listitem-grid/blob/develop/LICENSE)
+[MIT][license]
 
+[badge-license]: https://img.shields.io/github/license/gsong/react-listitem-grid
+[badge-npm]: https://img.shields.io/npm/v/react-listitem-grid
+[badge-test]:
+  https://github.com/gsong/react-listitem-grid/workflows/test/badge.svg
 [calc-itemwidth]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/utils/index.js#L69-L81
 [calc-layout-usage]:
@@ -297,13 +305,13 @@ specification. Contributions of any kind welcome!
   https://github.com/gsong/react-listitem-grid/blob/develop/src/lib/hooks.js#L6-L8
 [layout-specs]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L16-L19
+[license]: https://github.com/gsong/react-listitem-grid/blob/develop/LICENSE
+[npm]: https://www.npmjs.com/package/react-listitem-grid
 [recalc-width]:
   https://github.com/gsong/react-listitem-grid/blob/develop/src/example-app/examples/GridAll.js#L35-L41
 [resizeobserver-ponyfill]: https://github.com/juggle/resize-observer
 [resizeobserver]:
   https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver
 [task-board]: https://github.com/gsong/react-listitem-grid/projects/1
-[test-and-lint-badge]:
-  https://github.com/gsong/react-listitem-grid/workflows/test-and-lint/badge.svg
-[test-and-lint]:
-  https://github.com/gsong/react-listitem-grid/actions?query=workflow%3Atest-and-lint
+[test]:
+  https://github.com/gsong/react-listitem-grid/actions?query=workflow%3Atest
