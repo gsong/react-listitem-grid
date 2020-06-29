@@ -1,12 +1,9 @@
-name: test-and-lint
+name: semantic-release
 
-on:
-  push:
-    branches: [develop]
-  pull_request:
+on: push
 
 jobs:
-  test-and-lint:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v2-beta
@@ -44,3 +41,12 @@ jobs:
       - env:
           CI: true
         run: npm t
+
+      - run: npm run dist
+
+      - if: success()
+        env:
+          CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

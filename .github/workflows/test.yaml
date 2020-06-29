@@ -1,11 +1,12 @@
-name: publish-to-npm
+name: test
 
 on:
   push:
-    branches: [release]
+    branches: [develop]
+  pull_request:
 
 jobs:
-  publish:
+  test-and-lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v2-beta
@@ -38,9 +39,8 @@ jobs:
 
       # workflow specific steps
 
-      - name: Publish to npm
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > ~/.npmrc
-          npm run publish
+      - run: npm run lint
+
+      - env:
+          CI: true
+        run: npm t
