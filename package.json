@@ -43,7 +43,7 @@
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
-    "react-listitem-grid": "^2.2.1"
+    "react-listitem-grid": "workspace:*"
   },
   "peerDependencies": {
     "@babel/runtime": "^7",

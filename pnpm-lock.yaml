@@ -94,7 +94,7 @@ importers:
       react: ^16.13.1
       react-app-polyfill: ^1.0.6
       react-dom: ^16.13.1
-      react-listitem-grid: ^2.2.1
+      react-listitem-grid: 'workspace:*'
       react-scripts: ^3.4.1
       read-pkg: ^5.2.0
       remark-cli: ^8.0.0
@@ -13366,7 +13366,7 @@ packages:
       promise: 8.1.0
       raf: 3.4.1
       regenerator-runtime: 0.13.5
-      whatwg-fetch: 3.0.0
+      whatwg-fetch: 3.1.0
     engines:
       node: '>=6'
     resolution:
@@ -16504,9 +16504,9 @@ packages:
     dev: true
     resolution:
       integrity: sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==
-  /whatwg-fetch/3.0.0:
+  /whatwg-fetch/3.1.0:
     resolution:
-      integrity: sha512-9GSJUgz1D4MfyKU7KRqwOjXCXTqWdFNvEr7eUBYchQiVc744mqK/MzXPNR2WsPkmkOa4ywfg8C2n8h+13Bey1Q==
+      integrity: sha512-pgmbsVWKpH9GxLXZmtdowDIqtb/rvPyjjQv3z9wLcmgWKFHilKnZD3ldgrOlwJoPGOUluQsRPWd52yVkPfmI1A==
   /whatwg-mimetype/2.3.0:
     dev: true
     resolution:
