@@ -58,9 +58,9 @@ const generateFlow = async () => {
 const generatePackageJson = async () => {
   const {
     browserslist,
+    config,
     dependencies,
     devDependencies,
-    scripts,
     ...rest
   } = original;
 

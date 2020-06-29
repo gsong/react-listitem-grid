@@ -15,6 +15,8 @@
     "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update && flow-typed install jest@24",
     "init-dev": "npx pnpm i --prefer-frozen-lockfile && npm run dist && npx pnpm i",
     "lint": "eslint . && flow check && stylelint . && remark -f .",
+    "postversion": "../scripts/postversion.js",
+    "release": "npm run dist && semantic-release",
     "serve": "npm run build && serve -s build",
     "start": "run-p _start dist:watch",
     "test": "react-scripts test",
