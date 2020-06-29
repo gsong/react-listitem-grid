@@ -1,6 +1,6 @@
 {
   "name": "react-listitem-grid",
-  "version": "2.2.1",
+  "version": "0.0.0-semantically-released",
   "description": "Utilities and components for responsive card grid layout",
   "main": "index.js",
   "homepage": ".",
@@ -8,13 +8,13 @@
     "_start": "npm run dist && react-scripts start",
     "analyze": "npm run build && source-map-explorer build/**/*.js",
     "build": "npm run dist && react-scripts build",
+    "commit": "git-cz",
     "deploy": "npm run build && gh-pages -d build",
     "dist": "rimraf dist && NODE_ENV=production rollup -c",
     "dist:watch": "rollup -c -w",
     "flow-typed": "rimraf flow-typed/* && flow-typed update-cache && flow-typed update && flow-typed install jest@24",
     "init-dev": "npx pnpm i --prefer-frozen-lockfile && npm run dist && npx pnpm i",
     "lint": "eslint . && flow check && stylelint . && remark -f .",
-    "publish": "npm run dist && cd dist && npm publish",
     "serve": "npm run build && serve -s build",
     "start": "run-p _start dist:watch",
     "test": "react-scripts test",
@@ -51,9 +51,15 @@
     "@babel/preset-env": "^7.10.3",
     "@babel/preset-flow": "^7.10.1",
     "@babel/preset-react": "^7.10.1",
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
     "@rollup/plugin-babel": "^5.0.4",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@testing-library/react": "^10.4.3",
-    "all-contributors-cli": "^6.16.0",
+    "all-contributors-cli": "^6.16.1",
+    "commitizen": "^4.1.2",
+    "cz-conventional-changelog": "^3.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jest-dom": "^3.0.1",
     "eslint-plugin-prettier": "^3.1.4",
@@ -78,6 +84,7 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.18.1",
     "rollup-plugin-eslint": "^7.0.0",
+    "semantic-release": "^17.1.1",
     "serve": "^11.3.2",
     "sort-keys": "^4.0.0",
     "source-map-explorer": "^2.4.2",
@@ -96,5 +103,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
