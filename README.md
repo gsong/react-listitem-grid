@@ -37,8 +37,8 @@ npm install react-listitem-grid
 This library has minimal peer depencency on `@babel/runtime`, which is probably
 already present in your React project.
 
-If you use the React hook and the components from this library, you'll also need
-the `react` peer dependency.
+If you use the React hook and components from this library, you'll also need the
+`react` peer dependency.
 
 ## Should I Use This Library?
 
