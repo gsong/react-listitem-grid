@@ -45,7 +45,7 @@ function generateCard() {
     contentType: faker.lorem.word(),
     title: faker.lorem.words(8),
     subTitle: faker.lorem.words(),
-    url: faker.internet.url(),
+    url: "https://google.com",
     image: {
       url: `https://picsum.photos/seed/${faker.lorem.word()}/500`,
     },
