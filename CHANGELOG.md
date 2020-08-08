@@ -3,6 +3,15 @@
 All notable changes to this project are documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.2](https://github.com/gsong/react-listitem-grid/compare/v2.2.1...v2.2.2) (2020-08-08)
+
+### Bug Fixes
+
+- cjs instead of es package output
+  ([b27c393](https://github.com/gsong/react-listitem-grid/commit/b27c393199dd9d99be6246bc673e4dd10fbba555))
+- ignore flow error with ReactDOM.render
+  ([9ffaf01](https://github.com/gsong/react-listitem-grid/commit/9ffaf01e31f3c6e5e5f5aeb5a0fd07bc94ac92c0))
+
 ## 2.2.1 (2020-06-28)
 
 - Auto release via CI
