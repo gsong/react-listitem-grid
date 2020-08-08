@@ -12,5 +12,6 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  // $FlowFixMe
   rootElement,
 );
