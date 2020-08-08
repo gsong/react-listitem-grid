@@ -12,7 +12,7 @@ import original from "./package.json";
 export default [
   {
     input: "src/lib/index.js",
-    output: { dir: "dist", format: "es" },
+    output: { dir: "dist", format: "cjs", exports: "auto" },
     external: ["react", /@babel/, /@juggle/],
     preserveModules: true,
     plugins: [eslint(), babel({ babelHelpers: "runtime" }), writeBundle()],
