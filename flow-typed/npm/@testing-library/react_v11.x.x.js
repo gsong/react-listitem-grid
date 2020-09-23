@@ -1,5 +1,5 @@
-// flow-typed signature: 2ec4c8cd8f67266b906a8137b83f9fc7
-// flow-typed version: 11a906f160/@testing-library/react_v10.x.x/flow_>=v0.104.x
+// flow-typed signature: 97935120bcbddce95fe72effee644c7a
+// flow-typed version: 3d7fe31580/@testing-library/react_v11.x.x/flow_>=v0.104.x
 
 declare module '@testing-library/react' {
   // This type comes from
@@ -263,7 +263,7 @@ declare module '@testing-library/react' {
   ): RenderResult<CustomQueries>;
 
   declare export var act: ReactDOMTestUtilsAct;
-  declare export function cleanup(): Promise<void>;
+  declare export function cleanup(): void;
 
   declare export function waitFor<T>(
     callback: () => T,
@@ -443,8 +443,6 @@ declare module '@testing-library/react' {
     text: TextMatch,
     options?: TextMatchOptions
   ): HTMLElement;
-  declare export function getNodeText(
-    node: HTMLElement,
-  ): string;
+  declare export function getNodeText(node: HTMLElement): string;
   declare export var screen: Screen<>;
 }
