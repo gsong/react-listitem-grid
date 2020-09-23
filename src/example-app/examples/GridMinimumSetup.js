@@ -1,6 +1,6 @@
 //@flow strict
 /** @jsx jsx */
-import React from "react";
+import * as React from "react";
 import {
   Grid,
   calculateItemWidthWithCount,
@@ -15,7 +15,9 @@ import "react-listitem-grid/Grid/styles.css";
 
 const maxItemWidth = 350;
 
-export default function GridMinimumSetup() {
+export default function GridMinimumSetup(): React.Element<
+  typeof Grid.Container,
+> {
   const { containerWidth, rowCount, containerRef } = useCalculateLayout({
     maxItemWidth,
   });

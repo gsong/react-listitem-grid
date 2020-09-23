@@ -9,6 +9,8 @@ import { useLayout } from "./hooks";
 
 import "react-listitem-grid/Grid/styles.css";
 
+import type { Element } from "React";
+
 type Props = {
   maximizeItemsPerRow?: boolean,
   observeMaxRows?: boolean,
@@ -17,7 +19,7 @@ type Props = {
 const GridContainer = ({
   maximizeItemsPerRow = false,
   observeMaxRows = false,
-}: Props) => {
+}: Props): Element<string> => {
   const {
     adjustedItemWidth: itemWidth,
     cards,

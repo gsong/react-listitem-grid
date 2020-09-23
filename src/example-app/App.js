@@ -1,6 +1,6 @@
 //@flow strict
 /** @jsx jsx */
-import React from "react";
+import * as React from "react";
 import { Global, jsx } from "@emotion/core";
 
 import "./server";
@@ -26,7 +26,7 @@ const examples = {
   },
 };
 
-const App = () => {
+const App = (): React.Node => {
   const [selected, setExample] = React.useState("FlexAll");
   const Example = React.lazy(
     // $FlowFixMe

@@ -11,7 +11,10 @@ import type { Options } from "react-listitem-grid/utils";
 
 type CalcOptions = {| ...Options, observeMaxRows: boolean |};
 
-export const useLayout = ({ observeMaxRows, ...calcOptions }: CalcOptions) => {
+export const useLayout = ({
+  observeMaxRows,
+  ...calcOptions
+}: CalcOptions): any => {
   const constants = React.useContext(Constants);
   const {
     alignment,
@@ -82,7 +85,7 @@ export const useGetCards = ({
   maxItemWidth,
   observeMaxRows,
   rowCount,
-}: HookParams) => {
+}: HookParams): {| adjustedItemWidth: any, cards: any | Array<any> |} => {
   const [cards, setCards] = React.useState([]);
 
   React.useEffect(() => {

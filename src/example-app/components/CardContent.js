@@ -1,6 +1,6 @@
 //@flow strict
 /** @jsx jsx */
-import React from "react";
+import * as React from "react";
 import VisuallyHidden from "@reach/visually-hidden";
 import styled from "@emotion/styled";
 import { jsx } from "@emotion/core";
@@ -23,7 +23,7 @@ const CardContent = ({
   subTitle,
   title,
   url,
-}: Props) => {
+}: Props): React.Node => {
   const [linkRef, clickProps] = useClickableContent();
 
   return (
@@ -117,7 +117,10 @@ const LinkButton = styled.button({
   },
 });
 
-export const useClickableContent = () => {
+export const useClickableContent = (): (Array<
+  | {| current: HTMLElement | void |}
+  | {| onMouseDown: () => number, onMouseUp: () => void |},
+>) => {
   const link = React.useRef<HTMLElement | typeof undefined>();
   let down;
 

@@ -9,6 +9,8 @@ import { useLayout } from "./hooks";
 
 import "react-listitem-grid/Flex/styles.css";
 
+import type { Element } from "React";
+
 type Props = {
   maximizeItemsPerRow?: boolean,
   observeMaxRows?: boolean,
@@ -17,7 +19,7 @@ type Props = {
 const FlexContainer = ({
   maximizeItemsPerRow = false,
   observeMaxRows = false,
-}: Props) => {
+}: Props): Element<string> => {
   const {
     adjustedItemWidth: itemWidth,
     cards,

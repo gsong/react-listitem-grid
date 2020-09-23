@@ -5,7 +5,7 @@ import { calculateLayoutSpec } from "./utils/index.js";
 
 import type { Params } from "./utils/index.js";
 
-export const useCalculateLayout = (calcParams: Params) => {
+export const useCalculateLayout = (calcParams: Params): any => {
   const containerRef = React.useRef<?HTMLElement>();
 
   const [containerWidth, setContainerWidth] = React.useState(1024);

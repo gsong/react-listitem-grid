@@ -27,7 +27,12 @@ export const calculateLayoutSpec = ({
 }: {|
   ...Params,
   containerWidth: number,
-|}) => {
+|}): {|
+  containerWidth: number,
+  desiredItemCount: ?number,
+  itemWidth: number,
+  rowCount: number,
+|} => {
   const containerWidth = isFlex ? _containerWidth - columnGap : _containerWidth;
   const maxItemWidth = Math.max(_maxItemWidth, minItemWidth);
 
@@ -78,7 +83,7 @@ export const calculateItemWidthWithCount = ({
   itemCount,
   rowCount,
   ...rest
-}: ItemWidthParams) => {
+}: ItemWidthParams): number => {
   const itemWidth = calculateItemWidth({
     ...rest,
     rowCount: Math.min(itemCount, rowCount),
@@ -104,7 +109,7 @@ export const flexCompensate = {
   container: ({
     columnGap = defaults.columnGap,
     rowGap = defaults.rowGap,
-  }: Gaps) => {
+  }: Gaps): {| margin: string, width: string |} => {
     const margin = `-${rowGap}px 0 0 -${columnGap}px`;
     const width = `calc(100% + ${columnGap}px)`;
     return { margin, width };
@@ -113,7 +118,7 @@ export const flexCompensate = {
   item: ({
     columnGap = defaults.columnGap,
     rowGap = defaults.rowGap,
-  }: Gaps) => {
+  }: Gaps): {| margin: string |} => {
     const margin = `${rowGap}px 0 0 ${columnGap}px`;
     return { margin };
   },

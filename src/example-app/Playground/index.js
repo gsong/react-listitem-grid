@@ -1,6 +1,6 @@
 //@flow strict
 /** @jsx jsx */
-import React from "react";
+import * as React from "react";
 import debounce from "lodash/debounce";
 import { jsx } from "@emotion/core";
 
@@ -9,7 +9,7 @@ import Constants from "./contexts";
 import FlexContainer from "./FlexContainer";
 import GridContainer from "./GridContainer";
 
-export default () => {
+export default (): React.Node => {
   const { state, updateState } = useInit();
 
   return (

@@ -1,6 +1,6 @@
 //@flow strict
 /** @jsx jsx */
-import React from "react";
+import * as React from "react";
 import {
   Flex,
   calculateItemWidthWithCount,
@@ -19,7 +19,7 @@ const maxRows = 1;
 const minItemWidth = 150;
 const rowGap = 16;
 
-export default function FlexMaxRows() {
+export default function FlexMaxRows(): React.Element<typeof Flex.Container> {
   const {
     containerWidth,
     rowCount,

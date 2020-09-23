@@ -1,12 +1,15 @@
 //@flow strict
-import React from "react";
+import * as React from "react";
 
 import defaults from "../defaults.js";
 import { flexCompensate } from "../utils/index.js";
 
 import type { Gaps, Props } from "../types.js";
 
-const Container = React.forwardRef<Props, ?HTMLElement>(
+const Container: React$AbstractComponent<
+  Props,
+  ?HTMLElement,
+> = React.forwardRef<Props, ?HTMLElement>(
   (
     {
       columnGap = defaults.columnGap,
@@ -35,7 +38,7 @@ const Item = ({
   itemWidth,
   rowGap = defaults.rowGap,
   ...props
-}: ItemProps) => {
+}: ItemProps): React.Element<"li"> => {
   const style = {
     width: itemWidth,
     ...flexCompensate.item({ columnGap, rowGap }),

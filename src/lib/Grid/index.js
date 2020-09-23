@@ -1,5 +1,5 @@
 //@flow strict
-import React from "react";
+import * as React from "react";
 
 import defaults from "../defaults.js";
 
@@ -7,7 +7,10 @@ import type { Props as Props_ } from "../types.js";
 
 type Props = { ...Props_, itemWidth: number };
 
-const Container = React.forwardRef<Props, ?HTMLElement>(
+const Container: React$AbstractComponent<
+  Props,
+  ?HTMLElement,
+> = React.forwardRef<Props, ?HTMLElement>(
   (
     {
       itemWidth,
@@ -34,6 +37,8 @@ const Container = React.forwardRef<Props, ?HTMLElement>(
   ),
 );
 
-const Item = (props: any) => <li data-react-listitem-grid-item {...props} />;
+const Item = (props: any): React.Element<"li"> => (
+  <li data-react-listitem-grid-item {...props} />
+);
 
 export default { Container, Item };

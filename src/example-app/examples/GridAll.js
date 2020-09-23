@@ -1,6 +1,6 @@
 //@flow strict
 /** @jsx jsx */
-import React from "react";
+import * as React from "react";
 import {
   Grid,
   calculateItemWidthWithCount,
@@ -18,7 +18,7 @@ const maxItemWidth = 350;
 const minItemWidth = 150;
 const rowGap = 16;
 
-export default function GridAll() {
+export default function GridAll(): React.Element<typeof Grid.Container> {
   const { containerWidth, rowCount, containerRef } = useCalculateLayout({
     columnGap,
     maxItemWidth,
