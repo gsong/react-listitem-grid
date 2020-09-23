@@ -3,6 +3,18 @@
 All notable changes to this project are documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/gsong/react-listitem-grid/compare/v2.2.2...v2.3.0) (2020-09-23)
+
+### Bug Fixes
+
+- update flow typings to latest standards
+  ([ed5ac47](https://github.com/gsong/react-listitem-grid/commit/ed5ac4718706a2faa7009caa6f71c8f4a6983a1f))
+
+### Features
+
+- upgrade dependencies
+  ([aa444d1](https://github.com/gsong/react-listitem-grid/commit/aa444d111c393cec2933ab01f4628dd0f58067cb))
+
 ## [2.2.2](https://github.com/gsong/react-listitem-grid/compare/v2.2.1...v2.2.2) (2020-08-08)
 
 ### Bug Fixes
