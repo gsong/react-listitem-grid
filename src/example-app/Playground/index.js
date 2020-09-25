@@ -47,7 +47,7 @@ export default (): React.Node => {
 
 const useInit = () => {
   const [state, updateState] = React.useReducer(
-    // $FlowFixMe
+    // $FlowIgnore
     (state, update) => ({ ...state, ...update }),
     constants,
   );

@@ -32,7 +32,7 @@ const CardContent = ({
         <header css={{ margin: "auto 6px 6px", order: 1, paddingTop: 6 }}>
           <Title>
             <a
-              // $FlowFixMe
+              // $FlowIgnore
               ref={linkRef}
               href={url}
               css={{ color: "hsl(0, 0%, 25%)", textDecoration: "none" }}

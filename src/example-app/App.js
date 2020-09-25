@@ -5,7 +5,13 @@ import { Global, jsx } from "@emotion/core";
 
 import "./server";
 
-const examples = {
+const examples: {
+  [string]: {
+    label: string,
+    src?: string,
+    Component?: () => Promise<{ default: React.ComponentType<any> }>,
+  },
+} = {
   FlexAll: { label: "Flex with all cards" },
   FlexMaxItems: { label: "Flex max items per row with all cards" },
   FlexMaxRows: { label: "Flex with maxRows constraints" },
@@ -29,10 +35,8 @@ const examples = {
 const App = (): React.Node => {
   const [selected, setExample] = React.useState("FlexAll");
   const Example = React.lazy(
-    // $FlowFixMe
     examples[selected].Component ?? (() => import(`./examples/${selected}`)),
   );
-  // $FlowFixMe
   const src = examples[selected].src ?? `examples/${selected}.js`;
 
   return (
@@ -48,7 +52,7 @@ const App = (): React.Node => {
               value={selected}
               onChange={(e) => setExample(e.currentTarget.value)}
             >
-              {/* $FlowFixMe */}
+              {/* $FlowIgnore */}
               {Object.entries(examples).map(([value, { label }]) => (
                 <option {...{ value }} key={value}>
                   {label}
